@@ -1,0 +1,33 @@
+.footer-bg{
+    background: #EBEBEA;
+}
+.font-p14{
+    font-size: 14px;
+    color:#707070;
+}
+.font{
+    color:#364A15;
+}
+.footer-copyright{
+    background-color: #1E1E1E;
+}
+.mt-50{
+    margin-top: 50px;
+}
+.container-alinhamento { /*tudo dentro dessa classe esta alinhado*/
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3%;
+
+}
+
+.redes-sociais ul{
+    list-style: none;
+}
+.redes-sociais ul li{
+    display: inline;
+    padding:2.5px;
+    margin:0;
+}
