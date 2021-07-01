@@ -1,20 +1,20 @@
 .footer-bg{
-    background: #EBEBEA;
+    background: #cfcfcc;
 }
-.font-p14{
+.fs-14{
     font-size: 14px;
     color:#707070;
 }
-.font{
+.fs-17{
     color:#364A15;
+    font-size: 17px;
+    font-weight: bold;
 }
 .footer-copyright{
     background-color: #1E1E1E;
 }
-.mt-50{
-    margin-top: 50px;
-}
-.container-alinhamento { /*tudo dentro dessa classe esta alinhado*/
+
+.container-alinhamento { /*tudo dentro dessa classe esta alinhado na vertical*/
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -22,12 +22,43 @@
     margin-bottom: 3%;
 
 }
-
+/*
 .redes-sociais ul{
     list-style: none;
 }
 .redes-sociais ul li{
     display: inline;
-    padding:2.5px;
-    margin:0;
+}*/
+
+/* ESTILIZAÇÃO DO FOOTER */
+ul.social-network{
+    list-style: none;
+    padding: 0;
+}
+
+/* acessando a tag <li> dentro da tag <ul> para alinhar os ícones da lista*/
+ul.social-network li{
+    display: inline;
+    margin: 0;
+    padding: 5px;
+}
+
+/* acessando a classe fa dentro da tag dos icones <i> para alterar tamanho, cor e padding de todos */
+.fa{
+    /*font-size: 35pt;*/
+    color: white;
+    padding: 10px;
+}
+
+/* alterando a cor dos icones das redes sociais ao passar o mouse (hover) */
+.fa-facebook-square:hover{
+    color: #3b5998;
+}
+
+.fa-instagram:hover{
+    color: #c13584;
+}
+
+.fa-linkedin-square:hover{
+    color: #0072b1;
 }
