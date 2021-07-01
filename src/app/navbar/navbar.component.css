@@ -1,11 +1,11 @@
 .navOpt {
-background: #1E1E1E;
-height: 65px;
+    background: #1E1E1E;
+    height: 65px;
 }
 
 .font {
-color: #f1f1f1;
-font-family: 'Poppins';
+    color: #f1f1f1;
+    font-family: 'Poppins';
 }
 
 .mc-font {
@@ -30,7 +30,6 @@ font-family: 'Poppins';
     justify-content: center;
     align-items: center;
     margin-bottom: 3%;
-    
 }
 
 .logo {
@@ -47,7 +46,7 @@ font-family: 'Poppins';
     margin-right: 18px;
 }
 
-.buttonpadrao{
+.buttonpadrao {
     top: 695px;
     left: 861px;
     width: 160px;
@@ -57,6 +56,6 @@ font-family: 'Poppins';
     opacity: 1;
 }
 
-.button:hover{
+.button:hover {
     color: #fff;
 }
