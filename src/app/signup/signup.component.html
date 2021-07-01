@@ -11,7 +11,7 @@
                     <div class="row">
                         <div class="form-group">
                             <label for="nome">Primeiro Nome</label>
-                            <input class="form-control" type="text" name="nome" id="nome" placeholder="Digite seu nome">
+                            <input [(ngModel)]='user.nome' class="form-control" type="text" name="nome" id="nome" placeholder="Digite seu nome">
                         </div>
 
                         <div class="form-group mx-4">
@@ -28,7 +28,7 @@
                     <div class="row">
                         <div class="form-group">
                             <label for="cpf">CPF</label>
-                            <input class="form-control" type="text" name="cpf" id="cpf" placeholder="xxx.xxx.xxx-xx">
+                            <input [(ngModel)]='user.cpf' class="form-control" type="text" name="cpf" id="cpf" placeholder="xxx.xxx.xxx-xx">
                         </div>
                     </div>
 
@@ -36,43 +36,43 @@
 
                 <div class="form-group">
                     <label for="endereco">Endereço</label>
-                    <input class="form-control" type="text" name="endereco" id="endereco"
+                    <input [(ngModel)]='user.endereco' class="form-control" type="text" name="endereco" id="endereco"
                         placeholder="Rua , nº , bairro">
                 </div>
 
                 <div class="form-group">
                     <label for="cep">CEP</label>
-                    <input class="form-control" type="text" name="cep" id="cep" placeholder="xxxxx-xxx">
+                    <input [(ngModel)]='user.cep' class="form-control" type="text" name="cep" id="cep" placeholder="xxxxx-xxx">
                 </div>
 
                 <div class="form-group">
                     <label for="telefone">Telefone</label>
-                    <input class="form-control" type="text" name="telefone" id="telefone" placeholder="(xx) xxxxx-xxxx">
+                    <input [(ngModel)]='user.telefone' class="form-control" type="text" name="telefone" id="telefone" placeholder="(xx) xxxxx-xxxx">
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input class="form-control" type="email" name="senha" id="senha" placeholder="seuemail@examplo.com">
+                    <input [(ngModel)]='user.email' class="form-control" type="email" name="senha" id="senha" placeholder="seuemail@examplo.com">
                 </div>
 
                 <div class="form-group">
                     <label for="senha">Senha</label>
-                    <input class="form-control" type="password" name="senha" id="senha" placeholder="Digite sua senha">
+                    <input (input)='confirmarSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="Digite sua senha">
                 </div>
 
                 <div class="form-group">
                     <label for="confirmeSenha">Confirmar Senha</label>
-                    <input class="form-control" type="password" name="confirmeSenha" id="confirmeSenha"
+                    <input [(ngModel)]='user.senha' class="form-control" type="password" name="confirmeSenha" id="confirmeSenha"
                         placeholder="Confirme sua senha">
                 </div>
 
                 <div class="d-flex justify-content-center">
-                    <button tipe="submit" class="btn button font">CADASTRAR</button>
+                    <button tipe="submit" class="btn button font" (click)='cadastrar()' data-toggle="modal" data-target="#login">CADASTRAR</button>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 d-flex mt-0"> <a routerLink="/previewProduto" data-toggle="modal" data-target="#login"> <img src="assets/img/fundo-cadastro-usuario.gif" height="800px" width="800px">
-        </a></div>
+        <div class="col-md-6 d-flex mt-0">
+                <img src="assets/img/fundo-cadastro-usuario.gif" height="800px" width="800px">
+        </div>
     </div>
-
 </div>
