@@ -7,3 +7,6 @@ button{
     border-radius: 10px;
     opacity: 1;
 }
+.button:hover{
+    color: #fff;
+}

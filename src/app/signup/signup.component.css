@@ -3,3 +3,24 @@
     font-family: 'Poppins';
     font-weight: bold;
     }
+input{
+    border-radius: 15px;
+}
+button{
+    top: 695px;
+    left: 861px;
+    width: 160px;
+    height: 35px;
+    border-radius: 10px;
+    opacity: 1;
+    border-color: #364A15;
+    color: #364A15;
+    border-width: 2px;
+}
+.button:hover{
+    color: #fff;
+    background-color: #364A15;
+}
+img{
+    border: none;
+}
