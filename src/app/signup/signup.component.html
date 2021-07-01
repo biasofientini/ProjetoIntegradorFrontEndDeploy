@@ -2,29 +2,42 @@
 
     <div class="row">
 
-        <div class="col-md-6 d-flex justify-content-center">
+        <div class="col-md-6 d-flex justify-content-center mt-5">
+
             <div class="col-md-10">
 
-                <!--<h1 class="text-center">Cadastro</h1>-->
+                <div class="col-md-12 d-flex justify-content-left">
 
-                <div class="form-group">
-                    <label for="nome">Primeiro Nome</label>
-                    <input class="form-control" type="text" name="nome" id="nome" placeholder="Digite seu nome">
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="nome">Primeiro Nome</label>
+                            <input class="form-control" type="text" name="nome" id="nome" placeholder="Digite seu nome">
+                        </div>
+
+                        <div class="form-group mx-4">
+                            <label for="sobrenome">Sobrenome</label>
+                            <input class="form-control" type="text" name="sobrenome" id="sobrenome"
+                                placeholder="Digite seu sobrenome">
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="form-group">
-                    <label for="sobrenome">Sobrenome</label>
-                    <input class="form-control" type="text" name="sobrenome" id="sobrenome" placeholder="Digite seu sobrenome">
-                </div>
+                <div class="col-md-12 d-flex justify-content-left">
 
-                <div class="form-group">
-                    <label for="cpf">CPF</label>
-                    <input class="form-control" type="text" name="cpf" id="cpf" placeholder="xxx.xxx.xxx-xx">
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="cpf">CPF</label>
+                            <input class="form-control" type="text" name="cpf" id="cpf" placeholder="xxx.xxx.xxx-xx">
+                        </div>
+                    </div>
+
                 </div>
 
                 <div class="form-group">
                     <label for="endereco">Endereço</label>
-                    <input class="form-control" type="text" name="endereco" id="endereco" placeholder="Rua , nº , bairro">
+                    <input class="form-control" type="text" name="endereco" id="endereco"
+                        placeholder="Rua , nº , bairro">
                 </div>
 
                 <div class="form-group">
@@ -54,13 +67,12 @@
                 </div>
 
                 <div class="d-flex justify-content-center">
-                    <button tipe="submit" class="btn btn-success">Cadastrar</button>
+                    <button tipe="submit" class="btn button font">CADASTRAR</button>
                 </div>
             </div>
         </div>
-
-        <div class="col-md-6"> <a routerLink="/entrar"><img src="assets/img/fundo-cadastro-usuario.gif" height="670"> </a></div>
+        <div class="col-md-6 d-flex mt-0"> <a routerLink="/entrar"><img src="assets/img/fundo-cadastro-usuario.gif" height="800px" width="800px">
+        </a></div>
     </div>
 
 </div>
-
