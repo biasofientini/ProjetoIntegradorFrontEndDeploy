@@ -46,3 +46,17 @@ font-family: 'Poppins';
     border-radius: 28px;
     margin-right: 18px;
 }
+
+.buttonpadrao{
+    top: 695px;
+    left: 861px;
+    width: 160px;
+    height: 35px;
+    background: #364A15 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.button:hover{
+    color: #fff;
+}
