@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { PreviewProdutoComponent } from './preview-produto/preview-produto.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { PreviewProdutoComponent } from './preview-produto/preview-produto.compo
     FooterComponent,
     LoginComponent,
     SignupComponent,
-    PreviewProdutoComponent
+    PreviewProdutoComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
