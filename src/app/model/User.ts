@@ -1,18 +1,17 @@
 
 import { Cart } from "./Cart"
+import { Role } from "./Role"
 
 export class User{
     public id: number
-    public nome: string
+    public name: string
     public email: string
-    public senha: string
-    public endereco: string
-    public telefone: string
-    public cpf: string
-    public cep: string
-    public pontuacao: number
+    public password: string
+    public address: string
+    public phone: string
+    public zipCode: string
+    public points: number
     public token: string
-    public admin: boolean 
-    public carrinho: Cart[]
-    //public roles: Role[]
+    public cart: Cart[]
+    public roles: Role[]
 }

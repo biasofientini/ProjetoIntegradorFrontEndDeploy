@@ -1,8 +1,9 @@
 export class UserDTO{
-    
-    public nome: string
+    public name: string
     public email: string
-    public senha: string
+    public password: string
     public token: string
-    
+    public phone: string
+    public zipCode: string
+    public address: string  
 }

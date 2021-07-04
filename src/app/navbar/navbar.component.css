@@ -1,13 +1,12 @@
 .navOpt {
-background: #1E1E1E;
-height: 65px;
+    background: #1E1E1E;
+    height: 65px;
 }
 
 .font {
     color: #f1f1f1;
     font-family: 'Poppins';
-    }
-
+}
 .mc-font {
     font-size: 8pt;
 }
@@ -30,7 +29,6 @@ height: 65px;
     justify-content: center;
     align-items: center;
     margin-bottom: 3%;
-    
 }
 
 .logo {
@@ -45,4 +43,18 @@ height: 65px;
     height: 30px;
     border-radius: 28px;
     margin-right: 18px;
+}
+
+.buttonpadrao {
+    top: 695px;
+    left: 861px;
+    width: 160px;
+    height: 35px;
+    background: #364A15 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.button:hover {
+    color: #fff;
 }

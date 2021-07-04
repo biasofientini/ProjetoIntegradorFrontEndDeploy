@@ -3,11 +3,14 @@ import { Router } from '@angular/router';
 import { User } from '../model/User';
 import { AuthService } from '../service/auth.service';
 
+declare var $: any
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
+
 export class SignupComponent implements OnInit {
 
   user: User = new User
@@ -16,7 +19,6 @@ export class SignupComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router
-
   ) { }
 
   ngOnInit(){
@@ -28,14 +30,12 @@ export class SignupComponent implements OnInit {
   }
 
   cadastrar(){
-
-    if(this.user.senha != this.confirmeSenha){
+    if(this.user.password != this.confirmeSenha){
       alert('Atenção! As senhas não correspodem.')
     } else {
-
       this.authService.cadastrar(this.user).subscribe((resp: User) => {
         this.user = resp
-        this.router.navigate(['/entrar'])
+        this.router.navigate(['/previewProduto'])
         alert('Usuário cadastrado com sucesso!')
       })
     }

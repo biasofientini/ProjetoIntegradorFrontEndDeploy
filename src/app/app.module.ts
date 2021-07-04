@@ -11,6 +11,9 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { PreviewProdutoComponent } from './preview-produto/preview-produto.component';
 import { HomeComponent } from './home/home.component';
+import { AllProductsComponent } from './all-products/all-products.component';
+import { ProductComponent } from './product/product.component';
+import { ImgComponent } from './img/img.component';
 
 
 @NgModule({
@@ -22,6 +25,9 @@ import { HomeComponent } from './home/home.component';
     SignupComponent,
     PreviewProdutoComponent,
     HomeComponent
+    AllProductsComponent,
+    ProductComponent,
+    ImgComponent
   ],
   imports: [
     BrowserModule,

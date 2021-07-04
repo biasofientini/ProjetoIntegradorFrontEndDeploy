@@ -11,7 +11,7 @@
                     <div class="row">
                         <div class="form-group">
                             <label for="nome">Primeiro Nome</label>
-                            <input [(ngModel)]='user.nome' class="form-control" type="text" name="nome" id="nome"
+                            <input [(ngModel)]='user.name' class="form-control" type="text" name="nome" id="nome"
                                 placeholder="Digite seu nome">
                         </div>
 
@@ -21,42 +21,29 @@
                                 placeholder="Digite seu sobrenome">
                         </div>
                     </div>
-
                 </div>
-
-                <div class="col-md-12 d-flex justify-content-left">
-
-                    <div class="row">
-                        <div class="form-group">
-                            <label for="cpf">CPF</label>
-                            <input [(ngModel)]='user.cpf' class="form-control" type="text" name="cpf" id="cpf"
-                                placeholder="xxx.xxx.xxx-xx">
-                        </div>
-                    </div>
-
-                </div>
-
+              
                 <div class="form-group">
                     <label for="endereco">Endereço</label>
-                    <input [(ngModel)]='user.endereco' class="form-control" type="text" name="endereco" id="endereco"
+                    <input [(ngModel)]='user.address' class="form-control" type="text" name="endereco" id="endereco"
                         placeholder="Rua , nº , bairro">
                 </div>
 
                 <div class="form-group">
                     <label for="cep">CEP</label>
-                    <input [(ngModel)]='user.cep' class="form-control" type="text" name="cep" id="cep"
+                    <input [(ngModel)]='user.zipCode' class="form-control" type="text" name="cep" id="cep"
                         placeholder="xxxxx-xxx">
                 </div>
 
                 <div class="form-group">
                     <label for="telefone">Telefone</label>
-                    <input [(ngModel)]='user.telefone' class="form-control" type="text" name="telefone" id="telefone"
+                    <input [(ngModel)]='user.phone' class="form-control" type="text" name="telefone" id="telefone"
                         placeholder="(xx) xxxxx-xxxx">
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input [(ngModel)]='user.email' class="form-control" type="email" name="email" id="email"
+                    <input [(ngModel)]='user.email' class="form-control" type="email" name="senha" id="senha"
                         placeholder="seuemail@examplo.com">
                 </div>
 
@@ -68,19 +55,18 @@
 
                 <div class="form-group">
                     <label for="confirmeSenha">Confirmar Senha</label>
-                    <input [(ngModel)]='user.senha' class="form-control" type="password" name="confirmeSenha"
+                    <input [(ngModel)]='user.password' class="form-control" type="password" name="confirmeSenha"
                         id="confirmeSenha" placeholder="Confirme sua senha">
                 </div>
 
                 <div class="d-flex justify-content-center">
-                    <button tipe="submit" class="btn button font" (click)='cadastrar()'> CADASTRAR
-                    </button>
+                    <button tipe="submit" class="btn button font" (click)='cadastrar()' data-toggle="modal"
+                        data-target="#login">CADASTRAR</button>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 d-flex mt-0"> <img src="assets/img/fundo-cadastro-usuario.gif" height="800px"
-                width="800px">
+        <div class="col-md-6 d-flex mt-0">
+            <img src="assets/img/fundo-cadastro-usuario.gif" height="800px" width="800px">
         </div>
     </div>
-
 </div>
