@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'entrar', component: LoginComponent},
   { path: 'cadastrar', component: SignupComponent },
   { path: 'previewProduto', component: PreviewProdutoComponent },
-  { path: 'home', component: HomeComponent}
+  { path: 'home', component: HomeComponent},
   { path: 'produtos', component: AllProductsComponent}
 
 ];

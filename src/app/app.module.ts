@@ -24,7 +24,7 @@ import { ImgComponent } from './img/img.component';
     LoginComponent,
     SignupComponent,
     PreviewProdutoComponent,
-    HomeComponent
+    HomeComponent,
     AllProductsComponent,
     ProductComponent,
     ImgComponent
