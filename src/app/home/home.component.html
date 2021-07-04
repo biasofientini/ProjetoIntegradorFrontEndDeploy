@@ -1,20 +1,25 @@
 <app-navbar></app-navbar>
-<div class="container-fluid font">
-    <div class="row">
-        <video class="fx" width="100%" autoplay="autoplay" loop="loop">
-            <source src="../../assets/img/video.mp4" type="video/mp4">
 
+
+<!-- VÍDEO -->
+<div class="container-fluid">
+    <div class="row container-video">
+        <video width="100%" autoplay="autoplay" loop="loop">
+            <source src="../../assets/img/video.mp4" type="video/mp4">
         </video>
-    </div>
-    <div class="row d-flex justify-content-center">
-        <!--<h1 class="txt">LifeShop</h1>-->
-        <span class="marca-dagua txt">LifeShop</span>
+        <h1 class="centered font-fam">LifeShop</h1>
+        <h2 class="centered-h2 font-fam"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt. </h2>
     </div>
 </div>
+<!-- /VÍDEO -->
 
+
+<!-- DESTAQUES DA SEMANA -->
+<!--
 <div class="container font-fam">
-    <h3 class="font-green mt-3 font-weight-bold">Destaques da Semana</h3>
     <div class="row">
+        <h3 class="font-green mt-3 font-weight-bold">Destaques da Semana</h3>
         <div class="card mx-4 my-4 align-items-center card-pref week-config" style="width: 18rem;">
             <img src="https://images.unsplash.com/photo-1540914124281-342587941389?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80"
                 class="card-img-top card-pref" alt="...">
@@ -57,35 +62,94 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid back-color">
-        <h3 class="font-green mt-3 font-fam font-weight-bold">Categorias</h3>
-        <div class="row d-flex justify-content-center">
-            <img class="size categ-config fx" src="../../assets/img/categ1.jpg" alt="">
-            <img class="size categ-config fx" src="../../assets/img/categ1.jpg" alt="">
-            <img class="size categ-config fx" src="../../assets/img/categ1.jpg" alt="">
-            <img class="size categ-config fx" src="../../assets/img/categ1.jpg" alt="">
+
+</div> -->
+<!-- / DESTAQUES DA SEMANA -->
+
+<!--CATEGORIAS  -->
+
+<div class="container-fluid" style="background-color: #cfcfcc;">
+    <h3 class="font-green pt-3 font-weight-bold font-fam ml-3">Categorias</h3>
+    <div class="row ml-1 mr-1">
+        <div class="col-md-4 categoria">
+            <img class="img-fluid img-size" src="../../assets/img/vestuario-cat1.jpg" alt="">
+            <h4 class="cat-texto font-fam">ALIMENTOS</h4>
+        </div>
+        <div class="col-md-4 categoria">
+            <img class="img-fluid img-size" src="../../assets/img/vestuario-cat1.jpg" alt="">
+            <h4 class="cat-texto font-fam">VESTUÁRIO</h4>
+        </div>
+        <div class="col-md-4 categoria">
+            <img class="img-fluid img-size" src="../../assets/img/vestuario-cat1.jpg" alt="">
+            <h4 class="cat-texto font-fam">BEM ESTAR</h4>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row d-flex align-items-center">
-    
-            <div class="col-md-6">
-    
-                <div class="row d-flex justify-content-center font-fam">
-                    <div class="col-md-6">
-                        <h1 class="text-center mb-3 font-weight-bold font-green">Quando você compra, você doa!</h1>
-                        <h1 class="text-center mb-3 font-gray fs-13">Lorem ipsum dolor sit amet, consectetur 
-                            adipiscing elit, sed do eiusmod tempor 
-                            incididunt ut labore et dolore magna aliqua.</h1>
-                        <a href="#" class="btn button-config font">Saiba Mais ></a>
-                </div>
-    
-            </div>
-    
-            <div class="col-md-6" id="img-bg"></div>
-                <div class="row"><img class="size-cat" src="../../assets/img/categ1.jpg" alt=""></div>
-            
+    <div class="row ml-1 mr-1 mt-3 pb-5">
+        <div class="col-md-6 categoria">
+            <img class="img-fluid img-size" src="../../assets/img/vestuario-cat1.jpg" alt="">
+            <h4 class="cat-texto font-fam">ACESSÓRIOS</h4>
+        </div>
+        <div class="col-md-6 categoria">
+            <img class="img-fluid img-size" src="../../assets/img/vestuario-cat1.jpg" alt="">
+            <h4 class="cat-texto font-fam">UTILITÁRIOS</h4>
         </div>
     </div>
 </div>
+<!-- /CATEGORIAS -->
+
+<!-- SOBRE DOAÇÃO -->
+
+<div class="container">
+    <div class="row d-flex justify-content-start align-items-center mb-5 mt-5">
+
+        <div class="col-md-5">
+            <div class="row d-flex justify-content-start">
+                <h1 class="text-left mb-3 mt-5 font-weight-bold font-fam font-green">Quando você compra, <br> você doa!</h1>
+                <h3 class="text-left font-gray mt-2">Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua.</h3>
+                <a href="#" class="btn btn-config font-fam mt-5">Saiba Mais ></a>
+            </div>
+        </div>
+
+        <div class="col-md-7">
+
+            <div class="row d-flex justify-content-start align-items-center">
+                <div class="col-md-3 mr-136 ml-5">
+                    <div class="card " style="width: 18rem; height: 15rem; background-color: #5B4126;">
+                        <div class="card-body">
+                            <h3 class="mt-5"> Colocar icone aqui </h3>
+                            <h5 class="card-title">Título especial</h5>
+                            <p class="card-text">Com suporte a texto embaixo, que funciona como uma introdução a um
+                                conteúdo adicional.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-3" style="width: 18rem;  height: 15rem; background-color: #A04306;">
+                        <div class="card-body">
+                            <h3 class="mt-5"> Colocar icone aqui </h3>
+                            <h5 class="card-title">Título especial</h5>
+                            <p class="card-text">Com suporte a texto embaixo, que funciona como uma introdução a um
+                                conteúdo adicional.</p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;  height: 15rem; background-color: #4E7E48;">
+                        <div class="card-body">
+                            <h3 class="mt-5"> Colocar icone aqui </h3>
+                            <h5 class="card-title">Título especial</h5>
+                            <p class="card-text">Com suporte a texto embaixo, que funciona como uma introdução a um
+                                conteúdo adicional.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- /DOAÇÃO -->
+
+
 <app-footer></app-footer>

@@ -14,6 +14,6 @@ export class AuthService {
   ) { }
 
   cadastrar(user: User): Observable<User>{
-    return this.http.post<User>('http://localhost:8080/usuario/role/{{1}}', user)
+    return this.http.post<User>('http://localhost:8080/usuario/cadastrar', user)
   }
 }

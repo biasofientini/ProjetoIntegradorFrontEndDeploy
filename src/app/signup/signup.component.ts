@@ -10,13 +10,12 @@ import { AuthService } from '../service/auth.service';
 })
 export class SignupComponent implements OnInit {
 
-
   user: User = new User
   confirmeSenha: string
 
   constructor(
     private authService: AuthService,
-    private rota: Router
+    private router: Router
 
   ) { }
 
@@ -36,9 +35,9 @@ export class SignupComponent implements OnInit {
 
       this.authService.cadastrar(this.user).subscribe((resp: User) => {
         this.user = resp
+        this.router.navigate(['/entrar'])
         alert('Usuário cadastrado com sucesso!')
       })
-
     }
   }
 }

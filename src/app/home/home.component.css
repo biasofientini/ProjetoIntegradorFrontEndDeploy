@@ -1,3 +1,73 @@
+
+/* VIDEO */
+.container-video {
+    position: relative;
+    text-align: center;
+    color: #cfcfcc;
+}
+
+.container-video:hover > video{
+    transition:0.3s;
+    filter: blur(2.5px);
+}
+
+.container-video:hover > h1{
+    color: #364A15;
+    font-family: poppins;
+    font-weight: bolder;
+}
+.container-video:hover > h2 {
+    color: #1E1E1E;
+    font-weight:bold;
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+}
+.centered-h2{
+    position:absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: inherit;
+}
+/** FIM VÍDEO **/
+
+/* CATEGORIAS */
+.categoria { 
+    transition: all .2s ease-in-out; 
+    position: relative; 
+    color: white;
+}
+.categoria:hover { 
+    transition:0.5s; /*suavidade no crescimento da imagem durante o hover*/
+    transform: scale(1.1); 
+    z-index: 99;
+    font-family: poppins;
+    color: #1E1E1E;
+}
+.cat-texto{
+    position:absolute;
+    top: 85%;
+    left: 40%;
+    font-size: larger;
+    font-family: 'Poppins'
+}
+
+/** FIM CATEGORIAS **/
+
+/* DOAÇÃO */
+.mr-136{
+    margin-right: 136px;
+}
+.ml-6{
+    margin-left: 6px;
+}
+
+/* FIM DOAÇÃO */
 .txt {
     opacity: 0;
     transition:0.3s;
@@ -8,21 +78,14 @@
     opacity: 1;
 }
 
-.fx:hover{
-    transition:0.3s;
-    filter: blur(3.5px);
-}
 
-.bold{
-    font-weight: bold;
-}
-
+/*
 .marca-dagua{
     position:absolute;
     width:100%;
     text-align:center;
     z-index:999;  
-}
+}*/
 
 .card-pref{
     border-radius: 23px;
@@ -38,11 +101,11 @@
     background-size: cover;
 }
 
-.size{
-    max-height: 400px;
-    max-width: 400px;
+.img-size{
+   /* max-height: 400px;
+    max-width: 400px;*/
     height: auto;
-    width: auto;
+    width: 100%;
 }
 
 .fc {
@@ -57,32 +120,18 @@
     font-size: 13px;
 }
 
-.size-cat {
-    max-height: 200px;
-    max-width: 300px;
-    height: auto;
-    width: auto;
-}
 
-.button-config {
+.btn-config {
     background-color: #A4B501;
     color: #ffffff;
-    border-radius: 13px;
+    border-radius: 10px;
+}
+.btn-config:hover {
+    background-color: #364A15;
 }
 
-.categ-config {
-    opacity: 1;
-    transition: 0.2s;
-    padding-top: 3%;
-    padding-bottom: 3%;
-}
 
-.categ-config:hover{
-    transition: 0.2s;
-    opacity: 0.8;
-   transform: scale(1.1);
-   z-index: 99;
-}
+
 
 .week-config{
     transition: 0.2s;
@@ -91,7 +140,7 @@
 }
 
 .week-config:hover {
-    transition: 0.2s;
+   transition: 0.2s;
    transform: scale(1.1);
    box-shadow: 0px 11px 6px #00000029;
    z-index: 99;
@@ -107,4 +156,3 @@
     color: #943200;
 }
 
-    

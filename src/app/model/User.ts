@@ -1,6 +1,5 @@
 
 import { Cart } from "./Cart"
-import { Role } from "./Role"
 
 export class User{
     public id: number
@@ -13,6 +12,7 @@ export class User{
     public cep: string
     public pontuacao: number
     public token: string
+    public admin: boolean 
     public carrinho: Cart[]
-    public roles: Role[]
+    //public roles: Role[]
 }
