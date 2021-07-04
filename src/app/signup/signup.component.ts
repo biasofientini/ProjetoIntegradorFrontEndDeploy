@@ -31,7 +31,7 @@ export class SignupComponent implements OnInit {
   }
 
   cadastrar(){
-    if(this.user.senha != this.confirmeSenha){
+    if(this.user.password != this.confirmeSenha){
       alert('Atenção! As senhas não correspodem.')
     } else {
 
