@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { PreviewProdutoComponent } from './preview-produto/preview-produto.component';
+import { HomeComponent } from './home/home.component';
 import { AllProductsComponent } from './all-products/all-products.component';
 import { ProductComponent } from './product/product.component';
 import { ImgComponent } from './img/img.component';
@@ -23,6 +24,7 @@ import { ImgComponent } from './img/img.component';
     LoginComponent,
     SignupComponent,
     PreviewProdutoComponent,
+    HomeComponent
     AllProductsComponent,
     ProductComponent,
     ImgComponent

@@ -19,7 +19,6 @@ export class SignupComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router
-
   ) { }
 
   ngOnInit(){
@@ -34,13 +33,11 @@ export class SignupComponent implements OnInit {
     if(this.user.password != this.confirmeSenha){
       alert('Atenção! As senhas não correspodem.')
     } else {
-
       this.authService.cadastrar(this.user).subscribe((resp: User) => {
         this.user = resp
         this.router.navigate(['/previewProduto'])
         alert('Usuário cadastrado com sucesso!')
       })
-
     }
   }
 }

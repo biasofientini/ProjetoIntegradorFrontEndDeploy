@@ -1,0 +1,159 @@
+
+/* VIDEO */
+.container-video {
+    position: relative;
+    text-align: center;
+    color: #F5F5F5;
+}
+
+.container-video:hover > video{
+    transition:0.3s;
+    filter: blur(2.5px);
+}
+
+.container-video:hover > h1{
+    color: #364A15;
+    font-family: poppins;
+    font-weight: bolder;
+}
+.container-video:hover > h2 {
+    color: #1E1E1E;
+    font-weight:bold;
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+}
+.centered-h2{
+    position:absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: inherit;
+}
+/** FIM VÍDEO **/
+
+/* CATEGORIAS */
+.categoria { 
+    transition: all .2s ease-in-out; 
+    position: relative; 
+    color: white;
+}
+.categoria:hover { 
+    transition:0.5s; /*suavidade no crescimento da imagem durante o hover*/
+    box-shadow: 11px 11px 6px 6px #00000029;
+    transform: scale(1.1); 
+    z-index: 99;
+    font-family: poppins;
+    color: #1E1E1E;
+}
+.cat-texto{
+    position:absolute;
+    top: 85%;
+    left: 40%;
+    font-size: larger;
+    font-family: 'Poppins'
+}
+
+/** FIM CATEGORIAS **/
+
+/* DOAÇÃO */
+.mr-136{
+    margin-right: 136px;
+}
+.ml-6{
+    margin-left: 6px;
+}
+
+/* FIM DOAÇÃO */
+.txt {
+    opacity: 0;
+    transition:0.3s;
+}
+
+.txt:hover {
+    
+    opacity: 1;
+}
+
+
+/*
+.marca-dagua{
+    position:absolute;
+    width:100%;
+    text-align:center;
+    z-index:999;  
+}*/
+
+.card-pref{
+    border-radius: 23px;
+}
+
+.back-color{
+    background-color: #F5F5F5;
+    background-size: cover;
+}
+
+.back-color{
+    background-color: #F5F5F5;
+    background-size: cover;
+}
+
+.img-size{
+   /* max-height: 400px;
+    max-width: 400px;*/
+    height: auto;
+    width: 100%;
+}
+
+.fc {
+    color: #364A15;
+}
+
+.font-gray {
+    color: #707070;
+}
+
+.fs-13 {
+    font-size: 13px;
+}
+
+
+.btn-config {
+    background-color: #A4B501;
+    color: #ffffff;
+    border-radius: 10px;
+}
+.btn-config:hover {
+    background-color: #364A15;
+}
+
+
+
+
+.week-config{
+    transition: 0.2s;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.week-config:hover {
+   transition: 0.2s;
+   transform: scale(1.1);
+   box-shadow: 0px 11px 6px #00000029;
+   z-index: 99;
+}
+
+.btn-card {
+    background-color: #364A15;
+    color: #ffffff;
+    border-radius: 13px;
+}
+
+.price {
+    color: #943200;
+}
+

@@ -6,4 +6,5 @@ export class Product{
     public stock: number
     public urlImage: string
     public category: string
+
 }
