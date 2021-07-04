@@ -3,7 +3,7 @@
 .container-video {
     position: relative;
     text-align: center;
-    color: #cfcfcc;
+    color: #F5F5F5;
 }
 
 .container-video:hover > video{
@@ -44,6 +44,7 @@
 }
 .categoria:hover { 
     transition:0.5s; /*suavidade no crescimento da imagem durante o hover*/
+    box-shadow: 11px 11px 6px 6px #00000029;
     transform: scale(1.1); 
     z-index: 99;
     font-family: poppins;
