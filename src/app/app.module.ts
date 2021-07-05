@@ -14,6 +14,9 @@ import { HomeComponent } from './home/home.component';
 import { AllProductsComponent } from './all-products/all-products.component';
 import { ProductComponent } from './product/product.component';
 import { ImgComponent } from './img/img.component';
+import { CartComponent } from './cart/cart.component';
+import { CartItemComponent } from './cart-item/cart-item.component';
+import { ListCartsComponent } from './list-carts/list-carts.component';
 
 
 @NgModule({
@@ -27,7 +30,10 @@ import { ImgComponent } from './img/img.component';
     HomeComponent,
     AllProductsComponent,
     ProductComponent,
-    ImgComponent
+    ImgComponent,
+    CartComponent,
+    CartItemComponent,
+    ListCartsComponent
   ],
   imports: [
     BrowserModule,
