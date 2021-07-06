@@ -10,24 +10,8 @@ import { AuthService } from '../service/auth.service';
 })
 export class NavbarComponent implements OnInit {
 
-  user: User = new User
+  constructor() { }
 
-  constructor(
-    private authService: AuthService,
-    private router: Router
-
-  ) { }
-
-  ngOnInit(){
-    window.scroll(0,0)
+  ngOnInit(): void {
   }
-
-  logar() {
-    this.authService.logar(this.user).subscribe((resp: User) => {
-      localStorage.setItem("token", resp.token)
-      //localStorage.getItem("token")
-    })
-
-  }
-
 }
