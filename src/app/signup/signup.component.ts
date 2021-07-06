@@ -40,4 +40,8 @@ export class SignupComponent implements OnInit {
       })
     }
   }
+
+  voltar() {
+    this.router.navigate(['/home'])
+  }
 }
