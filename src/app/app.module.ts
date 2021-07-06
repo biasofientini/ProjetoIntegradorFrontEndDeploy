@@ -48,7 +48,7 @@ import { NewProductComponent } from './new-product/new-product.component';
     OrderComponent,
     ListOrdersComponent,
     AboutComponent,
-    OrderItemComponent
+    OrderItemComponent,
     AdminComponent,
     UsersListAdminComponent,
     NewProductComponent
