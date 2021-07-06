@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from '../model/Product';
-import { ProductDTO } from '../model/ProductDTO';
 import { ProductService } from '../service/product.service';
 
 @Component({
@@ -11,10 +10,8 @@ import { ProductService } from '../service/product.service';
 })
 export class NewProductComponent implements OnInit {
 
-  //product: ProductDTO = new ProductDTO()
   product: Product = new Product()
-  //categoryP: number //category é uma string na model Product, porém é um number na model ProductDTO
-  categoryP: string
+  categoryP: number 
 
   constructor(
     private productService: ProductService,
@@ -27,32 +24,16 @@ export class NewProductComponent implements OnInit {
 
   productCategory(event: any) {
     this.categoryP = event.target.value
-
   }
   newProduct() {
-    //this.product.category = this.categoryP
-    if(this.categoryP == '1') {
-      this.product.category = 'Alimentos'
-    } 
-    else if(this.categoryP == '2'){
-      this.product.category = 'Vestuário'
-    }
-    else if(this.categoryP == '3'){
-      this.product.category = 'Utensílios'
-    }
-    else if(this.categoryP == '4'){
-      this.product.category = 'Acessórios'
-    }
-    else if(this.categoryP == '5'){
-      this.product.category = 'Bem Estar'
-    }
-    else{
-      this.product.category = ''
-    }
-
+    this.product.category = this.categoryP
     this.productService.postProduct(this.product).subscribe((resp: Product) => {
       this.product = resp
       alert('Produto cadastrado com sucesso!')
+    }, erro => {
+      if(erro.status == 403){
+        alert('Acesso negado!')
+      }
     })
   }
 }
