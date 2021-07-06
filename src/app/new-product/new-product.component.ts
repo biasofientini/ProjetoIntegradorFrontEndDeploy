@@ -11,7 +11,7 @@ import { ProductService } from '../service/product.service';
 })
 export class NewProductComponent implements OnInit {
 
-  product: ProductDTO = new ProductDTO()
+  product: Product = new Product()
   categoryP: number //category é uma string na model Product, porém é um number na model ProductDTO
 
   constructor(
@@ -28,7 +28,7 @@ export class NewProductComponent implements OnInit {
   }
   newProduct() {
     this.product.category = this.categoryP
-    this.productService.postProduct(this.product).subscribe((resp: ProductDTO) => {
+    this.productService.postProduct(this.product).subscribe((resp: Product) => {
       this.product = resp
       alert('Produto cadastrado com sucesso!')
     })
