@@ -1,12 +1,14 @@
+import { ListCartsComponent } from './list-carts/list-carts.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AllProductsComponent } from './all-products/all-products.component';
 import { LoginComponent } from './login/login.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { PreviewProdutoComponent } from './preview-produto/preview-produto.component';
 import { SignupComponent } from './signup/signup.component';
-import { CartComponent } from './cart/cart.component';
+import { TeamComponent } from './team/team.component';
+import { ListOrdersComponent } from './list-orders/list-orders.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
 
@@ -15,9 +17,12 @@ const routes: Routes = [
   { path: 'entrar', component: LoginComponent},
   { path: 'cadastrar', component: SignupComponent },
   { path: 'previewProduto', component: PreviewProdutoComponent },
-  { path: 'home', component: HomeComponent},
-  { path: 'produtos', component: AllProductsComponent},
-  { path: 'carrinho', component: CartComponent}
+  { path: 'home', component: HomeComponent },
+  { path: 'produtos', component: AllProductsComponent },
+  { path: 'carrinho', component: ListCartsComponent },
+  { path: 'equipe', component: TeamComponent },
+  { path: 'pedido', component: ListOrdersComponent },
+  { path: 'sobre', component: AboutComponent }
 
 ];
 

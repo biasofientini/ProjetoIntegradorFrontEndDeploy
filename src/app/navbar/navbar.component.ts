@@ -11,6 +11,7 @@ import { AuthService } from '../service/auth.service';
 export class NavbarComponent implements OnInit {
 
   user: User = new User
+  autenticado = false
 
   constructor(
     private authService: AuthService,
@@ -20,11 +21,15 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(){
     window.scroll(0,0)
+    if((localStorage.getItem('token') || "") != '') {
+      this.autenticado = true
+    }
   }
 
   logar() {
     this.authService.logar(this.user).subscribe((resp: User) => {
       localStorage.setItem("token", resp.token)
+      this.autenticado = true
       //localStorage.getItem("token")
     })
 

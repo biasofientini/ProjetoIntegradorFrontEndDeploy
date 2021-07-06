@@ -17,6 +17,11 @@ import { ImgComponent } from './img/img.component';
 import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
 import { ListCartsComponent } from './list-carts/list-carts.component';
+import { TeamComponent } from './team/team.component';
+import { OrderComponent } from './order/order.component';
+import { ListOrdersComponent } from './list-orders/list-orders.component';
+import { AboutComponent } from './about/about.component';
+import { OrderItemComponent } from './order-item/order-item.component';
 
 
 @NgModule({
@@ -33,7 +38,12 @@ import { ListCartsComponent } from './list-carts/list-carts.component';
     ImgComponent,
     CartComponent,
     CartItemComponent,
-    ListCartsComponent
+    ListCartsComponent,
+    TeamComponent,
+    OrderComponent,
+    ListOrdersComponent,
+    AboutComponent,
+    OrderItemComponent
   ],
   imports: [
     BrowserModule,

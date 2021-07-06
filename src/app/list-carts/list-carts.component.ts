@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cart } from '../model/Cart';
 import { CartService } from '../service/cart.service';
+import { cart1, cart2 } from '../model/Mocks';
 
 @Component({
   selector: 'app-list-carts',
@@ -9,7 +10,7 @@ import { CartService } from '../service/cart.service';
 })
 export class ListCartsComponent implements OnInit {
 
-  listCarts: Cart[]
+  listCarts: Cart[] = []
 
   constructor(
     private authCart: CartService
@@ -20,9 +21,10 @@ export class ListCartsComponent implements OnInit {
   }
 
   findAllCarts() {
-    this.authCart.getAllCart().subscribe((resp: Cart[]) => {
-      this.listCarts = resp
-    })
+    // this.authCart.getAllCart().subscribe((c: Cart[]) => {
+    //   console.log(c)
+    // })
+    this.listCarts.push(cart1)
   }
 
 }

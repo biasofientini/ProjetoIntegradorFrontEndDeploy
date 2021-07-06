@@ -1,0 +1,10 @@
+.testeAnimacao1:hover {
+    transition: 0.25s;
+    transform: scale(1.1);
+    box-shadow: 3.5px 3.5px 10px 0px rgba(0, 0, 0, 0.1);
+  }
+
+.testeAnimacao1:not(:hover) {
+    transition: 0.25s;
+    box-shadow: 3.5px 3.5px 5px 0px rgba(0, 0, 0, 0.0);
+}

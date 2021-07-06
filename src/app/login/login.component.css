@@ -1,4 +1,4 @@
-button{
+.buttonpadrao{
     top: 695px;
     left: 861px;
     width: 160px;
@@ -7,6 +7,6 @@ button{
     border-radius: 10px;
     opacity: 1;
 }
-.button:hover{
+.buttonpadrao:hover{
     color: #fff;
 }
