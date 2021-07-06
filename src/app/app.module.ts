@@ -14,6 +14,9 @@ import { HomeComponent } from './home/home.component';
 import { AllProductsComponent } from './all-products/all-products.component';
 import { ProductComponent } from './product/product.component';
 import { ImgComponent } from './img/img.component';
+import { AdminComponent } from './admin/admin.component';
+import { UsersListAdminComponent } from './users-list-admin/users-list-admin.component';
+import { NewProductComponent } from './new-product/new-product.component';
 
 
 @NgModule({
@@ -27,7 +30,10 @@ import { ImgComponent } from './img/img.component';
     HomeComponent,
     AllProductsComponent,
     ProductComponent,
-    ImgComponent
+    ImgComponent,
+    AdminComponent,
+    UsersListAdminComponent,
+    NewProductComponent
   ],
   imports: [
     BrowserModule,
