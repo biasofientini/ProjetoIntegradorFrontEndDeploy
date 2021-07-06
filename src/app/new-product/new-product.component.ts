@@ -11,8 +11,10 @@ import { ProductService } from '../service/product.service';
 })
 export class NewProductComponent implements OnInit {
 
-  product: ProductDTO = new ProductDTO()
-  categoryP: number //category é uma string na model Product, porém é um number na model ProductDTO
+  //product: ProductDTO = new ProductDTO()
+  product: Product = new Product()
+  //categoryP: number //category é uma string na model Product, porém é um number na model ProductDTO
+  categoryP: string
 
   constructor(
     private productService: ProductService,
@@ -25,10 +27,30 @@ export class NewProductComponent implements OnInit {
 
   productCategory(event: any) {
     this.categoryP = event.target.value
+
   }
   newProduct() {
-    this.product.category = this.categoryP
-    this.productService.postProduct(this.product).subscribe((resp: ProductDTO) => {
+    //this.product.category = this.categoryP
+    if(this.categoryP == '1') {
+      this.product.category = 'Alimentos'
+    } 
+    else if(this.categoryP == '2'){
+      this.product.category = 'Vestuário'
+    }
+    else if(this.categoryP == '3'){
+      this.product.category = 'Utensílios'
+    }
+    else if(this.categoryP == '4'){
+      this.product.category = 'Acessórios'
+    }
+    else if(this.categoryP == '5'){
+      this.product.category = 'Bem Estar'
+    }
+    else{
+      this.product.category = ''
+    }
+
+    this.productService.postProduct(this.product).subscribe((resp: Product) => {
       this.product = resp
       alert('Produto cadastrado com sucesso!')
     })
