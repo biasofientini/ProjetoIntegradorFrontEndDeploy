@@ -1,57 +1,55 @@
-<nav class="navbar navbar-expand-lg navOpt font-fam">
-  <a class="navbar-brand" href="index.html"> <img width="100" src="https://i.imgur.com/HdqthhR.png" alt=""></a>
-  <button class="navbar-toggler font navbar-light" type="button" data-toggle="collapse"
-    data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-    aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0 font">
-      <li class="nav-item">
-        <a class="nav-link active transit-size" aria-current="page" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active transit-size" aria-current="page" href="#">Categorias</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active transit-size" aria-current="page" href="#" routerLink="/produtos">Shop</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active transit-size" aria-current="page" href="#">Blog</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active transit-size" aria-current="page" href="#" routerLink="/sobre">Sobre</a>
-      </li>
-    </ul>
-    <form class="d-flex ml-auto">
-      <input class="form-control me-2 radius mc-font font" type="search" placeholder="O que você está procurando?"
-        aria-label="Search">
-    </form>
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0 font container-logo">
-      <li class="nav-item">
-        <img src="assets/img/login.png" width="25" height="25" alt="">
-      </li>
-      <li *ngIf="!autenticado" class="nav-item">
-        <a class="nav-link active mc-font transit-size" aria-current="page" href="#" data-toggle="modal"
-          data-target="#login">Login</a>
-      </li>
-      <li *ngIf="autenticado" class="nav-item">
-        <div class="dropdown mx-3">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Opções
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item active transit-size" routerLink="/pedido" href="#">Meus Pedidos</a>
+<nav class="navbar navbar-expand-lg navbar-dark navOpt">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html"> <img width="100" src="https://i.imgur.com/mt12qR4.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 font">
+        <li class="nav-item">
+          <a class="nav-link active transit-size" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active transit-size" aria-current="page" href="#">Categorias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active transit-size" aria-current="page" href="#" routerLink="/produtos">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active transit-size" aria-current="page" href="#">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active transit-size" aria-current="page" href="#" routerLink="/sobre">Sobre</a>
+        </li>
+      </ul>
+      <form class="d-flex ml-auto">
+        <input class="form-control me-2 radius mc-font font" type="search" placeholder="O que você está procurando?"
+          aria-label="Search">
+      </form>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 font container-logo">
+        <li *ngIf="!autenticado" class="nav-item">
+          <a class="nav-link active mc-font transit-size" aria-current="page" href="#" data-toggle="modal" data-target="#login"><img src="assets/img/login.png" width="25" height="25" alt=""> Login</a>
+        </li>
+        <li *ngIf="!autenticado" class="nav-item">
+          <a class="nav-link active mc-font transit-size" aria-current="page" href="#" data-toggle="modal" data-target="#login"><img src="assets/img/login.png" width="25" height="25" alt=""> Login</a>
+        </li>
+        <li *ngIf="autenticado" class="nav-item">
+          <div class="dropdown mx-3">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Opções
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item active transit-size" routerLink="/pedido" href="#">Meus Pedidos</a>
+            </div>
           </div>
-        </div>
-      </li>
-      <li class="nav-item">
-        <img class="transit-size" src="assets/img/carrinho.png" width="25" height="25" alt="" routerLink='/carrinho'>
-      </li>
-    </ul>
-  </div>
+        </li>
+        <li class="nav-item">
+          <img class="transit-size" src="assets/img/carrinho.png" width="25" height="25" alt="" routerLink='/carrinho'>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
-<app-login></app-login>
+<app-login>
