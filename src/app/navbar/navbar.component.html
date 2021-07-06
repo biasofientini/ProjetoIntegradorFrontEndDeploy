@@ -1,36 +1,98 @@
-<nav class="navbar navbar-expand-lg navOpt font-fam">
-  <a class="navbar-brand" href="index.html"> <img width="100" src="https://i.imgur.com/HdqthhR.png" alt=""></a>
-  <button class="navbar-toggler font navbar-light" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link transit-size" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link transit-size" href="#">Blog</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link transit-size" routerLink="/produtos">Shop</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link transit-size" href="#">Sobre</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2 me-2 radius mc-font" id="search" type="search" href="" placeholder="O que você procura?">
-    </form>
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0 font container-logo">
-      <li class="nav-item">
-        <a class="nav-link active mc-font transit-size" aria-current="page" href="#" data-toggle="modal"
-          data-target="#login"><img src="assets/img/login.png" width="25" height="25" alt=""> Login </a>
-      </li>
-      <li class="nav-item">
-        <img class="transit-size" src="assets/img/carrinho.png" width="25" height="25" alt="">
-      </li>
-    </ul>
+<!--<nav class="navbar navbar-expand-lg navbar-dark navOpt font-fam">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html"> <img width="100" src="https://i.imgur.com/mt12qR4.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 font">
+        <li class="nav-item">
+          <a class="nav-link active transit-size" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active transit-size" aria-current="page" href="#">Categorias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active transit-size" aria-current="page" href="#" routerLink="/produtos">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active transit-size" aria-current="page" href="#">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active transit-size" aria-current="page" href="#" routerLink="/sobre">Sobre</a>
+        </li>
+      </ul>
+      <label for="exampleDataList" class="form-label">Datalist example</label>
+<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+<datalist id="datalistOptions">
+  <option value="San Francisco">
+  <option value="New York">
+  <option value="Seattle">
+  <option value="Los Angeles">
+  <option value="Chicago">
+</datalist>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 font container-logo">
+        <li *ngIf="!autenticado" class="nav-item">
+          <a class="nav-link active mc-font transit-size" aria-current="page" href="#" data-toggle="modal" data-target="#login"><img src="assets/img/login.png" width="25" height="25" alt=""> Login</a>
+        </li>
+        <li *ngIf="!autenticado" class="nav-item">
+          <a class="nav-link active mc-font transit-size" aria-current="page" href="#" data-toggle="modal" data-target="#login"><img src="assets/img/login.png" width="25" height="25" alt=""> Login</a>
+        </li>
+        <li *ngIf="autenticado" class="nav-item">
+          <div class="dropdown mx-3">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Opções
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item active transit-size" routerLink="/pedido" href="#">Meus Pedidos</a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <img class="transit-size" src="assets/img/carrinho.png" width="25" height="25" alt="" routerLink='/carrinho'>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
-<app-login></app-login>
+
+<app-login>-->
+
+  <nav class="navbar navbar-expand-lg navOpt font-fam">
+    <a class="navbar-brand" href="index.html"> <img width="100" src="https://i.imgur.com/HdqthhR.png" alt=""></a>
+    <button class="navbar-toggler font navbar-light" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link transit-size" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link transit-size" href="#">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link transit-size" routerLink="/produtos">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link transit-size" href="#">Sobre</a>
+        </li>
+      </ul>
+<input class="form-control radius mc-font" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+<datalist id="datalistOptions">
+  <option value="San Francisco">
+</datalist>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 font container-logo">
+        <li class="nav-item">
+          <a class="nav-link active mc-font transit-size" aria-current="page" href="#" data-toggle="modal"
+            data-target="#login"><img src="assets/img/login.png" width="25" height="25" alt=""> Login </a>
+        </li>
+        <li class="nav-item">
+          <img class="transit-size" src="assets/img/carrinho.png" width="25" height="25" alt="">
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <app-login></app-login>

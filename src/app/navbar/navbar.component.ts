@@ -10,18 +10,28 @@ import { AuthService } from '../service/auth.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  user: User = new User
+  autenticado = false
 
-  ngOnInit() {
+  constructor(
+    private authService: AuthService,
+    private router: Router
+
+  ) { }
+
+  ngOnInit(){
+    window.scroll(0,0)
+    if((localStorage.getItem('token') || "") != '') {
+      this.autenticado = true
+    }
   }
 
-  search(){
-    document.addEventListener("keypress", function(e){
-      if(e.key === "Enter"){
-      const btn = document.querySelector("#search");
-    }
-      
-
+  logar() {
+    this.authService.logar(this.user).subscribe((resp: User) => {
+      localStorage.setItem("token", resp.token)
+      this.autenticado = true
     })
-  };
+  }
+
 }
+

@@ -10,13 +10,11 @@ import { AuthService } from '../service/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-
   user: User = new User
 
   constructor(
     private authService: AuthService,
     private router: Router
-
   ) { }
 
   ngOnInit(){
@@ -26,10 +24,7 @@ export class LoginComponent implements OnInit {
   logar() {
     this.authService.logar(this.user).subscribe((resp: User) => {
       localStorage.setItem("token", resp.token)
-      //localStorage.getItem("token")
     })
-
   }
-
 
 }
