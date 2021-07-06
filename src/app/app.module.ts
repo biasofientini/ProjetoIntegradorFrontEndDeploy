@@ -22,6 +22,9 @@ import { OrderComponent } from './order/order.component';
 import { ListOrdersComponent } from './list-orders/list-orders.component';
 import { AboutComponent } from './about/about.component';
 import { OrderItemComponent } from './order-item/order-item.component';
+import { AdminComponent } from './admin/admin.component';
+import { UsersListAdminComponent } from './users-list-admin/users-list-admin.component';
+import { NewProductComponent } from './new-product/new-product.component';
 
 
 @NgModule({
@@ -44,6 +47,9 @@ import { OrderItemComponent } from './order-item/order-item.component';
     ListOrdersComponent,
     AboutComponent,
     OrderItemComponent
+    AdminComponent,
+    UsersListAdminComponent,
+    NewProductComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ import { SignupComponent } from './signup/signup.component';
 import { TeamComponent } from './team/team.component';
 import { ListOrdersComponent } from './list-orders/list-orders.component';
 import { AboutComponent } from './about/about.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
 
@@ -22,7 +23,10 @@ const routes: Routes = [
   { path: 'carrinho', component: ListCartsComponent },
   { path: 'equipe', component: TeamComponent },
   { path: 'pedido', component: ListOrdersComponent },
-  { path: 'sobre', component: AboutComponent }
+  { path: 'sobre', component: AboutComponent },
+  { path: 'home', component: HomeComponent},
+  { path: 'produtos', component: AllProductsComponent},
+  { path: 'admin', component: AdminComponent}
 
 ];
 

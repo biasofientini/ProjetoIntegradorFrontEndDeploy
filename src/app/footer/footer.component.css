@@ -1,3 +1,4 @@
+
 .footer-bg{
     background: #cfcfcc;
 }
@@ -49,20 +50,21 @@ ul.social-network li{
 ul.method-payment{
     list-style: none;
     padding: 0;
+
 }
 
 /* acessando a tag <li> dentro da tag <ul> para alinhar os ícones da lista*/
 ul.method-payment li{
     display: inline;
-    margin: 0;
+    margin: 1.2px;
 
 }
 
 ul.icons-empresa{
     list-style: none;
     padding: 0;
-    margin-top: 150px;
-    margin-left: 70px;
+    margin-top: 100px;
+
 }
 
 /* acessando a tag <li> dentro da tag <ul> para alinhar os ícones da lista*/
@@ -83,6 +85,7 @@ ul.icons-empresa li{
 a.fb-copyright{
     text-decoration:none;
 }
+
 
 
 
