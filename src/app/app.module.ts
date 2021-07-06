@@ -14,6 +14,14 @@ import { HomeComponent } from './home/home.component';
 import { AllProductsComponent } from './all-products/all-products.component';
 import { ProductComponent } from './product/product.component';
 import { ImgComponent } from './img/img.component';
+import { CartComponent } from './cart/cart.component';
+import { CartItemComponent } from './cart-item/cart-item.component';
+import { ListCartsComponent } from './list-carts/list-carts.component';
+import { TeamComponent } from './team/team.component';
+import { OrderComponent } from './order/order.component';
+import { ListOrdersComponent } from './list-orders/list-orders.component';
+import { AboutComponent } from './about/about.component';
+import { OrderItemComponent } from './order-item/order-item.component';
 import { AdminComponent } from './admin/admin.component';
 import { UsersListAdminComponent } from './users-list-admin/users-list-admin.component';
 import { NewProductComponent } from './new-product/new-product.component';
@@ -31,6 +39,14 @@ import { NewProductComponent } from './new-product/new-product.component';
     AllProductsComponent,
     ProductComponent,
     ImgComponent,
+    CartComponent,
+    CartItemComponent,
+    ListCartsComponent,
+    TeamComponent,
+    OrderComponent,
+    ListOrdersComponent,
+    AboutComponent,
+    OrderItemComponent
     AdminComponent,
     UsersListAdminComponent,
     NewProductComponent
