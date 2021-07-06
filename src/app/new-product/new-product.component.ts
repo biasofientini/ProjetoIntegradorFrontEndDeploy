@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from '../model/Product';
-import { ProductDTO } from '../model/ProductDTO';
 import { ProductService } from '../service/product.service';
 
 @Component({
@@ -12,7 +11,6 @@ import { ProductService } from '../service/product.service';
 export class NewProductComponent implements OnInit {
 
   product: Product = new Product()
-  categoryP: number //category é uma string na model Product, porém é um number na model ProductDTO
 
   constructor(
     private productService: ProductService,
@@ -20,14 +18,16 @@ export class NewProductComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.product.category = 1 //default
     window.scroll(0, 0)
   }
 
   productCategory(event: any) {
-    this.categoryP = event.target.value
+    this.product.category = Number(event.target.value)
   }
+  
   newProduct() {
-    this.product.category = this.categoryP
+    console.log(this.product)
     this.productService.postProduct(this.product).subscribe((resp: Product) => {
       this.product = resp
       alert('Produto cadastrado com sucesso!')
