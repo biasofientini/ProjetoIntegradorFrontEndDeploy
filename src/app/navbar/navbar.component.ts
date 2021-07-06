@@ -12,6 +12,16 @@ export class NavbarComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
+
+  search(){
+    document.addEventListener("keypress", function(e){
+      if(e.key === "Enter"){
+      const btn = document.querySelector("#search");
+    }
+      
+
+    })
+  };
 }
