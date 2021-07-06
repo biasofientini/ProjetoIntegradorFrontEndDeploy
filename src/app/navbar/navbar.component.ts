@@ -30,7 +30,6 @@ export class NavbarComponent implements OnInit {
     this.authService.logar(this.user).subscribe((resp: User) => {
       localStorage.setItem("token", resp.token)
       this.autenticado = true
-      //localStorage.getItem("token")
     })
 
   }
