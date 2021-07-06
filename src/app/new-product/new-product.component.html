@@ -1,10 +1,11 @@
 <div class="container-flex">
     <h5 class="text-center mb-5 font-gray">CADASTRAR NOVO PRODUTO </h5>
-    <form class="font-green fs">
+    <div class="font-green fs">
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="nome">Nome</label>
-                <input  [(ngModel)]='product.name' type="text" class="form-control" id="nome" placeholder="Nome do produto">
+                <input [(ngModel)]='product.name' type="text" class="form-control" id="nome"
+                    placeholder="Nome do produto">
             </div>
             <div class="form-group col-md-6">
                 <label for="categoria">Categoria</label>
@@ -19,7 +20,8 @@
         </div>
         <div class="form group">
             <label for="descricao">Descricao</label>
-            <textarea [(ngModel)]='product.description' class="form-control mb-3" id="descricao" rows="3"  placeholder="Descrição do produto..."></textarea>
+            <textarea [(ngModel)]='product.description' class="form-control mb-3" id="descricao" rows="3"
+                placeholder="Descrição do produto..."></textarea>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
@@ -33,9 +35,10 @@
         </div>
         <div class="form-group">
             <label for="urlImagem">Imagem do produto</label>
-            <input [(ngModel)]='product.urlImage' type="text" class="form-control" id="urlImagem" placeholder="Url da imagem">
-          </div>
-    </form>
+            <input [(ngModel)]='product.urlImage' type="text" class="form-control" id="urlImagem"
+                placeholder="Url da imagem">
+        </div>
+    </div>
     <div class="d-flex justify-content-center">
         <button tipe="submit" class="btn btn-danger mr-4">Cancelar</button>
         <button tipe="submit" class="btn btn-success" (click)="newProduct()">Cadastrar</button>
