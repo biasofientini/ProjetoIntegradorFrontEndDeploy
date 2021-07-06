@@ -1,11 +1,10 @@
 .navOpt {
     background: #1E1E1E;
-    height: 65px;
+    min-height: 4rem;
 }
 
 .font {
     color: #f1f1f1;
-    font-family: 'Poppins';
 }
 .mc-font {
     font-size: 8pt;
@@ -13,6 +12,7 @@
 
 .transit-size {
     transition: transform 0.2s;
+    color: #f1f1f1;
     z-index: 1;
 }
 
@@ -32,6 +32,8 @@
 }
 
 .logo {
+    max-height: 200px;
+    max-width: 200px;
     width: auto;
     height: auto;
 }
