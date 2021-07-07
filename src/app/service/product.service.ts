@@ -2,11 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from '../model/Product';
-<<<<<<< HEAD
 import { URL } from './url';
-=======
-
->>>>>>> 26f8b37bd6b244e1ad77d8419224cc82c15060c7
 
 @Injectable({
   providedIn: 'root'
