@@ -25,12 +25,17 @@ export class NewProductComponent implements OnInit {
   productCategory(event: any) {
     this.product.category = Number(event.target.value)
   }
-  
+
   newProduct() {
     console.log(this.product)
     this.productService.postProduct(this.product).subscribe((resp: Product) => {
       this.product = resp
       alert('Produto cadastrado com sucesso!')
+      this.product = new Product()
+    }, erro => {
+      if (erro.status == 403) {
+        alert('Acesso negado!')
+      }
     })
   }
 }

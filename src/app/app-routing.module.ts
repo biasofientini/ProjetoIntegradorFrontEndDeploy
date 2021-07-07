@@ -13,6 +13,7 @@ import { AboutComponent } from './about/about.component';
 import { AdminComponent } from './admin/admin.component';
 
 
+
 const routes: Routes = [
 
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -28,7 +29,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'produtos', component: AllProductsComponent},
   { path: 'produtoslistadm', component: ProductListAdmComponent},
-  { path: 'admin', component: AdminComponent}
+  { path: 'admin', component: AdminComponent},
 
 
 ];

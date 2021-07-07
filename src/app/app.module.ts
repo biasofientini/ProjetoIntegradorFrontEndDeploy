@@ -28,6 +28,7 @@ import { NewProductComponent } from './new-product/new-product.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +52,8 @@ import { NewProductComponent } from './new-product/new-product.component';
     OrderItemComponent,
     AdminComponent,
     UsersListAdminComponent,
-    NewProductComponent
+    NewProductComponent,
+   
 
   ],
   imports: [
