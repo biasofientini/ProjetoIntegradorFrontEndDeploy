@@ -1,14 +1,15 @@
 <div class="card p-4">
     <div class="card-body">
-        <!-- <h2>{{c.id}}</h2> -->
         <h2>Carrinho de natal</h2>
     </div>
     <div>
         <div class="row">
-            <app-cart-item *ngFor="let cartItem of listCartItems;" (newProductEvent)="computeCart($event)" [cartItem]="cartItem" class="w-100"></app-cart-item>
+            <app-cart-item *ngFor="let cartItem of listCartItems;" (productEvent)="computeCart($event)" [cartItem]="cartItem" class="w-100"></app-cart-item>
         </div>
     </div>
     <h4>Preço final: <span class="badge badge-pill badge-light">{{ finalPrice }}</span></h4>
     <h4>Total de itens <span class="badge badge-pill badge-light">{{ totalItems }}</span></h4>
-    <button (click)="checkout()" class="btn btn-lg btn-success">Finalizar compra</button>
+
+    <button *ngIf="processingOrder" class="btn btn-lg btn-outline-success" disabled>Processando compra...</button>
+    <button *ngIf="!processingOrder" (click)="checkout()" class="btn btn-lg btn-success">Finalizar compra</button>
 </div>

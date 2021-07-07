@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { AlertComponent } from '../alert/alert.component';
 import { Product } from '../model/Product';
-import { ProductService } from '../service/product.service';
+import { AllProductsService } from '../service/all-products.service';
 
 @Component({
   selector: 'app-new-product',
@@ -9,28 +9,40 @@ import { ProductService } from '../service/product.service';
   styleUrls: ['./new-product.component.css']
 })
 export class NewProductComponent implements OnInit {
-
-  product: Product = new Product()
+  @Input() p: Product
+  categoryName: string = ''
+  deleted: boolean = false
+  alert = AlertComponent
 
   constructor(
-    private productService: ProductService,
-    private router: Router //sem uso por enquanto
+    private allProductsService: AllProductsService
   ) { }
 
-  ngOnInit() {
-    this.product.category = 1 //default
-    window.scroll(0, 0)
+  ngOnInit(): void {
+    if (this.p.category == 1) {
+      this.categoryName = 'Alimentos'
+    }
+    else if (this.p.category == 2) {
+      this.categoryName = 'Vestuário'
+    }
+    else if (this.p.category == 3) {
+      this.categoryName = 'Utensílios'
+    }
+    else if (this.p.category == 4) {
+      this.categoryName = 'Acessórios'
+    }
+    else if (this.p.category == 5) {
+      this.categoryName = 'Bem Estar'
+    }
+    else {
+      this.categoryName = ''
+    }
   }
 
-  productCategory(event: any) {
-    this.product.category = Number(event.target.value)
-  }
-  
-  newProduct() {
-    console.log(this.product)
-    this.productService.postProduct(this.product).subscribe((resp: Product) => {
-      this.product = resp
-      alert('Produto cadastrado com sucesso!')
+  deleteProduct() {
+    this.allProductsService.deleteById(this.p.id!).subscribe(() => {
+      this.alert.setAlert('Remoção', `${this.p.name} removido com sucesso`, 'agora')
+      this.deleted = true
     })
   }
 }

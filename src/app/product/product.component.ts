@@ -1,7 +1,8 @@
-import { CartItemService } from './../service/cart-item.service';
+import { CartItemService } from '../service/cart-item.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../model/Product';
 import { CartItem } from '../model/CartItem';
+import { AlertComponent } from '../alert/alert.component';
 
 @Component({
   selector: 'app-product',
@@ -12,6 +13,7 @@ export class ProductComponent implements OnInit {
 
   @Input() p: Product
   categoryName: string = ''
+  alert = AlertComponent
 
   constructor(
     private authCartItem: CartItemService
@@ -39,9 +41,8 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart() {
-    this.authCartItem.post(1, this.p.id!).subscribe((c: CartItem) => {
-      console.log('success! product, added', c)
-      alert('Produto adicionado com sucesso')      
+    this.authCartItem.post(1, this.p.id!).subscribe(() => {
+      this.alert.setAlert('😄 produto adicionado', `${this.p.name} adiconado ao carrinho`, 'agora', 1500)
     })
   }
 }

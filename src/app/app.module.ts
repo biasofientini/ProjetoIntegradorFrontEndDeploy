@@ -25,6 +25,10 @@ import { OrderItemComponent } from './order-item/order-item.component';
 import { AdminComponent } from './admin/admin.component';
 import { UsersListAdminComponent } from './users-list-admin/users-list-admin.component';
 import { NewProductComponent } from './new-product/new-product.component';
+import { AlertComponent } from './alert/alert.component';
+import { ListNewProductComponent } from './list-new-product/list-new-product.component';
+import { NewProductFormComponent } from './new-product-form/new-product-form.component';
+
 
 
 
@@ -51,6 +55,10 @@ import { NewProductComponent } from './new-product/new-product.component';
     OrderItemComponent,
     AdminComponent,
     UsersListAdminComponent,
+    NewProductComponent,
+    AlertComponent,
+    ListNewProductComponent,
+    NewProductFormComponent,
     NewProductComponent
 
   ],

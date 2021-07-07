@@ -1,6 +1,6 @@
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Order } from './../model/Order';
+import { Order } from '../model/Order';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { URL } from './url';
