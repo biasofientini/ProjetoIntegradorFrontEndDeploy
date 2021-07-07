@@ -31,6 +31,7 @@ import { NewProductFormComponent } from './new-product-form/new-product-form.com
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +58,8 @@ import { NewProductFormComponent } from './new-product-form/new-product-form.com
     NewProductComponent,
     AlertComponent,
     ListNewProductComponent,
-    NewProductFormComponent
+    NewProductFormComponent,
+    NewProductComponent
 
   ],
   imports: [
