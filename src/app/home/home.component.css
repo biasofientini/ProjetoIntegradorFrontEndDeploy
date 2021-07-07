@@ -7,14 +7,14 @@
 }
 
 .container-video:hover > video{
-    transition:0.3s;
+    transition: 1s;
     /* opacity: 0.8;*/
     filter: blur(2.5px);
     transform: scale(1.003);
 }
 
 .container-video:hover > h1{
-    transition: 1s;
+    transition: 0.5s;
     color: #ffffff;
     font-size: 200px;
     font-weight: bolder;

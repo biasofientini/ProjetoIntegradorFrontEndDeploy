@@ -28,4 +28,8 @@ export class CartItemService {
     }
     return this.http.post<CartItem>(`${URL}/item`, body, this.token)
   }
+
+  delete(idCartItem: number): Observable<any> {
+    return this.http.delete(`${URL}/item/${idCartItem}`, this.token)
+  }
 }

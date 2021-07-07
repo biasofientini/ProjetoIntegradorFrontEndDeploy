@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ImgComponent } from './img.component';
+import { ProductListAdmComponent } from './product-list-adm.component';
 
-describe('ImgComponent', () => {
-  let component: ImgComponent;
-  let fixture: ComponentFixture<ImgComponent>;
+describe('ProductListAdmComponent', () => {
+  let component: ProductListAdmComponent;
+  let fixture: ComponentFixture<ProductListAdmComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ImgComponent ]
+      declarations: [ ProductListAdmComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ImgComponent);
+    fixture = TestBed.createComponent(ProductListAdmComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

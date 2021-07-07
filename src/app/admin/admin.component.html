@@ -1,4 +1,29 @@
-<div class="container font-fam">
+<app-navbar></app-navbar>
+<app-alert></app-alert>
+
+
+<div class="container px-4 mt-5">
+    <div class="row">
+        <div class="col-3">
+            <ul class="list-group">
+                <li class="list-group-item active">Produtos</li>
+                <button class="list-group-item" routerLink="produto/cadastrar" routerLinkActive="bg-secondary" [routerLinkActiveOptions]="{exact:true}">
+                    Criar
+                </button>
+                <button class="list-group-item" routerLink="produto" routerLinkActive="bg-secondary" [routerLinkActiveOptions]="{exact:true}">
+                    Todos
+                </button>
+                <li class="list-group-item active">Usuários</li>
+              </ul>
+        </div>
+        <div class="col-9">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+</div>
+
+<!-- <div class="container">
     <div class="row d-flex justify-content-start mt-5">
         <div class="col-md-3">
             <table class="table table-bordered">
@@ -63,4 +88,4 @@
 
     </div>
 
-</div>
+</div> -->
