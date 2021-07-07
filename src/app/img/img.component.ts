@@ -9,6 +9,7 @@ export class ImgComponent implements OnInit {
 
   @Input() src: string = ""
   @Input() class: string = ""
+  @Input() style: string = ""
   public skeleton = true;
 
 
