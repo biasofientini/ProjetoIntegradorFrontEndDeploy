@@ -7,28 +7,22 @@ svg:hover{
     color: #A4B501;
     cursor: pointer;
 }
-.font {
-    color: #364A15;
-    font-family: 'Poppins';
-    font-weight: bold;
-    }
 input{
     border-radius: 15px;
 }
-button{
+button {
     top: 695px;
     left: 861px;
     width: 160px;
     height: 35px;
     border-radius: 10px;
-    opacity: 1;
-    border-color: #364A15;
-    color: #364A15;
-    border-width: 2px;
-}
-.button:hover{
-    color: #fff;
     background-color: #364A15;
+    color: #ffffff;
+    border-radius: 10px;
+}
+button:hover {
+    color: #ffffff;
+    background-color: #A4B501;
 }
 img{
     border: none;

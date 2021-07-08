@@ -28,6 +28,7 @@ import { NewProductComponent } from './new-product/new-product.component';
 import { AlertComponent } from './alert/alert.component';
 import { ListNewProductComponent } from './list-new-product/list-new-product.component';
 import { NewProductFormComponent } from './new-product-form/new-product-form.component';
+import { StackComponent } from './stack/stack.component';
 
 
 
@@ -59,7 +60,8 @@ import { NewProductFormComponent } from './new-product-form/new-product-form.com
     AlertComponent,
     ListNewProductComponent,
     NewProductFormComponent,
-    NewProductComponent
+    NewProductComponent,
+    StackComponent
 
   ],
   imports: [
