@@ -17,16 +17,19 @@
     font-size: 200px;
     font-weight: bolder;
 }
+
+.container-video:hover > h2 {
+    color: #1E1E1E;
+    font-weight:bold;
+}
+
 .container-video:not(:hover) > video{
     transition: 1s;
 }
 .container-video:not(:hover) > h1{
     transition: 0.5s;
 }
-.container-video:hover > h2 {
-    color: #1E1E1E;
-    font-weight:bold;
-}
+
 .centered {
     position: absolute;
     top: 50%;
