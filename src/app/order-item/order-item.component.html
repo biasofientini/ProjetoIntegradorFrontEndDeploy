@@ -1,4 +1,4 @@
-<div class="media my-1 border p-3">
+<!-- <div class="media my-1 border p-3">
     <app-img style="height: 64px;" [src]="item.urlImage"></app-img>
     <div class="media-body ml-3">
         <div class="row"> 
@@ -13,4 +13,12 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
+
+<td>
+    <app-img [style]="'height: 64px;width: 64px;object-fit: cover;'" [class]="'rounded'"
+        [src]="item.urlImage"></app-img>
+</td>
+<td>{{item.name}}</td>
+<td><span class="badge badge-pill badge-secondary">Qtd {{item.productQty}}</span></td>
+<td>R$ {{item.price}}</td>

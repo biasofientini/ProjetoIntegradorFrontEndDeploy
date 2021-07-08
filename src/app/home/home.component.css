@@ -5,19 +5,23 @@
     text-align: center;
     color: #ffffff;
 }
-
 .container-video:hover > video{
-    transition: 1s;
+    transition: 0.3s;
     /* opacity: 0.8;*/
     filter: blur(2.5px);
     transform: scale(1.003);
 }
-
 .container-video:hover > h1{
-    transition: 0.5s;
+    transition: 1s;
     color: #ffffff;
     font-size: 200px;
     font-weight: bolder;
+}
+.container-video:not(:hover) > video{
+    transition: 1s;
+}
+.container-video:not(:hover) > h1{
+    transition: 0.5s;
 }
 .container-video:hover > h2 {
     color: #1E1E1E;

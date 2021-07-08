@@ -1,17 +1,21 @@
-import { Component, Input, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { AlertComponent } from '../alert/alert.component';
 import { Product } from '../model/Product';
 import { AllProductsService } from '../service/all-products.service';
 
+declare var bootstrap: any
+
 @Component({
-  selector: 'app-new-product',
+  selector: '[app-new-product]',
   templateUrl: './new-product.component.html',
   styleUrls: ['./new-product.component.css']
 })
 export class NewProductComponent implements OnInit {
+  @ViewChild('component') component: ElementRef
+  @ViewChild('modalComponent') modalComponent: ElementRef
+
   @Input() p: Product
   categoryName: string = ''
-  deleted: boolean = false
   alert = AlertComponent
 
   constructor(
@@ -39,10 +43,21 @@ export class NewProductComponent implements OnInit {
     }
   }
 
+  showPreviewProduct(){
+    const modal = new bootstrap.Modal(this.modalComponent.nativeElement)
+    modal.show()
+  }
+
   deleteProduct() {
     this.allProductsService.deleteById(this.p.id!).subscribe(() => {
       this.alert.setAlert('Remoção', `${this.p.name} removido com sucesso`, 'agora')
-      this.deleted = true
-    })
+      const collapse = new bootstrap.Collapse(
+        this.component.nativeElement, 
+        {toggle: false}
+      )
+      collapse.hide()
+    },
+    () => this.alert.setAlert(`Erro ao apagar produto`, ` Erro ao apagar ${this.p.name}, possivelmente o produto está associado a alguma ordem de algum cliente`, 'agora')
+    )
   }
 }

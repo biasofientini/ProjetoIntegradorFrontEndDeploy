@@ -1,31 +1,19 @@
-<div class="container mr-0">
-    <div class="row">
-        <div *ngFor="let p of listProducts">
-            <app-new-product [p]="p"></app-new-product>
-        </div>
-    </div>
-</div>
-
 <div class="container">
-    <div class="row d-flex justify-content-center align-items-center">
-        <nav aria-label="Navegação de página exemplo">
-            <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Anterior" style="color: black;">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only">Anterior</span>
-                    </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#" style="color: black;">1</a></li>
-                <li class="page-item"><a class="page-link" href="#" style="color: black;">2</a></li>
-                <li class="page-item"><a class="page-link" href="#" style="color: black;">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Próximo" style="color: black;">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">Próximo</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <div class="row">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Estoque</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody app-new-product *ngFor="let p of listProducts" [p]="p">
+            </tbody>
+        </table>
     </div>
 </div>

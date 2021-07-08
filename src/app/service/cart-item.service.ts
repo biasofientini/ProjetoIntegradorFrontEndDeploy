@@ -32,4 +32,8 @@ export class CartItemService {
   delete(idCartItem: number): Observable<any> {
     return this.http.delete(`${URL}/item/${idCartItem}`, this.token)
   }
+
+  update(cartItem: CartItem): Observable<any> {
+    return this.http.put(`${URL}/item/${cartItem.id}`, cartItem, this.token)
+  }
 }

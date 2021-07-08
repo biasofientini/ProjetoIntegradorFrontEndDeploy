@@ -11,7 +11,7 @@ interface Item {
 }
 
 @Component({
-  selector: 'app-order-item',
+  selector: '[app-order-item]',
   templateUrl: './order-item.component.html',
   styleUrls: ['./order-item.component.css']
 })
