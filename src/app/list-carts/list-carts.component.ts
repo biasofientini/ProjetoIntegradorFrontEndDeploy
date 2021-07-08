@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cart } from '../model/Cart';
 import { CartService } from '../service/cart.service';
-import { cart1, cart2 } from '../model/Mocks';
 
 @Component({
   selector: 'app-list-carts',
@@ -19,12 +18,20 @@ export class ListCartsComponent implements OnInit {
   ngOnInit(): void {
     this.findAllCarts()
   }
-
-  findAllCarts() {
-    // this.authCart.getAllCart().subscribe((c: Cart[]) => {
-    //   console.log(c)
-    // })
-    this.listCarts.push(cart1)
+  
+  computeCarts(){
+    this.findAllCarts()
   }
 
+  findAllCarts() {
+    this.authCart.getAllCart().subscribe((listCarts: Cart[]) => {
+      listCarts.sort((c1: Cart, c2: Cart) => c1.id - c2.id).reverse()
+      this.listCarts = listCarts
+      if(this.listCarts.length == 0){
+        this.authCart.post().subscribe(() => {
+          this.findAllCarts()
+        })
+      }
+    })
+  }
 }

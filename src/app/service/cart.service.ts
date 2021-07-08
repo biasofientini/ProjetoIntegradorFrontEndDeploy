@@ -22,4 +22,12 @@ export class CartService {
   getAllCart() {
     return this.http.get<Cart[]>(`${URL}/cart`, this.token)
   }
+
+  post() {
+    return this.http.post<Cart>(`${URL}/cart`, {} ,this.token)
+  }
+
+  delete(idCart: number) {
+    return this.http.delete(`${URL}/cart/${idCart}` ,this.token)
+  }
 }

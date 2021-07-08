@@ -1,16 +1,27 @@
-<div class="media my-1 border p-3">    
-    <app-img style="height: 64px;" [class]="'mr-3'" [src]="item.urlImage"></app-img>
-    <div class="media-body">
-        <div class="row"> 
-            <div class="col-4">
-                <h5 class="mt-0">{{item.name}}</h5>
+<tr #component class="collapse show">
+    <td>
+        <app-img [style]="'height: 64px;width: 64px;object-fit: cover;'" [class]="'rounded'" [src]="item.urlImage"></app-img>
+    </td>
+    <td>{{item.name}}</td>
+    <td>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button (click)="decreaseQty()" class="btn btn-outline-secondary" type="button">-</button>
             </div>
-            <div class="col-4">
-                 <span class="badge badge-pill badge-secondary">Qtd {{item.productQty}}</span> 
-            </div>
-            <div class="col-4">
-                R$ {{item.price}}
+            <span class="input-group-text px-4">{{ item.productQty }}</span>
+            <div class="input-group-append">
+                <button (click)="increaseQty()" class="btn btn-outline-secondary" type="button">+</button>
             </div>
         </div>
-    </div>
-</div>
+    </td>
+    <td>R$ {{item.price}}</td>
+    <td>
+        <button (click)="removeItem()" class="btn btn-outline-danger">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg"
+                viewBox="0 0 16 16">
+                <path
+                    d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
+            </svg>
+        </button>
+    </td>
+</tr>
