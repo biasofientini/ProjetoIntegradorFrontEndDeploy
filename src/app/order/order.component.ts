@@ -1,4 +1,4 @@
-import { Order } from './../model/Order';
+import { Order } from '../model/Order';
 import { Component, Input, OnInit } from '@angular/core';
 import { OrderItem } from '../model/OrderItem';
 import { OrderItemService } from '../service/order-item.service';
@@ -21,8 +21,12 @@ export class OrderComponent implements OnInit {
     private authOrderItem: OrderItemService
   ) { }
 
+  computeOrder({price, qty}: {price: number, qty: number}){
+    this.finalPrice += price * qty
+    this.totalItems += qty
+  }
+
   ngOnInit(): void {
-    
     this.findAllOrderItems()
   }
 
@@ -31,7 +35,6 @@ export class OrderComponent implements OnInit {
     console.log(this.o)
     this.authOrderItem.getAllByOrderId(this.o.id).subscribe((listOrderItems: OrderItem[]) => {
       this.listOrderItems = listOrderItems
-      listOrderItems.forEach((item: OrderItem) => this.totalItems += item.quantity)
     })
   }
 }

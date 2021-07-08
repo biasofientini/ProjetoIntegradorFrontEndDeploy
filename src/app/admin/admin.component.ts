@@ -12,7 +12,6 @@ export class AdminComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    window.scroll(0, 0)
   }
 
   changeTipoTemplate(tipo: number) {

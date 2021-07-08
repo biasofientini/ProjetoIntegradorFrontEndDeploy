@@ -20,8 +20,4 @@ export class ProductService {
   postProduct(product: Product): Observable<Product> {
     return this.http.post<Product>(`${URL}/product`, product, this.token)
   }
-
-  deleteProduct(id: number) {
-    return this.http.delete<Product>(`${URL}/product/${id}`, this.token)
-  }
 }
