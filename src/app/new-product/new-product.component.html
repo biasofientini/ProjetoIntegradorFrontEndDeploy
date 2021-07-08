@@ -7,10 +7,10 @@
     <td>{{p.description}}</td>
     <td>{{p.stock}}</td>
     <td>{{p.price}}</td>
-    <td><span class="badge badge-pill badge-secondary">{{ categoryName }}</span></td>
+    <td><span class="badge badge-pill badge-secondary">{{ getCategoryName(p.category) }}</span></td>
     <td>
         <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-outline-primary">
+            <button (click)="showUpdateProduct()" type="button" class="btn btn-outline-primary">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
                     viewBox="0 0 16 16">
                     <path
@@ -36,6 +36,7 @@
     </td>
 </tr>
 
+<!-- Modal Preview Produto-->
 <div #modalComponent class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -55,12 +56,99 @@
                             <h5 class="card-title">{{p.name}}</h5>
                             <p class="card-text">{{p.description}}</p>
                             <p>
-                                <span class="badge badge-pill badge-secondary">{{ categoryName }}</span>
+                                <span class="badge badge-pill badge-secondary">{{ getCategoryName(p.category) }}</span>
                             </p>
                             <button type="button" class="btn btn-block btn-success">Comprar</button>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Update Produto-->
+<div #modalComponentUpdateP class="modal fade" id="modalExemplo" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">ALTERAR DADOS DO PRODUTO</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 font-green fs">
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input [(ngModel)]='p.name' type="text" class="form-control" id="nome"
+                                placeholder="{{p.name}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="categoria">Categoria atual: {{ getCategoryName(p.category) }}</label>
+                            <select class="form-control" id="categoria" (change)='productCategory($event)'>
+                                <option>Escolha a nova categoria</option>
+                                <option value='1'>Alimentos</option>
+                                <option value='2'>Vestuário</option>
+                                <option value='3'>Utensílios</option>
+                                <option value='4'>Acessórios</option>
+                                <option value='5'>Bem-estar</option>
+                            </select>
+                        </div>
+                        <div class="form group">
+                            <label for="descricao">Descricao</label>
+                            <textarea [(ngModel)]='p.description' class="form-control mb-3" id="descricao" rows="3"
+                                placeholder="{{p.description}}"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="urlImagem">Imagem do produto</label>
+                            <input [(ngModel)]='p.urlImage' type="text" class="form-control" id="urlImagem"
+                                placeholder="{{p.urlImage}}">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="estoque">Estoque</label>
+                                    <input [(ngModel)]='p.stock' type="text" class="form-control"
+                                        placeholder="{{p.stock}}">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="preco">Preço</label>
+                                    <input [(ngModel)]='p.price' type="text" class="form-control"
+                                        placeholder="R$ {{p.price}}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mx-4 my-4 d-flex justify-content-center align-items-center testeAnimacao1"
+                            style="width: 18rem; height: 25rem;">
+                            <app-img [class]="'card-img-top'" [style]="'height: 10rem; width: 18rem;'"
+                                [src]="p.urlImage">
+                            </app-img>
+                            <div class="card-body d-flex align-items-end ">
+                                <div class="text-center" style="width: 16rem;">
+                                    <h5 class="card-title">{{p.name}}</h5>
+                                    <p class="card-text">{{p.description}}</p>
+                                    <p>
+                                        <span class="badge badge-pill badge-secondary">{{ getCategoryName(p.category)
+                                            }}</span>
+                                    </p>
+                                    <button type="button" class="btn btn-block btn-success">Comprar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" (click) = 'updateProduct()'>Salvar mudanças</button>
             </div>
         </div>
     </div>
