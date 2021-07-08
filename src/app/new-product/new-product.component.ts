@@ -2,6 +2,7 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { AlertComponent } from '../alert/alert.component';
 import { Product } from '../model/Product';
 import { AllProductsService } from '../service/all-products.service';
+import { ProductService } from '../service/product.service';
 
 declare var bootstrap: any
 
@@ -13,34 +14,55 @@ declare var bootstrap: any
 export class NewProductComponent implements OnInit {
   @ViewChild('component') component: ElementRef
   @ViewChild('modalComponent') modalComponent: ElementRef
+  @ViewChild('modalComponentUpdateP') modalComponentUpdateP: ElementRef
 
   @Input() p: Product
   categoryName: string = ''
   alert = AlertComponent
 
   constructor(
-    private allProductsService: AllProductsService
+    private allProductsService: AllProductsService,
+    private productService: ProductService
   ) { }
 
   ngOnInit(): void {
-    if (this.p.category == 1) {
-      this.categoryName = 'Alimentos'
+  }
+
+  productCategory(event: any) {
+    this.p.category = Number(event.target.value)
+  }
+
+  getCategoryName(category: number): string {
+    if(category == 1) {
+      return 'Alimentos'
+    } 
+    else if(category == 2){
+      return 'Vestuário'
     }
-    else if (this.p.category == 2) {
-      this.categoryName = 'Vestuário'
+    else if(category == 3){
+      return 'Utensílios'
     }
-    else if (this.p.category == 3) {
-      this.categoryName = 'Utensílios'
+    else if(category == 4){
+      return 'Acessórios'
     }
-    else if (this.p.category == 4) {
-      this.categoryName = 'Acessórios'
+    else if(category == 5){
+      return 'Bem-estar'
     }
-    else if (this.p.category == 5) {
-      this.categoryName = 'Bem Estar'
+    else{
+      return''
     }
-    else {
-      this.categoryName = ''
-    }
+  }
+
+  showUpdateProduct(){
+    const modal = new bootstrap.Modal(this.modalComponentUpdateP.nativeElement)
+    modal.show()
+  }
+
+  updateProduct(){
+    this.productService.putProduct(this.p).subscribe((resp: Product) =>{
+      this.p = resp
+      alert('Produto atualizado com sucesso')
+    })
   }
 
   showPreviewProduct(){
