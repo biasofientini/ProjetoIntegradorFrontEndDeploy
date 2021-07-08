@@ -10,13 +10,13 @@
                 <h2 class="mb-0">
                     <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
                         [attr.data-target]="'#collapse'+i" aria-expanded="true">
-                        {{c.id}}
+                        Carrinho {{ listCarts.length-i }}
                     </button>
                 </h2>
             </div>
     
             <div [attr.id]="'collapse'+i" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <app-cart [c]="c"></app-cart>
+                <app-cart (cartEvent)="computeCarts()" [c]="c"></app-cart>
             </div>
         </div>
     </div>

@@ -1,13 +1,13 @@
-<div class="container">
+<div class="container pb-5">
     <h5 class="text-center mb-5 font-gray">CADASTRAR NOVO PRODUTO </h5>
-    <div class="font-green fs">
-        <div class="form-row">
-            <div class="form-group col-md-6">
+    <div class="row">
+        <div class="col-md-6 font-green fs">
+            <div class="form-group">
                 <label for="nome">Nome</label>
                 <input [(ngModel)]='product.name' type="text" class="form-control" id="nome"
                     placeholder="Nome do produto">
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group">
                 <label for="categoria">Categoria</label>
                 <select class="form-control" id="categoria" (change)='productCategory($event)'>
                     <option value='1'>Alimentos</option>
@@ -17,32 +17,29 @@
                     <option value='5'>Utensílios</option>
                 </select>
             </div>
-        </div>
-        <div class="form group">
-            <label for="descricao">Descricao</label>
-            <textarea [(ngModel)]='product.description' class="form-control mb-3" id="descricao" rows="3"
-                placeholder="Descrição do produto..."></textarea>
-        </div>
-        <div class="form-group">
-            <label for="urlImagem">Imagem do produto</label>
-            <input [(ngModel)]='product.urlImage' type="text" class="form-control" id="urlImagem" placeholder="Url da imagem">
-        </div>
-        <div class="row">
-            <div class="col-6">
-                <div class="form-group">
-                    <label for="estoque">Estoque</label>
-                    <input [(ngModel)]='product.stock' type="text" class="form-control" placeholder="-">
-                </div>
-                <div class="form-group">
-                    <label for="preco">Preço</label>
-                    <input [(ngModel)]='product.price' type="text" class="form-control" placeholder="R$ 0,00">
-                </div>
+            <div class="form group">
+                <label for="descricao">Descricao</label>
+                <textarea [(ngModel)]='product.description' class="form-control mb-3" id="descricao" rows="3"
+                    placeholder="Descrição do produto..."></textarea>
             </div>
-            <div class="col-6 d-flex justify-content-end" style="height: 10rem; width: 18rem;">
-                <app-img [class]="'card-img-top'" [style]="'height: 10rem; width: 18rem;'" [src]="product.urlImage"></app-img>
+            <div class="form-group">
+                <label for="urlImagem">Imagem do produto</label>
+                <input [(ngModel)]='product.urlImage' type="text" class="form-control" id="urlImagem" placeholder="Url da imagem">
             </div>
+            <div class="form-group">
+                <label for="estoque">Estoque</label>
+                <input [(ngModel)]='product.stock' type="text" class="form-control" placeholder="-">
+            </div>
+            <div class="form-group">
+                <label for="preco">Preço</label>
+                <input [(ngModel)]='product.price' type="text" class="form-control" placeholder="R$ 0,00">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <app-product [p]="product"></app-product>
         </div>
     </div>
+
     <div class="d-flex justify-content-center mt-5">
         <button tipe="submit" class="btn px-3 btn-danger mr-4">Cancelar</button>
         <button tipe="submit" class="btn px-3 btn-success" (click)="newProduct()">Cadastrar</button>

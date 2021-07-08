@@ -17,7 +17,7 @@ interface Item {
 }
 
 @Component({
-  selector: 'app-cart-item',
+  selector: '[app-cart-item]',
   templateUrl: './cart-item.component.html',
   styleUrls: ['./cart-item.component.css']
 })
@@ -42,6 +42,30 @@ export class CartItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.getInfo()
+  }
+
+  increaseQty(){
+    this.item.productQty++
+    this.updateCartItem()
+  }
+
+  decreaseQty(){
+    if(this.item.productQty-1 > 0){
+      this.item.productQty--
+      this.updateCartItem()
+    }
+  }
+
+  updateCartItem(){
+    this.productEvent.emit({
+      price: this.item.price,
+      qty: this.item.productQty - this.cartItem.productQty
+    })
+    this.cartItem.productQty = this.item.productQty
+
+    this.authCartItemService.update(this.cartItem).subscribe((cartItem: CartItem) => {
+      this.alert.setAlert('Atualização', `${this.item.name} foi atualizado para ${cartItem.productQty} itens`, 'agora')
+    })
   }
 
   removeItem(){

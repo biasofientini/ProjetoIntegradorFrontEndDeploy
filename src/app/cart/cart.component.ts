@@ -1,5 +1,6 @@
+import { CartService } from './../service/cart.service';
 import { CartItem } from './../model/CartItem';
-import { Input } from '@angular/core';
+import { Input, ViewChild, ElementRef, EventEmitter, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Cart } from '../model/Cart';
 import { CartItemService } from '../service/cart-item.service';
@@ -13,7 +14,9 @@ import { AlertComponent } from '../alert/alert.component';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-
+  @Output() cartEvent = new EventEmitter()
+  
+  @ViewChild('component') component: ElementRef
   alert = AlertComponent
   @Input() c: Cart
   listCartItems: CartItem[] = []
@@ -23,7 +26,8 @@ export class CartComponent implements OnInit {
 
   constructor(
     private authCartItem: CartItemService,
-    private authOrder: OrderService
+    private authOrder: OrderService,
+    private authCart: CartService
   ) { }
 
   ngOnInit(): void {
@@ -37,15 +41,49 @@ export class CartComponent implements OnInit {
 
   findAllCartItems() {
     this.authCartItem.getAllByCartId(this.c.id).subscribe((listCartItems: CartItem[]) => {
-      this.listCartItems = listCartItems
+      this.listCartItems = this.groupProducts(listCartItems)
     })
   }
 
   checkout() {
     this.processingOrder = true
     this.authOrder.post(this.c.id).subscribe((order: Order) => {
-      this.alert.setAlert('Tudo certo 😍', `Compra realizada com sucesso! Total gasto: R$ ${order.finalPrice}`, 'agora')
+      this.alert.setAlert('😍 Tudo certo', `Compra realizada com sucesso! Total gasto: R$ ${order.finalPrice}`, 'agora', 3000)
       this.processingOrder = false
+      this.authCart.post().subscribe(() => {
+        this.cartEvent.emit()
+      })
     })
+  }
+
+  deleteCart(){
+    this.authCart.delete(this.c.id).subscribe(() => {
+      this.alert.setAlert('Carrinho removido', 'Carrinho removido com sucesso', 'agora')
+      this.cartEvent.emit()
+    })
+  }
+
+  groupProducts(products: CartItem[]): any{
+    const counter = new Map<number, CartItem[]>()
+    products.forEach((c: CartItem) => {
+      if(counter.has(c.productId)){
+        const newCartItemArray = [...counter.get(c.productId)||[], c]
+        counter.set(c.productId, newCartItemArray)
+      }
+      else{
+        counter.set(c.productId, [c])
+      }
+    })
+    const arrayProducts: CartItem[] = []
+    counter.forEach((cartItems: CartItem[]) => {
+      const first = cartItems[0]
+      for(let i=1; i < cartItems.length; i++){
+        first.productQty += cartItems[i].productQty
+        this.authCartItem.delete(cartItems[i].id).subscribe()
+      }
+      this.authCartItem.update(first).subscribe()
+      arrayProducts.push(first)
+    })
+    return arrayProducts
   }
 }

@@ -27,32 +27,32 @@ export class NewProductFormComponent implements OnInit {
     this.product.category = Number(event.target.value)
   }
 
-  validateInput(){
-    if(this.product.description === undefined || this.product.description === ''){
+  validateInput() {
+    if (this.product.description === undefined || this.product.description === '') {
       this.alert.setAlert('Dados inválidos', 'Insira uma descrição válida', 'agora')
       return false
     }
-    if(this.product.name === undefined || this.product.name === ''){
+    if (this.product.name === undefined || this.product.name === '') {
       this.alert.setAlert('Dados inválidos', 'Insira um nome válido', 'agora')
       return false
     }
-    if(this.product.price === undefined || this.product.price < 0){
+    if (this.product.price === undefined || this.product.price < 0) {
       this.alert.setAlert('Dados inválidos', 'Insira um preço válido', 'agora')
       return false
     }
-    if(this.product.stock === undefined || this.product.stock < 0){
+    if (this.product.stock === undefined || this.product.stock < 0) {
       this.alert.setAlert('Dados inválidos', 'Insira um estoque válido', 'agora')
       return false
     }
-    if(this.product.urlImage === undefined || this.product.urlImage === ''){
+    if (this.product.urlImage === undefined || this.product.urlImage === '') {
       this.alert.setAlert('Url inválida', 'Insira uma url válida', 'agora')
       return false
     }
     return true
   }
-  
+
   newProduct() {
-    if(!this.validateInput()) return
+    if (!this.validateInput()) return
     this.productService.postProduct(this.product).subscribe((resp: Product) => {
       this.product = resp
       this.alert.setAlert('Produto cadastrado', `${this.product.name} cadastrado com sucesso`, 'agora', 2000)
