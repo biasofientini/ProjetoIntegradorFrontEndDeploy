@@ -13,7 +13,6 @@ import { HomeComponent } from './home/home.component';
 import { AllProductsComponent } from './all-products/all-products.component';
 import { ProductComponent } from './product/product.component';
 import { ImgComponent } from './img/img.component';
-import { ProductListAdmComponent } from './product-list-adm/product-list-adm.component';
 import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
 import { ListCartsComponent } from './list-carts/list-carts.component';
@@ -30,8 +29,6 @@ import { ListNewProductComponent } from './list-new-product/list-new-product.com
 import { NewProductFormComponent } from './new-product-form/new-product-form.component';
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +41,6 @@ import { NewProductFormComponent } from './new-product-form/new-product-form.com
     AllProductsComponent,
     ProductComponent,
     ImgComponent,
-    ProductListAdmComponent,
     CartComponent,
     CartItemComponent,
     ListCartsComponent,
