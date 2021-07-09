@@ -18,6 +18,10 @@ export class OrderItemService {
   }
 
   getAllByOrderId(idOrder: number): Observable<OrderItem[]>{
-     return this.http.get<OrderItem[]> (`${URL}/orderitem?idOrder=${idOrder}`, this.token)
+     return this.http.get<OrderItem[]> (`${URL}/orderitem/u?idOrder=${idOrder}`, this.token)
   }
+
+  adminGetAllByOrderId(idOrder: number): Observable<OrderItem[]>{
+    return this.http.get<OrderItem[]> (`${URL}/orderitem/a?idOrder=${idOrder}`, this.token)
+ }
 }

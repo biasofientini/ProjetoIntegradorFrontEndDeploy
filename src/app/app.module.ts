@@ -30,8 +30,10 @@ import { ListNewUserComponent } from './list-new-user/list-new-user.component';
 import { NewUserFormComponent } from './new-user-form/new-user-form.component';
 import { StackComponent } from './stack/stack.component';
 import { AccountComponent } from './account/account.component';
+import { AdminListOrdersComponent } from './admin-list-orders/admin-list-orders.component';
+import { AdminOrderComponent } from './admin-order/admin-order.component';
+import { AdminOrderItemComponent } from './admin-order-item/admin-order-item.component';
 import { NewUserComponent } from './new-user/new-user.component';
-
 
 
 @NgModule({
@@ -64,6 +66,9 @@ import { NewUserComponent } from './new-user/new-user.component';
     NewUserFormComponent,
     StackComponent,
     AccountComponent,
+    AdminListOrdersComponent,
+    AdminOrderComponent,
+    AdminOrderItemComponent,
     NewUserComponent
   ],
   imports: [
