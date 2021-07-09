@@ -10,6 +10,9 @@ import { AllProductsService } from '../service/all-products.service';
 export class AllProductsComponent implements OnInit {
 
   listProducts: Product[]
+  maxItemsPage: number = 12
+  currentPage: number = 0
+  numberOfPages: number
 
   constructor(
     private allProductsService: AllProductsService
@@ -22,6 +25,24 @@ export class AllProductsComponent implements OnInit {
   findAllProducts() {
     this.allProductsService.getAllProducts().subscribe((resp: Product[]) => {
       this.listProducts = resp
+      this.numberOfPages = Math.ceil(resp.length/this.maxItemsPage)
     })
   }
+
+  changePage(index: number) {
+    this.currentPage = index
+  }
+
+  decreasePage() {
+    if(this.currentPage - 1 >= 0){
+      this.currentPage--
+    }
+  }
+
+  increasePage() {
+    if(this.currentPage + 1 < this.numberOfPages){
+      this.currentPage++
+    }
+  }
+
 }

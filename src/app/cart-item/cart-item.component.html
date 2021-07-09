@@ -14,7 +14,7 @@
             </div>
         </div>
     </td>
-    <td>R$ {{item.price}}</td>
+    <td>{{item.price | currency:'BRL'}}</td>
     <td>
         <button (click)="removeItem()" class="btn btn-outline-danger">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg"

@@ -14,14 +14,14 @@ import { AdminComponent } from './admin/admin.component';
 import { ListNewProductComponent } from './list-new-product/list-new-product.component';
 import { NewProductFormComponent } from './new-product-form/new-product-form.component';
 import { StackComponent } from './stack/stack.component';
-
+import { AccountComponent } from './account/account.component';
 
 const routes: Routes = [
-
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'entrar', component: LoginComponent},
   { path: 'cadastrar', component: SignupComponent },
   { path: 'stack', component: StackComponent },
+  { path: 'conta', component: AccountComponent },
   { path: 'previewProduto', component: PreviewProdutoComponent },
   { path: 'home', component: HomeComponent },
   { path: 'produtos', component: AllProductsComponent },
@@ -36,8 +36,6 @@ const routes: Routes = [
     { path: 'produto', component: ListNewProductComponent},
     { path: 'produto/cadastrar', component: NewProductFormComponent}
   ]}
-
-
 ];
 
 @NgModule({

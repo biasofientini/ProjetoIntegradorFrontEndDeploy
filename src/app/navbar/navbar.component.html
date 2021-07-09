@@ -10,12 +10,8 @@
       <li class="nav-item active">
         <a class="nav-link transit-size font1" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link active transit-size" href="#">Categorias</a>
-      </li> -->
-
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle font1 text-light transit-size" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle font1 transit-size" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Categorias
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -26,7 +22,6 @@
           <a class="dropdown-item font-fam" href="#">Vestuários</a>
         </div>
       </li>
-
       <li class="nav-item">
         <a class="nav-link active transit-size font1" href="#" routerLink="/produtos">Shop</a>
       </li>
@@ -43,7 +38,20 @@
         <a class="nav-link active mc-font transit-size font1" aria-current="page" href="#" data-toggle="modal"
           data-target="#login"><img src="assets/img/login.png" width="25" height="25" alt=""> Login</a>
       </li>
-      <li *ngIf="autenticado" class="nav-item">
+
+
+      <li *ngIf="autenticado" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle font1 transit-size" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Minha conta
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item font-fam" routerLink="/pedido">Meus pedidos</a>
+          <a class="dropdown-item font-fam" routerLink="/conta">Meu perfil</a>
+          <a class="dropdown-item font-fam" routerLink="/admin">Administrador</a>
+          <a class="dropdown-item font-fam" (click)='signout()'>Sair</a>
+        </div>
+      </li>
+      <!-- <li *ngIf="autenticado" class="nav-item">
         <div class="dropdown mx-3">
           <button class="btn btn-secondary dropdown-toggle font1" type="button" id="dropdownMenuButton"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -53,27 +61,11 @@
             <a class="dropdown-item active transit-size font1" routerLink="/pedido" href="#">Meus Pedidos</a>
           </div>
         </div>
-      </li>
+      </li> -->
       <li class="nav-item">
         <img class="transit-size" src="assets/img/carrinho.png" width="25" height="25" alt="" routerLink='/carrinho'>
       </li>
     </ul>
   </div>
 </nav>
-
 <app-login>
-
-
-
-  <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0 font container-logo">
-  <li class="nav-item">
-    <a class="nav-link active mc-font transit-size" aria-current="page" href="#" data-toggle="modal"
-      data-target="#login"><img src="assets/img/login.png" width="25" height="25" alt=""> Login </a>
-  </li>
-  <li class="nav-item">
-    <img class="transit-size" src="assets/img/carrinho.png" width="25" height="25" alt="">
-  </li>
-</ul>
-</div>
-</nav>
-<app-login></app-login> -->
