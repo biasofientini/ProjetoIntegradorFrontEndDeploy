@@ -11,11 +11,7 @@ export class AdminComponent implements OnInit {
   
   constructor() { }
 
-  ngOnInit() {
-  }
-
-  changeTipoTemplate(tipo: number) {
-    this.tipoTemplate = tipo;
+  ngOnInit() : void {
   }
 
 }

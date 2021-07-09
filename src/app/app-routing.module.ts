@@ -12,6 +12,7 @@ import { AboutComponent } from './about/about.component';
 import { AdminComponent } from './admin/admin.component';
 import { ListNewProductComponent } from './list-new-product/list-new-product.component';
 import { NewProductFormComponent } from './new-product-form/new-product-form.component';
+import { NewUserFormComponent } from './new-user-form/new-user-form.component';
 
 
 
@@ -31,7 +32,8 @@ const routes: Routes = [
   { path: 'produtos', component: AllProductsComponent},
   { path: 'admin', component: AdminComponent, children: [
     { path: 'produto', component: ListNewProductComponent},
-    { path: 'produto/cadastrar', component: NewProductFormComponent}
+    { path: 'produto/cadastrar', component: NewProductFormComponent},
+    { path: 'usuario/cadastrar', component: NewUserFormComponent}
   ]}
 
 

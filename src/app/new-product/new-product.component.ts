@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlertComponent } from '../alert/alert.component';
 import { Product } from '../model/Product';
 import { AllProductsService } from '../service/all-products.service';
@@ -22,7 +23,8 @@ export class NewProductComponent implements OnInit {
 
   constructor(
     private allProductsService: AllProductsService,
-    private productService: ProductService
+    private productService: ProductService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -52,16 +54,39 @@ export class NewProductComponent implements OnInit {
       return''
     }
   }
-
+  validateInput() {
+    if (this.p.description === undefined || this.p.description === '') {
+      this.alert.setAlert('Dados inválidos', 'Insira uma descrição válida', 'agora')
+      return false
+    }
+    if (this.p.name === undefined || this.p.name === '') {
+      this.alert.setAlert('Dados inválidos', 'Insira um nome válido', 'agora')
+      return false
+    }
+    if (this.p.price === undefined || this.p.price < 0) {
+      this.alert.setAlert('Dados inválidos', 'Insira um preço válido', 'agora')
+      return false
+    }
+    if (this.p.stock === undefined || this.p.stock < 0) {
+      this.alert.setAlert('Dados inválidos', 'Insira um estoque válido', 'agora')
+      return false
+    }
+    if (this.p.urlImage === undefined || this.p.urlImage === '') {
+      this.alert.setAlert('Url inválida', 'Insira uma url válida', 'agora')
+      return false
+    }
+    return true
+  }
   showUpdateProduct(){
     const modal = new bootstrap.Modal(this.modalComponentUpdateP.nativeElement)
     modal.show()
   }
 
   updateProduct(){
+    if (!this.validateInput()) return
     this.productService.putProduct(this.p).subscribe((resp: Product) =>{
       this.p = resp
-      alert('Produto atualizado com sucesso')
+      alert('Alterações realizadas com sucesso!')
     })
   }
 
