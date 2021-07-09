@@ -41,7 +41,7 @@
 
 <div class="container mr-0">
     <div class="row">
-        <div *ngFor="let p of listProducts">
+        <div *ngFor="let p of listProducts.slice(maxItemsPage*currentPage, (currentPage+1)*maxItemsPage)">
             <app-product [p]="p"></app-product>
         </div>
     </div>
@@ -52,16 +52,14 @@
         <nav aria-label="Navegação de página exemplo">
             <ul class="pagination">
                 <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Anterior" style="color: black;">
+                    <a class="page-link" (click)='decreasePage()' aria-label="Anterior" style="color: black;">
                         <span aria-hidden="true">&laquo;</span>
                         <span class="sr-only">Anterior</span>
                     </a>
                 </li>
-                <li class="page-item"><a class="page-link" href="#" style="color: black;">1</a></li>
-                <li class="page-item"><a class="page-link" href="#" style="color: black;">2</a></li>
-                <li class="page-item"><a class="page-link" href="#" style="color: black;">3</a></li>
+                <li *ngFor="let _ of [].constructor(numberOfPages); index as i" (click)='changePage(i)' class="{{'page-item'+' '+(i==currentPage?'active':'')}}"><a class="page-link" style="color: black;">{{i+1}}</a></li>
                 <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Próximo" style="color: black;">
+                    <a class="page-link" (click)='increasePage()' aria-label="Próximo" style="color: black;">
                         <span aria-hidden="true">&raquo;</span>
                         <span class="sr-only">Próximo</span>
                     </a>

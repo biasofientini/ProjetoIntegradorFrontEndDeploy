@@ -28,6 +28,7 @@ export class OrderComponent implements OnInit {
 
   ngOnInit(): void {
     this.findAllOrderItems()
+    this.date = this.o.date
   }
 
   findAllOrderItems() {

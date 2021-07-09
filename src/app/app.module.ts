@@ -28,6 +28,8 @@ import { ListNewProductComponent } from './list-new-product/list-new-product.com
 import { NewProductFormComponent } from './new-product-form/new-product-form.component';
 import { ListNewUserComponent } from './list-new-user/list-new-user.component';
 import { NewUserFormComponent } from './new-user-form/new-user-form.component';
+import { StackComponent } from './stack/stack.component';
+import { AccountComponent } from './account/account.component';
 
 
 @NgModule({
@@ -57,7 +59,9 @@ import { NewUserFormComponent } from './new-user-form/new-user-form.component';
     NewProductFormComponent,
     NewProductComponent,
     ListNewUserComponent,
-    NewUserFormComponent
+    NewUserFormComponent,
+    StackComponent,
+    AccountComponent
 
   ],
   imports: [
