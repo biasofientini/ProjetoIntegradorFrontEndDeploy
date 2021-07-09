@@ -1,0 +1,48 @@
+<div class="card p-4">
+    <div class="card-body">
+        <div class="text-right mb-4">
+            <button *ngIf="o.status == 'Em separação'" (click)="markAsSent()" class="btn btn-outline-success">
+                Marcar como enviado
+            </button>
+            <button *ngIf="o.status == 'Enviado'" (click)="markAsSent()" class="btn btn-success" disabled>
+                Enviado
+            </button>
+        </div>
+        <h2>Data da compra {{ date }} </h2>
+        <hr>
+        <div class="my-3">
+            <h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.8rem" height="1.8rem" fill="currentColor" class="bi bi-house"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                    <path fill-rule="evenodd"
+                        d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                </svg>
+                Dados de Entrega
+            </h2>
+            <h5>Cliente: {{ customer.address }}</h5>
+            <h5>Telefone: {{ customer.phone }}</h5>
+            <h5>Endereço: {{ customer.address }}</h5>
+            <h5>CEP: {{ customer.zipCode }}</h5>
+        </div>
+        <h4>Preço pago: <span class="badge badge-pill badge-light">{{ finalPrice | currency:'BRL' }}</span></h4>
+        <h4>Total de itens <span class="badge badge-pill badge-light">{{ totalItems }}</span></h4>
+    </div>
+    <div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Quantidade</th>
+                    <th scope="col">Preço</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr app-admin-order-item (newProductEvent)="computeOrder($event)"
+                    *ngFor="let orderItem of listOrderItems;" [orderItem]="orderItem"></tr>
+            </tbody>
+        </table>
+    </div>
+</div>

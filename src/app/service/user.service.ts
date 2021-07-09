@@ -17,6 +17,10 @@ export class UserService {
   }
 
   getById(id: number) {
+    return this.http.get<User>(`${URL}/user/u/${id}`, this.token)
+  }
+
+  adminGetById(id: number){
     return this.http.get<User>(`${URL}/user/${id}`, this.token)
   }
 

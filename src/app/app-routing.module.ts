@@ -1,3 +1,4 @@
+import { AdminListOrdersComponent } from './admin-list-orders/admin-list-orders.component';
 import { ListCartsComponent } from './list-carts/list-carts.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -33,7 +34,8 @@ const routes: Routes = [
   { path: 'produtos', component: AllProductsComponent},
   { path: 'admin', component: AdminComponent, children: [
     { path: 'produto', component: ListNewProductComponent},
-    { path: 'produto/cadastrar', component: NewProductFormComponent}
+    { path: 'produto/cadastrar', component: NewProductFormComponent},
+    { path: 'pedidos', component: AdminListOrdersComponent }
   ]}
 ];
 

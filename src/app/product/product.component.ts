@@ -21,7 +21,7 @@ export class ProductComponent implements OnInit {
   constructor(
     private authCartItem: CartItemService,
     private authCart: CartService
-  ) { }
+  ) {}
 
 
   getCategoryName(category: number): string {
