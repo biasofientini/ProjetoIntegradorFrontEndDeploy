@@ -13,8 +13,10 @@ import { AboutComponent } from './about/about.component';
 import { AdminComponent } from './admin/admin.component';
 import { ListNewProductComponent } from './list-new-product/list-new-product.component';
 import { NewProductFormComponent } from './new-product-form/new-product-form.component';
+import { NewUserFormComponent } from './new-user-form/new-user-form.component';
 import { StackComponent } from './stack/stack.component';
 import { AccountComponent } from './account/account.component';
+import { ListNewUserComponent } from './list-new-user/list-new-user.component';
 
 
 const routes: Routes = [
@@ -25,7 +27,6 @@ const routes: Routes = [
   { path: 'conta', component: AccountComponent },
   { path: 'previewProduto', component: PreviewProdutoComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'produtos', component: AllProductsComponent },
   { path: 'carrinho', component: ListCartsComponent },
   { path: 'equipe', component: TeamComponent },
   { path: 'pedido', component: ListOrdersComponent },
@@ -35,7 +36,9 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent, children: [
     { path: 'produto', component: ListNewProductComponent},
     { path: 'produto/cadastrar', component: NewProductFormComponent},
-    { path: 'pedidos', component: AdminListOrdersComponent }
+    { path: 'pedidos', component: AdminListOrdersComponent },
+    { path: 'usuario/cadastrar', component: NewUserFormComponent},
+    { path: 'usuario', component: ListNewUserComponent}
   ]}
 ];
 
