@@ -15,6 +15,7 @@ import { NewProductFormComponent } from './new-product-form/new-product-form.com
 import { NewUserFormComponent } from './new-user-form/new-user-form.component';
 import { StackComponent } from './stack/stack.component';
 import { AccountComponent } from './account/account.component';
+import { ListNewUserComponent } from './list-new-user/list-new-user.component';
 
 
 const routes: Routes = [
@@ -25,7 +26,6 @@ const routes: Routes = [
   { path: 'conta', component: AccountComponent },
   { path: 'previewProduto', component: PreviewProdutoComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'produtos', component: AllProductsComponent },
   { path: 'carrinho', component: ListCartsComponent },
   { path: 'equipe', component: TeamComponent },
   { path: 'pedido', component: ListOrdersComponent },
@@ -35,7 +35,8 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent, children: [
     { path: 'produto', component: ListNewProductComponent},
     { path: 'produto/cadastrar', component: NewProductFormComponent},
-    { path: 'usuario/cadastrar', component: NewUserFormComponent}
+    { path: 'usuario/cadastrar', component: NewUserFormComponent},
+    { path: 'usuario', component: ListNewUserComponent}
   ]}
 ];
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../model/User';
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-new-user-form',
@@ -7,9 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewUserFormComponent implements OnInit {
 
-  constructor() { }
+  user: User = new User()
+  roleId: number = 2 //default
+
+  constructor(
+    private serviceUser: UserService
+  ) { }
 
   ngOnInit(): void {
   }
+  confirmarSenha(event: any) {
 
+  }
+
+  admin(event: any) {
+    this.roleId = Number(event.target.value)
+
+  }
+  newUser(){
+    this.serviceUser.postUser(this.user, this.roleId).subscribe((resp: User) =>{
+    this.user = resp
+    this.user = new User()
+    if(this.roleId==1){
+      alert('Novo administrador cadastrado no sistema!')
+    }
+    if(this.roleId ==2){
+      alert('Novo usuário cadastrado!')
+    }
+    })
+  }
 }

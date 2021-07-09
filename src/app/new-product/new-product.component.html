@@ -58,6 +58,7 @@
                             <p>
                                 <span class="badge badge-pill badge-secondary">{{ getCategoryName(p.category) }}</span>
                             </p>
+                            <p class="card-text">{{p.price | currency:'BRL'}}</p>
                             <button type="button" class="btn btn-block btn-success">Comprar</button>
                         </div>
                     </div>
@@ -138,6 +139,7 @@
                                         <span class="badge badge-pill badge-secondary">{{ getCategoryName(p.category)
                                             }}</span>
                                     </p>
+                                    <p class="card-text">{{p.price | currency:'BRL'}}</p>
                                     <button type="button" class="btn btn-block btn-success">Comprar</button>
                                 </div>
                             </div>

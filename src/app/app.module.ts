@@ -30,6 +30,8 @@ import { ListNewUserComponent } from './list-new-user/list-new-user.component';
 import { NewUserFormComponent } from './new-user-form/new-user-form.component';
 import { StackComponent } from './stack/stack.component';
 import { AccountComponent } from './account/account.component';
+import { NewUserComponent } from './new-user/new-user.component';
+
 
 
 @NgModule({
@@ -61,8 +63,8 @@ import { AccountComponent } from './account/account.component';
     ListNewUserComponent,
     NewUserFormComponent,
     StackComponent,
-    AccountComponent
-
+    AccountComponent,
+    NewUserComponent
   ],
   imports: [
     BrowserModule,

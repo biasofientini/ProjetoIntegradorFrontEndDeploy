@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { User } from '../model/User';
 import { URL } from './url';
 
@@ -20,4 +21,11 @@ export class UserService {
     return this.http.get<User>(`${URL}/user/${id}`, this.token)
   }
 
+  getAllUsers(): Observable<User[]>{
+    return this.http.get<User[]>(`${URL}/user`, this.token)
+  }
+
+  postUser(user: User, id: number): Observable<User>{
+    return this.http.post<User>(`${URL}/user/role/${id}`, user)
+  }
 }
