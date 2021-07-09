@@ -1,0 +1,76 @@
+
+<div class="container pb-5">
+    <h5 class="text-center mb-5 font-gray">CADASTRAR NOVO USUÁRIO </h5>
+    <div class="row">
+        <div class="col-md-6 font-green fs">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input [(ngModel)]='user.name' type="text" class="form-control" id="nome" placeholder="Nome usuário">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input [(ngModel)]='user.email' type="email" class="form-control" id="email"
+                    placeholder="usuario@exemplo.com">
+            </div>
+            <div class="form-group">
+                <label for="urlImagem">Imagem do usuário</label>
+                <input type="text" class="form-control" id="urlImagem"
+                    placeholder="Url imagem do usuário">
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="cep">CEP</label>
+                        <input [(ngModel)]='user.zipCode' type="text" class="form-control" id="cep"
+                            placeholder="xxxxx-xxx">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input [(ngModel)]='user.phone' type="text" class="form-control" id="telefone"
+                            placeholder="(xx)xxxxx-xxxx">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <input [(ngModel)]='user.address' type="text" class="form-control" id="endereco" placeholder="Rua, nº, bairro">
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="senha">Senha</label>
+                        <input (input)='confirmarSenha($event)' type="password" class="form-control" id="senha"
+                            placeholder="Digite senha usuário">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="confirmeSenha">Confirmar Senha</label>
+                        <input [(ngModel)]='user.password' type="password" class="form-control" id="confirmeSenha"
+                            placeholder="Confirme senha">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value='1' id="roleAdmin" (change)="admin($event)">
+                <label class="form-check-label" for="roleAdmin">
+                  Administrador
+                </label>
+              </div>
+        </div>
+        <!-- Colocar CARD USER
+        <div class="col-md-6">
+            <app-product [p]="product"></app-product>
+        </div> -->
+    </div>
+
+    <div class="d-flex justify-content-center mt-5">
+        <button tipe="submit" class="btn px-3 btn-danger mr-4">Cancelar</button>
+        <button tipe="submit" class="btn px-3 btn-success" (click)="newUser()">Cadastrar</button>
+    </div>
+</div>

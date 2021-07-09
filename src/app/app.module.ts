@@ -22,13 +22,16 @@ import { ListOrdersComponent } from './list-orders/list-orders.component';
 import { AboutComponent } from './about/about.component';
 import { OrderItemComponent } from './order-item/order-item.component';
 import { AdminComponent } from './admin/admin.component';
-import { UsersListAdminComponent } from './users-list-admin/users-list-admin.component';
 import { NewProductComponent } from './new-product/new-product.component';
 import { AlertComponent } from './alert/alert.component';
 import { ListNewProductComponent } from './list-new-product/list-new-product.component';
 import { NewProductFormComponent } from './new-product-form/new-product-form.component';
+import { ListNewUserComponent } from './list-new-user/list-new-user.component';
+import { NewUserFormComponent } from './new-user-form/new-user-form.component';
 import { StackComponent } from './stack/stack.component';
 import { AccountComponent } from './account/account.component';
+import { NewUserComponent } from './new-user/new-user.component';
+
 
 
 @NgModule({
@@ -52,15 +55,16 @@ import { AccountComponent } from './account/account.component';
     AboutComponent,
     OrderItemComponent,
     AdminComponent,
-    UsersListAdminComponent,
     NewProductComponent,
     AlertComponent,
     ListNewProductComponent,
     NewProductFormComponent,
     NewProductComponent,
+    ListNewUserComponent,
+    NewUserFormComponent,
     StackComponent,
-    AccountComponent
-
+    AccountComponent,
+    NewUserComponent
   ],
   imports: [
     BrowserModule,

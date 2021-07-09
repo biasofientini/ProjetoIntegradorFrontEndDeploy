@@ -58,6 +58,7 @@
                             <p>
                                 <span class="badge badge-pill badge-secondary">{{ getCategoryName(p.category) }}</span>
                             </p>
+                            <p class="card-text">{{p.price | currency:'BRL'}}</p>
                             <button type="button" class="btn btn-block btn-success">Comprar</button>
                         </div>
                     </div>
@@ -138,6 +139,7 @@
                                         <span class="badge badge-pill badge-secondary">{{ getCategoryName(p.category)
                                             }}</span>
                                     </p>
+                                    <p class="card-text">{{p.price | currency:'BRL'}}</p>
                                     <button type="button" class="btn btn-block btn-success">Comprar</button>
                                 </div>
                             </div>
@@ -148,7 +150,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary" (click) = 'updateProduct()'>Salvar mudanças</button>
+                <button type="button" class="btn btn-primary" (click) = 'updateProduct()' data-dismiss="modal">Salvar mudanças</button>
             </div>
         </div>
     </div>
