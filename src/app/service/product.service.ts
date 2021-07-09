@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ProductDTO } from '../model/ProductDTO';
+import { Product } from '../model/Product';
+import { URL } from './url';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,15 @@ export class ProductService {
     private http: HttpClient
   ) { }
 
-  postProduct(product: ProductDTO): Observable<ProductDTO>{
-    return this.http.post<ProductDTO>('http://localhost:8080/product',product)
+  token = {
+    headers: new HttpHeaders().set('Authorization', localStorage.getItem("token") || "")
+  }
+
+  postProduct(product: Product): Observable<Product> {
+    return this.http.post<Product>(`${URL}/product`, product, this.token)
+  }
+
+  putProduct(product: Product): Observable<Product> {
+    return this.http.put<Product>(`${URL}/product/${product.id}`, product, this.token)
   }
 }

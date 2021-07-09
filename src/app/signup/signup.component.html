@@ -1,4 +1,5 @@
-<div class="container-fluid font">
+<app-navbar></app-navbar>
+<div class="container-fluid">
 
     <div class="row">
 
@@ -16,63 +17,52 @@
                     </a>
                 </div>
 
-
-                <div class="form-row">
-                    <div class="col">
-                        <!-- <div class="form-group"> -->
-                        <label for="nome">Primeiro Nome</label>
-                        <input [(ngModel)]='user.name' class="form-control" type="text" name="nome" id="nome"
-                            placeholder="Digite seu nome">
-                        <!-- </div> -->
-                    </div>
-                    <div class="col">
-                        <!-- <div class="form-group mx-4"> -->
-                        <label for="sobrenome">Sobrenome</label>
-                        <input class="form-control" type="text" name="sobrenome" id="sobrenome"
-                            placeholder="Digite seu sobrenome">
-                        <!-- </div> -->
-                    </div>
+                <div class="form-group font-fam font-weight-bold mt-3">
+                    <label for="nome">Nome</label>
+                    <input [(ngModel)]='user.name' class="form-control" type="text" name="nome" id="nome" placeholder="Digite seu nome">
                 </div>
 
-                <div class="form-group">
-                    <label for="endereco">Endereço</label>
-                    <input [(ngModel)]='user.address' class="form-control" type="text" name="endereco" id="endereco"
-                        placeholder="Rua , nº , bairro">
-                </div>
-
-                <div class="form-group">
-                    <label for="cep">CEP</label>
-                    <input [(ngModel)]='user.zipCode' class="form-control" type="text" name="cep" id="cep"
-                        placeholder="xxxxx-xxx">
-                </div>
-
-                <div class="form-group">
-                    <label for="telefone">Telefone</label>
-                    <input [(ngModel)]='user.phone' class="form-control" type="text" name="telefone" id="telefone"
-                        placeholder="(xx) xxxxx-xxxx">
-                </div>
-
-                <div class="form-group">
+                <div class="form-group font-fam font-weight-bold">
                     <label for="email">Email</label>
                     <input [(ngModel)]='user.email' class="form-control" type="email" name="senha" id="senha"
                         placeholder="seuemail@examplo.com">
                 </div>
 
-                <div class="form-group">
+                <div class="form-row font-fam font-weight-bold">
+                    <div class="col">
+                        <!-- <div class="form-group font-fam font-weight-bold"> -->
+                            <label for="cep" class="font-fam">CEP</label>
+                            <input [(ngModel)]='user.zipCode' class="form-control" type="text" name="cep" id="cep" placeholder="xxxxx-xxx">
+                        <!-- </div> -->
+                    </div>
+                    <div class="col">
+                        <!-- <div class="form-group font-fam font-weight-bold"> -->
+                            <label for="telefone" class="font-fam">Telefone</label>
+                            <input [(ngModel)]='user.phone' class="form-control" type="text" name="telefone" id="telefone"placeholder="(xx) xxxxx-xxxx">
+                        <!-- </div> -->
+                    </div>
+                </div>
+
+                <div class="form-group font-fam font-weight-bold mt-3">
+                    <label for="endereco">Endereço</label>
+                    <input [(ngModel)]='user.address' class="form-control" type="text" name="endereco" id="endereco"
+                        placeholder="Rua , nº , bairro">
+                </div>
+
+                <div class="form-group font-fam font-weight-bold">
                     <label for="senha">Senha</label>
                     <input (input)='confirmarSenha($event)' class="form-control" type="password" name="senha" id="senha"
                         placeholder="Digite sua senha">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group font-fam font-weight-bold">
                     <label for="confirmeSenha">Confirmar Senha</label>
                     <input [(ngModel)]='user.password' class="form-control" type="password" name="confirmeSenha"
                         id="confirmeSenha" placeholder="Confirme sua senha">
                 </div>
 
-                <div class="d-flex justify-content-center">
-                    <button tipe="submit" class="btn button font" (click)='cadastrar()' data-toggle="modal"
-                        data-target="#login">CADASTRAR</button>
+                <div class="d-flex justify-content-center mt-5">
+                    <button tipe="submit" class="btn button font-fam" (click)='cadastrar()' data-toggle="modal" data-target="#login">CADASTRAR</button>
                 </div>
 
             </div>
@@ -83,3 +73,4 @@
         </div>
     </div>
 </div>
+<app-footer></app-footer>

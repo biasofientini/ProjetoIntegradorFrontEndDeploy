@@ -33,5 +33,9 @@ export class NavbarComponent implements OnInit {
     })
   }
 
-}
+  signout() {
+    localStorage.clear()
+    window.location.reload()
+  }
 
+}

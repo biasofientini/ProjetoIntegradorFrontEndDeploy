@@ -9,27 +9,27 @@
             
             </div>
             <div class="modal-body">
-                <div class="form-group">
+                <div class="form-group font-fam">
                     <label for="usuario">Usuário</label>
                     <input [(ngModel)]='user.email' class="form-control" type="text" name="user" id="user"
                         placeholder="seuemail@exemplo.com">
                 </div>
             
-                <div class="form-group">
+                <div class="form-group font-fam">
                     <label for="senha">Senha</label>
                     <input [(ngModel)]='user.password' class="form-control" type="password" name="password"
                         id="password" placeholder="senha">
                 </div>
             
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center font-fam">
                     <button class="btn buttonpadrao" type="submit" data-dismiss="modal" aria-label="Close"
-                        (click)='logar()'>Entrar</button>
+                        (click)='logar()' routerLink='/home'>Entrar</button>
                 </div>
             
                 <hr class="mr-5 mb-5">
-                <p class="text-center">
+                <p class="text-center font-fam font-gray">
                     Não tem uma conta? <a routerLink='/cadastrar' data-dismiss="modal"
-                        aria-label="Close">Cadastre-se</a>
+                        aria-label="Close" class="font-gray">Cadastre-se</a>
                 </p>
             </div>
         </div>

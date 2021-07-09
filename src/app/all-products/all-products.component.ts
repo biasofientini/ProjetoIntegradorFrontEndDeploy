@@ -10,6 +10,9 @@ import { AllProductsService } from '../service/all-products.service';
 export class AllProductsComponent implements OnInit {
 
   listProducts: Product[]
+  maxItemsPage: number = 12
+  currentPage: number = 0
+  numberOfPages: number
 
   constructor(
     private allProductsService: AllProductsService
@@ -21,35 +24,25 @@ export class AllProductsComponent implements OnInit {
 
   findAllProducts() {
     this.allProductsService.getAllProducts().subscribe((resp: Product[]) => {
-      this.listProducts = resp.map(p => {
-        const pp = new Product()
-        pp.id = p.id
-        if(p.category == '1') {
-          pp.category = 'Alimentos'
-        } 
-        else if(p.category == '2'){
-          pp.category = 'Vestuário'
-        }
-        else if(p.category == '3'){
-          pp.category = 'Utensílios'
-        }
-        else if(p.category == '4'){
-          pp.category = 'Acessórios'
-        }
-        else if(p.category == '5'){
-          pp.category = 'Bem Estar'
-        }
-        else{
-          pp.category = ''
-        }
-        pp.description = p.description
-        pp.stock = p.stock
-        pp.name = p.name
-        pp.price = p.price
-        pp.urlImage = p.urlImage
-        return pp
-      })
+      this.listProducts = resp
+      this.numberOfPages = Math.ceil(resp.length/this.maxItemsPage)
     })
+  }
+
+  changePage(index: number) {
+    this.currentPage = index
+  }
+
+  decreasePage() {
+    if(this.currentPage - 1 >= 0){
+      this.currentPage--
+    }
+  }
+
+  increasePage() {
+    if(this.currentPage + 1 < this.numberOfPages){
+      this.currentPage++
+    }
   }
 
 }

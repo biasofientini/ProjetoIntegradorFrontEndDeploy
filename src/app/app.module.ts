@@ -13,7 +13,6 @@ import { HomeComponent } from './home/home.component';
 import { AllProductsComponent } from './all-products/all-products.component';
 import { ProductComponent } from './product/product.component';
 import { ImgComponent } from './img/img.component';
-import { ProductListAdmComponent } from './product-list-adm/product-list-adm.component';
 import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
 import { ListCartsComponent } from './list-carts/list-carts.component';
@@ -23,9 +22,15 @@ import { ListOrdersComponent } from './list-orders/list-orders.component';
 import { AboutComponent } from './about/about.component';
 import { OrderItemComponent } from './order-item/order-item.component';
 import { AdminComponent } from './admin/admin.component';
-import { UsersListAdminComponent } from './users-list-admin/users-list-admin.component';
 import { NewProductComponent } from './new-product/new-product.component';
-import { SearchComponent } from './search/search.component';
+import { AlertComponent } from './alert/alert.component';
+import { ListNewProductComponent } from './list-new-product/list-new-product.component';
+import { NewProductFormComponent } from './new-product-form/new-product-form.component';
+import { ListNewUserComponent } from './list-new-user/list-new-user.component';
+import { NewUserFormComponent } from './new-user-form/new-user-form.component';
+import { StackComponent } from './stack/stack.component';
+import { AccountComponent } from './account/account.component';
+import { NewUserComponent } from './new-user/new-user.component';
 
 
 
@@ -41,7 +46,6 @@ import { SearchComponent } from './search/search.component';
     AllProductsComponent,
     ProductComponent,
     ImgComponent,
-    ProductListAdmComponent,
     CartComponent,
     CartItemComponent,
     ListCartsComponent,
@@ -51,10 +55,16 @@ import { SearchComponent } from './search/search.component';
     AboutComponent,
     OrderItemComponent,
     AdminComponent,
-    UsersListAdminComponent,
     NewProductComponent,
-    SearchComponent
-
+    AlertComponent,
+    ListNewProductComponent,
+    NewProductFormComponent,
+    NewProductComponent,
+    ListNewUserComponent,
+    NewUserFormComponent,
+    StackComponent,
+    AccountComponent,
+    NewUserComponent
   ],
   imports: [
     BrowserModule,

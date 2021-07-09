@@ -1,18 +1,23 @@
-<h1>Carrinhos</h1>
+<app-navbar></app-navbar>
 
-<div class="accordion mx-5" id="accordionExample">
-    <div class="card" *ngFor="let c of listCarts; index as i;">
-        <div class="card-header" id="headingOne">
-            <h2 class="mb-0">
-                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
-                    [attr.data-target]="'#collapse'+i" aria-expanded="true">
-                    {{c.id}}
-                </button>
-            </h2>
-        </div>
+<app-alert></app-alert>
 
-        <div [attr.id]="'collapse'+i" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-           <app-cart [c]="c"></app-cart>
+<div class="container mt-5">
+    <h1>Carrinhos</h1>
+    <div class="accordion" id="accordionExample">
+        <div class="card" *ngFor="let c of listCarts; index as i;">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                        [attr.data-target]="'#collapse'+i" aria-expanded="true">
+                        Carrinho {{ listCarts.length-i }}
+                    </button>
+                </h2>
+            </div>
+    
+            <div [attr.id]="'collapse'+i" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <app-cart (cartEvent)="computeCarts()" [c]="c"></app-cart>
+            </div>
         </div>
     </div>
 </div>
