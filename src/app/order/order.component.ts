@@ -1,3 +1,4 @@
+import { User } from './../model/User';
 import { Order } from '../model/Order';
 import { Component, Input, OnInit } from '@angular/core';
 import { OrderItem } from '../model/OrderItem';
@@ -13,7 +14,7 @@ export class OrderComponent implements OnInit {
   @Input() o: Order
   finalPrice: number = 0
   totalItems: number = 0
-  date: string = "01/01/2021" // precisa mudar
+  date: string
 
   listOrderItems: OrderItem[] = []
 
@@ -33,7 +34,6 @@ export class OrderComponent implements OnInit {
 
   findAllOrderItems() {
     this.finalPrice = this.o.finalPrice
-    console.log(this.o)
     this.authOrderItem.getAllByOrderId(this.o.id).subscribe((listOrderItems: OrderItem[]) => {
       this.listOrderItems = listOrderItems
     })

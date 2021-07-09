@@ -23,10 +23,22 @@ export class OrderService {
   }
 
   getAll(): Observable<Order[]> {
-    return this.http.get<Order[]>(`${URL}/order`, this.token)
+    return this.http.get<Order[]>(`${URL}/order/u`, this.token)
   }
 
   getById(id: number) {
-    return this.http.get<Order[]>(`${URL}/order/${id}`, this.token)
+    return this.http.get<Order[]>(`${URL}/order/u/${id}`, this.token)
+  }
+
+  adminGetAll(): Observable<Order[]> {
+    return this.http.get<Order[]>(`${URL}/order/a`, this.token)
+  }
+
+  adminGetById(id: number) {
+    return this.http.get<Order[]>(`${URL}/order/a/${id}`, this.token)
+  }
+
+  update(order: Order){
+    return this.http.put<Order>(`${URL}/order/${order.id}`, order, this.token)
   }
 }

@@ -18,14 +18,20 @@
                 <th scope="col">Ações</th>
             </tr>
         </thead>
-        <tbody app-cart-item *ngFor="let c of listCartItems;" (productEvent)="computeCart($event)"
-            [cartItem]="c">
+        <tbody app-cart-item *ngFor="let c of listCartItems;" (productEvent)="computeCart($event)" [cartItem]="c">
         </tbody>
     </table>
-    <h4>Preço final: <span class="badge badge-pill badge-light">{{ finalPrice | currency:'BRL'}}</span></h4>
     <h4>Total de itens <span class="badge badge-pill badge-light">{{ totalItems }}</span></h4>
+    <hr>
+    <h5>Preço sem desconto: <span class="badge badge-pill badge-light">{{ finalPriceWithoutDiscount |currency:'BRL'}}</span></h5>
+    <h5>Desconto: <span class="badge badge-pill badge-success">{{ getDiscount() | currency:'BRL'}}</span></h5>
+    <h4 class="mb-5">Preço final: <span class="badge badge-pill badge-secondary">{{ finalPriceWithoutDiscount-getDiscount() | currency:'BRL'}}</span></h4>
 
-    <button *ngIf="!processingOrder && listCartItems.length == 0" class="btn btn-lg btn-outline-success" disabled>Carrinho vazio</button>
-    <button *ngIf="processingOrder && listCartItems.length > 0" class="btn btn-lg btn-outline-success" disabled>Processando compra...</button>
-    <button *ngIf="!processingOrder && listCartItems.length > 0" (click)="checkout()" class="btn btn-lg btn-success">Finalizar compra</button>
+
+    <button *ngIf="!processingOrder && listCartItems.length == 0" class="btn btn-lg btn-outline-success"
+        disabled>Carrinho vazio</button>
+    <button *ngIf="processingOrder && listCartItems.length > 0" class="btn btn-lg btn-outline-success"
+        disabled>Processando compra...</button>
+    <button *ngIf="!processingOrder && listCartItems.length > 0" (click)="checkout()"
+        class="btn btn-lg btn-success">Finalizar compra</button>
 </div>
