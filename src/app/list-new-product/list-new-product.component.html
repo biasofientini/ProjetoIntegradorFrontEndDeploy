@@ -1,6 +1,25 @@
 <div class="container">
     <div class="row">
-        <table class="table table-hover">
+        <div class="col-md-6 bg-success">
+            <div class="form-group col-md-10">
+                <label for="categorias">Filtrar por categoria</label>
+                <select id="categorias" class="custom-select" (change)='findProductsByCategory($event)'>
+                    <option value='0'>Todos</option>
+                    <option value='1'>Alimentos</option>
+                    <option value='2'>Vestuário</option>
+                    <option value='3'>Utensílios</option>
+                    <option value='4'>Acessórios</option>
+                    <option value='5'>Bem-estar</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+    
+
+
+    <div class="row">
+        <table class="table table-hover table-responsive">
             <thead>
                 <tr>
                     <th scope="col">#</th>

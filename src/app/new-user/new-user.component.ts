@@ -3,7 +3,7 @@ import { User } from '../model/User';
 
 
 @Component({
-  selector: 'app-new-user',
+  selector: '[app-new-user]',
   templateUrl: './new-user.component.html',
   styleUrls: ['./new-user.component.css']
 })

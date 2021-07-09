@@ -24,4 +24,8 @@ export class ProductService {
   putProduct(product: Product): Observable<Product> {
     return this.http.put<Product>(`${URL}/product/${product.id}`, product, this.token)
   }
+
+  getProductsByCatogories(category: string): Observable<Product[]>{
+    return this.http.get<Product[]>(`${URL}/product/category/${category}`)
+  }
 }
