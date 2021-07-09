@@ -1,4 +1,4 @@
-.buttonpadrao{
+/* .buttonpadrao{
     top: 695px;
     left: 861px;
     width: 160px;
@@ -9,4 +9,24 @@
 }
 .buttonpadrao:hover{
     color: #fff;
+} */
+.buttonpadrao {
+    top: 695px;
+    left: 861px;
+    width: 160px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #364A15;
+    color: #ffffff;
+    border-radius: 10px;
+}
+.buttonpadrao:hover {
+    color: #ffffff;
+    background-color: #A4B501;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: #364A15;
 }
