@@ -6,7 +6,6 @@ import { AllProductsComponent } from './all-products/all-products.component';
 import { LoginComponent } from './login/login.component';
 import { PreviewProdutoComponent } from './preview-produto/preview-produto.component';
 import { SignupComponent } from './signup/signup.component';
-import { ProductListAdmComponent } from './product-list-adm/product-list-adm.component';
 import { TeamComponent } from './team/team.component';
 import { ListOrdersComponent } from './list-orders/list-orders.component';
 import { AboutComponent } from './about/about.component';
@@ -15,6 +14,7 @@ import { ListNewProductComponent } from './list-new-product/list-new-product.com
 import { NewProductFormComponent } from './new-product-form/new-product-form.component';
 import { StackComponent } from './stack/stack.component';
 import { AccountComponent } from './account/account.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -31,7 +31,6 @@ const routes: Routes = [
   { path: 'sobre', component: AboutComponent },
   { path: 'home', component: HomeComponent},
   { path: 'produtos', component: AllProductsComponent},
-  { path: 'produtoslistadm', component: ProductListAdmComponent},
   { path: 'admin', component: AdminComponent, children: [
     { path: 'produto', component: ListNewProductComponent},
     { path: 'produto/cadastrar', component: NewProductFormComponent}

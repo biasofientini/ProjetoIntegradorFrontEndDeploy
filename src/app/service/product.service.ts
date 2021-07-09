@@ -20,4 +20,8 @@ export class ProductService {
   postProduct(product: Product): Observable<Product> {
     return this.http.post<Product>(`${URL}/product`, product, this.token)
   }
+
+  putProduct(product: Product): Observable<Product> {
+    return this.http.put<Product>(`${URL}/product/${product.id}`, product, this.token)
+  }
 }

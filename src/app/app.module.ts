@@ -13,7 +13,6 @@ import { HomeComponent } from './home/home.component';
 import { AllProductsComponent } from './all-products/all-products.component';
 import { ProductComponent } from './product/product.component';
 import { ImgComponent } from './img/img.component';
-import { ProductListAdmComponent } from './product-list-adm/product-list-adm.component';
 import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
 import { ListCartsComponent } from './list-carts/list-carts.component';
@@ -32,8 +31,6 @@ import { StackComponent } from './stack/stack.component';
 import { AccountComponent } from './account/account.component';
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +43,6 @@ import { AccountComponent } from './account/account.component';
     AllProductsComponent,
     ProductComponent,
     ImgComponent,
-    ProductListAdmComponent,
     CartComponent,
     CartItemComponent,
     ListCartsComponent,
