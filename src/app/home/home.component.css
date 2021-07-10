@@ -67,6 +67,7 @@
     font-family: 'Poiret One', sans-serif;
     color: white;
     font-size: 22pt;
+    text-shadow: 0px 11px 6px #000000a8;
 }
 
 /** FIM CATEGORIAS **/
@@ -113,12 +114,6 @@
     background-size: cover;
 }
 
-.img-size{
-   /* max-height: 400px;
-    max-width: 400px;*/
-    height: auto;
-    width: 100%;
-}
 
 .fc {
     color: #364A15;
@@ -178,4 +173,8 @@
 }
 .cursor{
     cursor: pointer;
+}
+
+.back1{
+    background-image: url(https://i.imgur.com/qjfgrRu.png);
 }

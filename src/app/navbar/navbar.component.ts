@@ -31,7 +31,6 @@ export class NavbarComponent implements OnInit {
       localStorage.setItem("token", resp.token)
       this.autenticado = true
     })
-
   }
 
   signout() {
