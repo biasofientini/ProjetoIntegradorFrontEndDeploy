@@ -37,5 +37,11 @@ export class NavbarComponent implements OnInit {
     localStorage.clear()
     window.location.reload()
   }
-
+  f(x?: any) {
+    console.log(x)
+    if(x.key == 'Enter'){
+      console.log('enter')
+    }
+  }
 }
+
