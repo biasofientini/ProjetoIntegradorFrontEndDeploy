@@ -5,6 +5,7 @@ import { ProductService } from '../service/product.service';
 import { AlertComponent } from '../alert/alert.component';
 
 
+
 @Component({
   selector: 'app-list-new-product',
   templateUrl: './list-new-product.component.html',
@@ -14,8 +15,10 @@ export class ListNewProductComponent implements OnInit {
 
 
   listProducts: Product[] = []
+  p: Product = new Product
   idCategory: number
-  category: string
+  categoryEnum: string
+  categoryName: string
   alert = AlertComponent
 
   constructor(
@@ -30,33 +33,45 @@ export class ListNewProductComponent implements OnInit {
   findProductsByCategory(event: any){
     this.idCategory = Number(event.target.value)
 
-    if(this.idCategory == 0){
+    if(this.idCategory === 0 || this.idCategory === undefined){
       this.findAllProducts()
     }
-    if(this.idCategory == 1){
-      this.category = 'ALIMENTOS'
+    if(this.idCategory === 1){
+      this.categoryEnum = 'ALIMENTOS'
+      this.categoryName = 'alimentos'
     }
-    if(this.idCategory == 2 ){
-      this.category = 'VESTUARIO'
+    if(this.idCategory === 2 ){
+      this.categoryEnum = 'VESTUARIO'
+      this.categoryName = 'vestuário'
     }
-    if(this.idCategory==3){
-      this.category = 'UTENSILIOS'
+    if(this.idCategory === 3){
+      this.categoryEnum = 'UTENSILIOS'
+      this.categoryName = 'utensílios'
     }
-    if(this.idCategory==4){
-      this.category = 'ACESSORIOS'
+    if(this.idCategory === 4){
+      this.categoryEnum = 'ACESSORIOS'
+      this.categoryName = 'acessórios'
     } 
-    if(this.idCategory==5){
-      this.category = 'BEMESTAR'
+    if(this.idCategory === 5){
+      this.categoryEnum = 'BEMESTAR'
+      this.categoryName = 'bem-estar'
     }
-    this.productService.getProductsByCatogories(this.category).subscribe((resp: Product[]) =>{
+    this.productService.getProductsByCatogories(this.categoryEnum).subscribe((resp: Product[]) =>{
     this.listProducts = resp
-    },
-    () => this.alert.setAlert(`Erro!`, ` Erro ao buscar por ${this.category}, possivelmente não há produtos cadastrados nessa categoria.`, 'agora')
+    }, 
+    () => this.alert.setAlert(`Erro!`, ` Erro ao buscar por ${this.categoryName}, não há produtos cadastrados nessa categoria.`, 'agora')
     )
 
   }
   findAllProducts() {
     this.allProductsService.getAllProducts().subscribe((resp: Product[]) => {
+      this.listProducts = resp
+    })
+  }
+
+  findProductsByDescription(){
+
+    this.productService.getProductsByDescription(this.p.description).subscribe((resp: Product[]) => {
       this.listProducts = resp
     })
   }

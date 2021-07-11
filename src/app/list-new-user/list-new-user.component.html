@@ -1,4 +1,23 @@
 <div class="container">
+
+    <div class="row">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="nome" class="mr-2 mb-4" >Pesquisar por nome:</label>
+                    <input [(ngModel)]="user.name" type="text" class="form-control mr-2 mb-4" id="nome"
+                        placeholder="Digite nome do usuário" name="nome">
+
+                </div>
+                <button (click)="findUsersByName()" type="button" class="btn btn-outline-secondary mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </button>
+            </form>
+    </div>
+
     <div class="row">
         <table class="table table-hover table-responsive">
             <thead>
@@ -11,8 +30,8 @@
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
-        <tbody app-new-user *ngFor="let user Of listUsers" [user]="user">
-            </tbody> 
+            <tbody app-new-user *ngFor="let user Of listUsers" [user]="user">
+            </tbody>
         </table>
     </div>
 </div>
