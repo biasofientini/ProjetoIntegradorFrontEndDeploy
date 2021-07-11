@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AlertComponent } from '../alert/alert.component';
 import { User } from '../model/User';
 import { UserService } from '../service/user.service';
 
@@ -9,7 +10,10 @@ import { UserService } from '../service/user.service';
 })
 export class ListNewUserComponent implements OnInit {
 
+
   listUsers: User[] = []
+  user: User = new User
+  alert = AlertComponent
 
   constructor(
     private serviceUser: UserService
@@ -23,5 +27,17 @@ export class ListNewUserComponent implements OnInit {
     this.serviceUser.getAllUsers().subscribe((resp: User[]) =>{
       this.listUsers = resp
     })
+  }
+  findUsersByName(){
+    if(this.user.name === undefined){
+      this.findAllUsers()
+    } else {
+      this.serviceUser.getUsersByName(this.user.name).subscribe((resp: User[]) =>{
+        this.listUsers = resp
+        if(this.listUsers.length==0){
+          this.alert.setAlert(`Usuário não localizado`, ` Erro ao buscar por ${this.user.name}, não há usuários cadastrados com esse nome.`, 'agora')
+        }
+      })
+    }
   }
 }

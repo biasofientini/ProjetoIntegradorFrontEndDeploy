@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../model/User';
@@ -17,6 +17,7 @@ export class UserService {
     headers: new HttpHeaders().set('Authorization', localStorage.getItem("token") || "")
   }
 
+ 
   getById(id: number): Observable<User> {
     return this.http.get<User>(`${URL}/user/u/${id}`, this.token)
   }
@@ -27,6 +28,11 @@ export class UserService {
 
   getAllUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${URL}/user`, this.token)
+  }
+
+  getUsersByName(name: string):Observable<User[]>{
+    let  nameUser = new HttpParams().set('name', name)
+    return this.http.get<User[]>(`${URL}/user?${nameUser}`, this.token)
   }
 
   postUser(user: User, id: number): Observable<User> {
