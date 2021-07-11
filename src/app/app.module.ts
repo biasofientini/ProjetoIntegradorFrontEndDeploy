@@ -34,6 +34,14 @@ import { AdminListOrdersComponent } from './admin-list-orders/admin-list-orders.
 import { AdminOrderComponent } from './admin-order/admin-order.component';
 import { AdminOrderItemComponent } from './admin-order-item/admin-order-item.component';
 import { NewUserComponent } from './new-user/new-user.component';
+import { ProductHorizontalComponent } from './product-horizontal/product-horizontal.component';
+import { ProductsCategoryComponent } from './products-category/products-category.component';
+import { AlimentosComponent } from './category/alimentos/alimentos.component';
+import { BemestarComponent } from './category/bemestar/bemestar.component';
+import { VestuarioComponent } from './category/vestuario/vestuario.component';
+import { UtensiliosComponent } from './category/utensilios/utensilios.component';
+import { AcessoriosComponent } from './category/acessorios/acessorios.component';
+
 
 
 @NgModule({
@@ -69,7 +77,15 @@ import { NewUserComponent } from './new-user/new-user.component';
     AdminListOrdersComponent,
     AdminOrderComponent,
     AdminOrderItemComponent,
-    NewUserComponent
+    NewUserComponent,
+    ProductHorizontalComponent,
+    ProductsCategoryComponent,
+    AlimentosComponent,
+    BemestarComponent,
+    VestuarioComponent,
+    UtensiliosComponent,
+    AcessoriosComponent
+
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,7 @@ export class NavbarComponent implements OnInit {
   user: User = new User
   autenticado = false
 
+
   constructor(
     private authService: AuthService,
     private router: Router
@@ -25,6 +26,7 @@ export class NavbarComponent implements OnInit {
       this.autenticado = true
     }
   }
+
 
   logar() {
     this.authService.logar(this.user).subscribe((resp: User) => {

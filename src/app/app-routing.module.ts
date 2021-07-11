@@ -17,6 +17,12 @@ import { NewUserFormComponent } from './new-user-form/new-user-form.component';
 import { StackComponent } from './stack/stack.component';
 import { AccountComponent } from './account/account.component';
 import { ListNewUserComponent } from './list-new-user/list-new-user.component';
+import { ProductsCategoryComponent } from './products-category/products-category.component';
+import { AlimentosComponent } from './category/alimentos/alimentos.component';
+import { BemestarComponent } from './category/bemestar/bemestar.component';
+import { VestuarioComponent } from './category/vestuario/vestuario.component';
+import { AcessoriosComponent } from './category/acessorios/acessorios.component';
+import { UtensiliosComponent } from './category/utensilios/utensilios.component';
 
 
 const routes: Routes = [
@@ -39,6 +45,21 @@ const routes: Routes = [
     { path: 'pedidos', component: AdminListOrdersComponent },
     { path: 'usuario/cadastrar', component: NewUserFormComponent},
     { path: 'usuario', component: ListNewUserComponent}
+  ]},
+  { path: 'produtos/alimentos', component: AlimentosComponent, children: [
+    { path: 'categoria/:id', component: ProductsCategoryComponent}
+  ]},
+  { path: 'produtos/bemestar', component: BemestarComponent, children: [
+    { path: 'categoria/:id', component: ProductsCategoryComponent}
+  ]},
+  { path: 'produtos/vestuario', component: VestuarioComponent, children: [
+    { path: 'categoria/:id', component: ProductsCategoryComponent}
+  ]},
+  { path: 'produtos/acessorios', component: AcessoriosComponent, children: [
+    { path: 'categoria/:id', component: ProductsCategoryComponent}
+  ]},
+  { path: 'produtos/utensilios', component: UtensiliosComponent, children: [
+    { path: 'categoria/:id', component: ProductsCategoryComponent}
   ]}
 ];
 
