@@ -79,21 +79,16 @@ export class NewUserFormComponent implements OnInit {
         this.user = resp
         if (this.checkboxAdmin.nativeElement.checked == true) {
           alert('Novo administrador cadastrado no sistema!')
-          this.user = new User()
-          this.passwordInput.nativeElement.value = ''
+          window.location.reload()
         } else if (this.checkboxAdmin.nativeElement.checked == false) {
           alert('Novo usuário cadastrado!')
-          this.user = new User()
-          this.passwordInput.nativeElement.value = ''
+          window.location.reload()
         }
       }, () => this.alert.setAlert(`Erro ao cadastrar`, `O email ${this.user.email}, já está cadastrado em nosso sistema.`, 'agora')
       )
     }
   }
   cancel() {
-    this.user = new User()
-    this.passwordInput.nativeElement.value = ''
-    this.checkboxAdmin.nativeElement.checked = false
-    this.roleId=2
+    window.location.reload()
   }
 }

@@ -1,0 +1,30 @@
+<app-alert></app-alert>
+<div class="container mr-0">
+    <div class="row d-flex justify-content-center mr-0"> 
+        <div *ngFor="let p of listProducts.slice(maxItemsPage*currentPage, (currentPage+1)*maxItemsPage)">
+            <app-product-horizontal [p]="p"></app-product-horizontal>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row d-flex justify-content-center align-items-center">
+        <nav aria-label="Navegação de página exemplo">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" (click)='decreasePage()' aria-label="Anterior" style="color: black;">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                </li>
+                <li *ngFor="let _ of [].constructor(numberOfPages); index as i" (click)='changePage(i)' class="{{'page-item'+' '+(i==currentPage?'active':'')}}"><a class="page-link" style="color: black;">{{i+1}}</a></li>
+                <li class="page-item">
+                    <a class="page-link" (click)='increasePage()' aria-label="Próximo" style="color: black;">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Próximo</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

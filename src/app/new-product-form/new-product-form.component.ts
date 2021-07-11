@@ -56,11 +56,12 @@ export class NewProductFormComponent implements OnInit {
     this.productService.postProduct(this.product).subscribe((resp: Product) => {
       this.product = resp
       this.alert.setAlert('Produto cadastrado', `${this.product.name} cadastrado com sucesso`, 'agora', 2000)
-      this.product = new Product()
+      window.location.reload()//dar reload na página
+     
     })
   }
 
   cancel(){
-    this.product = new Product()
+    window.location.reload()
   }
 }

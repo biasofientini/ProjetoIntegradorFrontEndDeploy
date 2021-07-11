@@ -1,17 +1,17 @@
-import { CartItem } from './../model/CartItem';
-import { CartService } from './../service/cart.service';
-import { CartItemService } from '../service/cart-item.service';
 import { Component, Input, OnInit } from '@angular/core';
-import { Product } from '../model/Product';
 import { AlertComponent } from '../alert/alert.component';
 import { Cart } from '../model/Cart';
+import { CartItem } from '../model/CartItem';
+import { Product } from '../model/Product';
+import { CartItemService } from '../service/cart-item.service';
+import { CartService } from '../service/cart.service';
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  selector: 'app-product-horizontal',
+  templateUrl: './product-horizontal.component.html',
+  styleUrls: ['./product-horizontal.component.css']
 })
-export class ProductComponent implements OnInit {
+export class ProductHorizontalComponent implements OnInit {
 
   @Input() p: Product
   cartItem: CartItem | null = null
@@ -21,8 +21,7 @@ export class ProductComponent implements OnInit {
   constructor(
     private authCartItem: CartItemService,
     private authCart: CartService
-  ) {}
-
+  ) { }
 
   getCategoryName(category: number): string {
     if(category == 1) {
@@ -44,8 +43,8 @@ export class ProductComponent implements OnInit {
       return''
     }
   }
-
   ngOnInit() {
+
   }
 
   increaseQty(){
@@ -64,6 +63,7 @@ export class ProductComponent implements OnInit {
         )
       })
       this.cartItem = null
+
     }
     else if(this.qty > 1){
       this.qty--
