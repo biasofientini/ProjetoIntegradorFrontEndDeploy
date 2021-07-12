@@ -9,8 +9,7 @@
     transition: 0.3s;
     /* opacity: 0.8;*/
     filter: blur(2.5px);
-    transform: scale(1.000); /*AQUI QUE ESTA GERANDO BARRA LATERAL SE SCALE >= 1.001*/
-
+    transform: scale(1.0025);
 }
 .container-video:hover > h1{
     transition: 1s;

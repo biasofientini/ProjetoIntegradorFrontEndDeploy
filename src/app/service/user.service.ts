@@ -39,8 +39,8 @@ export class UserService {
     return this.http.post<User>(`${URL}/user/role/${id}`, user)
   }
 
-  putUser(user: User): Observable<User> {
-    return this.http.put<User>(`${URL}/user/${user.id}`, user, this.token)
+  putUser(user: User, id: number){
+    return this.http.put<User>(`${URL}/user/${id}`, user, this.token)
   }
 
   deleteUser(id: number) :Observable<any>{

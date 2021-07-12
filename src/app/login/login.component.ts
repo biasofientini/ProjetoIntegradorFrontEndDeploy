@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
 
   logar() {
     this.authService.logar(this.user).subscribe((resp: User) => {
-      console.log(resp)
       localStorage.setItem("token", resp.token)
       localStorage.setItem("idUser", resp.id.toString())
       window.location.reload()

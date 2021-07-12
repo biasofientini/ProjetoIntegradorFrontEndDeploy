@@ -1,3 +1,4 @@
+import { Component, OnInit } from '@angular/core';
 import { ElementRef } from '@angular/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AlertComponent } from '../alert/alert.component';
@@ -55,6 +56,22 @@ export class NewUserFormComponent implements OnInit {
     return true
   }
 
+  admin(event: any) {
+    this.roleId = Number(event.target.value)
+  }
+  
+  newUser(){
+    this.serviceUser.postUser(this.user, this.roleId).subscribe((resp: User) =>{
+    this.user = resp
+    this.user = new User()
+    if(this.roleId==1){
+      this.alert.setAlert('😁 Sucesso!', `O administrador ${this.user.name} foi cadastrado na Lifeshop!`, 'agora', 3000)
+    }
+    if(this.roleId ==2){
+      this.alert.setAlert('😁 Sucesso!', `O usuário ${this.user.name} foi cadastrado na Lifeshop!`, 'agora', 3000)
+    }
+  }
+                                                                
   confirmarSenha(event: any) {
     this.confirmeSenha = event.target.value
   }

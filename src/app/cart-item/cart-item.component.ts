@@ -13,7 +13,8 @@ interface Item {
   productQty: number,
   name: string,
   price: number,
-  urlImage: string
+  urlImage: string,
+  productQtyAvailable: number
 }
 
 @Component({
@@ -32,7 +33,8 @@ export class CartItemComponent implements OnInit {
     productQty: 0,
     name: "",
     price: 0,
-    urlImage: ""
+    urlImage: "",
+    productQtyAvailable: 0
   }
 
   constructor(
@@ -93,6 +95,7 @@ export class CartItemComponent implements OnInit {
       this.item.name = product.name
       this.item.price = product.price
       this.item.urlImage = product.urlImage
+      this.item.productQtyAvailable = product.stock
       this.productEvent.emit({
         price: this.item.price,
         qty: this.item.productQty
