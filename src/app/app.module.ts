@@ -41,6 +41,7 @@ import { BemestarComponent } from './category/bemestar/bemestar.component';
 import { VestuarioComponent } from './category/vestuario/vestuario.component';
 import { UtensiliosComponent } from './category/utensilios/utensilios.component';
 import { AcessoriosComponent } from './category/acessorios/acessorios.component';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -84,7 +85,8 @@ import { AcessoriosComponent } from './category/acessorios/acessorios.component'
     BemestarComponent,
     VestuarioComponent,
     UtensiliosComponent,
-    AcessoriosComponent
+    AcessoriosComponent,
+    SearchComponent
 
   ],
   imports: [

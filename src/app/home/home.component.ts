@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Product } from '../model/Product';
+import { AllProductsService } from '../service/all-products.service';
 
 @Component({
   selector: 'app-home',
@@ -8,18 +10,27 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  listProducts: Product[]
+
   constructor(
-    private router: Router
+    private router: Router,
+    private allProductsService: AllProductsService
   ) { }
 
   ngOnInit(): void {
+    this.findAllProducts()
   }
 
+  findAllProducts() {
+    this.allProductsService.getAllProducts().subscribe((resp: Product[]) => {
+      this.listProducts = resp
+    })
+  }
   allProducts() {
     this.router.navigate(['/produtos'])
   }
 
-  desvendandoStack(){
+  desvendandoStack() {
     this.router.navigate(['/stack'])
   }
 

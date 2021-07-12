@@ -23,6 +23,7 @@ import { BemestarComponent } from './category/bemestar/bemestar.component';
 import { VestuarioComponent } from './category/vestuario/vestuario.component';
 import { AcessoriosComponent } from './category/acessorios/acessorios.component';
 import { UtensiliosComponent } from './category/utensilios/utensilios.component';
+import { SearchComponent } from './search/search.component';
 
 
 const routes: Routes = [
@@ -39,6 +40,7 @@ const routes: Routes = [
   { path: 'sobre', component: AboutComponent },
   { path: 'home', component: HomeComponent},
   { path: 'produtos', component: AllProductsComponent},
+  { path: 'search', component: SearchComponent},
   { path: 'admin', component: AdminComponent, children: [
     { path: 'produto', component: ListNewProductComponent},
     { path: 'produto/cadastrar', component: NewProductFormComponent},
@@ -61,6 +63,7 @@ const routes: Routes = [
   { path: 'produtos/utensilios', component: UtensiliosComponent, children: [
     { path: 'categoria/:id', component: ProductsCategoryComponent}
   ]}
+  
 ];
 
 @NgModule({
