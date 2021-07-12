@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../model/User';
 import { AuthService } from '../service/auth.service';
@@ -9,9 +9,11 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  @ViewChild('searchComponent') searchComponent: ElementRef
 
   user: User = new User
   autenticado = false
+  search: string
 
 
   constructor(
@@ -20,9 +22,9 @@ export class NavbarComponent implements OnInit {
 
   ) { }
 
-  ngOnInit(){
-    window.scroll(0,0)
-    if((localStorage.getItem('token') || "") != '') {
+  ngOnInit() {
+    window.scroll(0, 0)
+    if ((localStorage.getItem('token') || "") != '') {
       this.autenticado = true
     }
   }
@@ -39,10 +41,14 @@ export class NavbarComponent implements OnInit {
     localStorage.clear()
     window.location.reload()
   }
+  //lógica para fazer o search
   f(x?: any) {
     console.log(x)
-    if(x.key == 'Enter'){
-      console.log('enter')
+    if (x.key == 'Enter') {
+      this.search = this.searchComponent.nativeElement.value
+      alert(this.search)
+      this.router.navigate(['/search'])
+      //console.log('enter')
     }
   }
 }

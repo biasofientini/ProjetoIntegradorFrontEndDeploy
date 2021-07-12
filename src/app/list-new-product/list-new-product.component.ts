@@ -33,7 +33,7 @@ export class ListNewProductComponent implements OnInit {
   findProductsByCategory(event: any){
     this.idCategory = Number(event.target.value)
 
-    if(this.idCategory === 0 || this.idCategory === undefined){
+    if(this.idCategory === 0 || typeof this.idCategory === 'undefined'){
       this.findAllProducts()
     }
     if(this.idCategory === 1){
@@ -56,6 +56,7 @@ export class ListNewProductComponent implements OnInit {
       this.categoryEnum = 'BEMESTAR'
       this.categoryName = 'bem-estar'
     }
+
     this.productService.getProductsByCatogories(this.categoryEnum).subscribe((resp: Product[]) =>{
     this.listProducts = resp
     }, 
