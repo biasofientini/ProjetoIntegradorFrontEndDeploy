@@ -38,7 +38,7 @@ export class ProductComponent implements OnInit {
       return 'Acessórios'
     }
     else if(category == 5){
-      return 'Bem Estar'
+      return 'Bem-estar'
     }
     else{
       return''

@@ -4,7 +4,7 @@
         </app-img>
     </td>
     <td>{{p.name}}</td>
-    <td>{{p.description}}</td>
+    <td>{{p.description.substring(0,15)+"..."}}</td>
     <td>{{p.stock}}</td>
     <td>{{p.price | currency:'BRL' }}</td>
     <td><span class="badge badge-pill badge-secondary">{{ getCategoryName(p.category) }}</span></td>
@@ -54,7 +54,7 @@
                     <div class="card-body d-flex align-items-end ">
                         <div class="text-center" style="width: 16rem;">
                             <h5 class="card-title">{{p.name}}</h5>
-                            <p class="card-text">{{p.description}}</p>
+                            <p class="card-text">{{p.description.substring(0,25)+"..."}}</p>
                             <p>
                                 <span class="badge badge-pill badge-secondary">{{ getCategoryName(p.category) }}</span>
                             </p>
@@ -74,7 +74,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">ALTERAR DADOS DO PRODUTO</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Alterar Dados do Produto</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -126,6 +126,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
+                        <!-- card product-->
                         <div class="card mx-4 my-4 d-flex justify-content-center align-items-center testeAnimacao1"
                             style="width: 18rem; height: 25rem;">
                             <app-img [class]="'card-img-top'" [style]="'height: 10rem; width: 18rem;'"
@@ -134,7 +135,7 @@
                             <div class="card-body d-flex align-items-end ">
                                 <div class="text-center" style="width: 16rem;">
                                     <h5 class="card-title">{{p.name}}</h5>
-                                    <p class="card-text">{{p.description}}</p>
+                                    <p class="card-text">{{p.description.substring(0,25)+"..."}}</p>
                                     <p>
                                         <span class="badge badge-pill badge-secondary">{{ getCategoryName(p.category)
                                             }}</span>
@@ -145,12 +146,12 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary" (click) = 'updateProduct()' data-dismiss="modal">Salvar mudanças</button>
+                <button type="button" class="btn btn-primary" (click)='updateProduct()' data-dismiss="modal">Salvar
+                    mudanças</button>
             </div>
         </div>
     </div>

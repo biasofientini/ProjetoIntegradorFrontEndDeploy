@@ -1,6 +1,39 @@
 <div class="container">
+    <div class="row mb-3">
+        <div class="col-md-6  d-flex justify-content-start">
+            <div class="form-group col-md-8 ml-0 p-0">
+                <label for="categorias">Pesquisar por categoria:</label>
+                <select id="categorias" class="form-control" (change)='findProductsByCategory($event)'>
+                    <option value='0'>Todos os produtos</option>
+                    <option value='1'>Alimentos</option>
+                    <option value='2'>Vestuário</option>
+                    <option value='3'>Utensílios</option>
+                    <option value='4'>Acessórios</option>
+                    <option value='5'>Bem-estar</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <p class="mb-2 d-flex justify-content-start" >Pesquisar por descrição:</p>
+            <form class="form-inline d-flex justify-content-start">
+                <div class="form-group">
+                    <input [(ngModel)]="p.description" type="text" class="form-control" style="width: 260px;"  id="nome" placeholder="Digite descrição produto" name="nome">
+                </div>
+                <button (click)="findProductsByDescription()" type="button" class="btn btn-outline-secondary ml-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+    </div>
+
     <div class="row">
-        <table class="table table-hover">
+        <table class="table table-hover table-responsive">
             <thead>
                 <tr>
                     <th scope="col">#</th>

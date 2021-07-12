@@ -8,10 +8,10 @@
             <ul class="list-group">
                 <li class="list-group-item active">Produtos</li>
                 <button class="list-group-item" routerLink="produto/cadastrar" routerLinkActive="bg-secondary" [routerLinkActiveOptions]="{exact:true}">
-                    Criar
+                    Cadastrar
                 </button>
                 <button class="list-group-item" routerLink="produto" routerLinkActive="bg-secondary" [routerLinkActiveOptions]="{exact:true}">
-                    Todos
+                    Listar
                 </button>
                 <li class="list-group-item active">Pedidos</li>
                 <button class="list-group-item" routerLink="pedidos" routerLinkActive="bg-secondary" [routerLinkActiveOptions]="{exact:true}">
@@ -22,7 +22,7 @@
                     Cadastrar
                 </button>
                 <button class="list-group-item" routerLink="usuario" routerLinkActive="bg-secondary" [routerLinkActiveOptions]="{exact:true}">
-                    Todos
+                    Listar
                 </button>
               </ul>
         </div>
@@ -30,5 +30,5 @@
             <router-outlet></router-outlet>
         </div>
     </div>
-
 </div>
+<app-footer></app-footer>
