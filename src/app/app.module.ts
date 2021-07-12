@@ -34,6 +34,7 @@ import { AdminListOrdersComponent } from './admin-list-orders/admin-list-orders.
 import { AdminOrderComponent } from './admin-order/admin-order.component';
 import { AdminOrderItemComponent } from './admin-order-item/admin-order-item.component';
 import { NewUserComponent } from './new-user/new-user.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { NewUserComponent } from './new-user/new-user.component';
     AdminListOrdersComponent,
     AdminOrderComponent,
     AdminOrderItemComponent,
-    NewUserComponent
+    NewUserComponent,
+    EditUserComponent,
   ],
   imports: [
     BrowserModule,

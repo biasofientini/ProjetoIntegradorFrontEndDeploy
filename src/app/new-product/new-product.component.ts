@@ -86,7 +86,7 @@ export class NewProductComponent implements OnInit {
     if (!this.validateInput()) return
     this.productService.putProduct(this.p).subscribe((resp: Product) =>{
       this.p = resp
-      alert('Alterações realizadas com sucesso!')
+      this.alert.setAlert('🎉 Tudo certo', `O produto ${this.p.name} foi atualizado com sucesso!`, 'agora', 3000)
     })
   }
 

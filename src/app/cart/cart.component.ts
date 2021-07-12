@@ -65,6 +65,11 @@ export class CartComponent implements OnInit {
       this.authCart.post().subscribe(() => {
         this.cartEvent.emit()
       })
+    },
+    () => {
+      this.processingOrder = false
+      this.findAllCartItems()
+      this.alert.setAlert('Erro ao efetuar compra', 'Por favor, selecione uma válida para cada item', 'agora')
     })
   }
 

@@ -1,8 +1,9 @@
-<tr #component class="collapse show">
+<tr #component class="{{ 'collapse show' + ' ' + (item.productQtyAvailable < item.productQty ? 'bg-warning': '' ) }}">
     <td>
         <app-img [style]="'height: 64px;width: 64px;object-fit: cover;'" [class]="'rounded'" [src]="item.urlImage"></app-img>
     </td>
     <td>{{item.name}}</td>
+    <td>{{item.productQtyAvailable}}</td>
     <td>
         <div class="input-group mb-3">
             <div class="input-group-prepend">

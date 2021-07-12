@@ -12,4 +12,8 @@ export class StackComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  topo(){
+    window.scroll(0,0)
+  }
+
 }

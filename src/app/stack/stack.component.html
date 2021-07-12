@@ -1,3 +1,108 @@
-<p>Como Lifehsop carrega as imagens que você visualiza?</p>
-<p>Como os seus produtos são adicionados no seu carrinho?</p>
-<p>Curiosidades de UX</p>
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 justify-content-center align-items-center my-4">
+            <h1 class="text-center font1 font-weight-bold font-green my-4">A Lifeshop que você não reparou</h1>
+
+            <!-- <p class="text-justify font-fam font-gray my-4" style="font-size: 18px">Algumas coisas nos parecem tão naturais que as vezes nem percebemos, correto? É como quando caminhamos no parque em uma manhã ensolarada ou passamos um tempo na praia, em ambos os cenários, algo mágico está acontecendo: a luz do sol penetrando nossa pele, a brisa do mar provocando sensações sensoriais até ao menor fio de cabelo presente em nós. E muito embora a gente se sinta bem instantaneamente nesses ambientes, talvez não consigamos identificar o porquê. O motivo disso, é porque não reparamos em coisas simples que trazem essas sensações para nós, como o sol e a brisa do mar, apenas sentimos sem nos questionar de onde vêm esses sentimentos.</p> -->
+
+            <div class="row align-items-center">
+                <div class="col-md-9">
+                    <p class="text-justify font-fam font-gray my-4" style="font-size: 18px">Algumas coisas nos parecem
+                        tão naturais que as vezes nem percebemos, correto? É como quando caminhamos no parque em uma
+                        manhã ensolarada ou passamos um tempo na praia, em ambos os cenários, algo mágico está
+                        acontecendo: a luz do sol penetrando nossa pele, a brisa do mar provocando sensações sensoriais
+                        até ao menor fio de cabelo presente em nós.</p>
+                </div>
+                <div class="col-md-3 p-0">
+                    <app-img [class]="'card-img-top'" [src]="'https://i.imgur.com/UDZMo0s.png'"></app-img>
+                </div>
+            </div>
+
+            <p class="text-justify font-fam font-gray my-4" style="font-size: 18px">E muito embora a gente se sinta bem
+                instantaneamente nesses ambientes, talvez não consigamos identificar o porquê. O motivo disso, é porque
+                não reparamos em coisas simples que trazem essas sensações para nós, como o sol e a brisa do mar, apenas
+                sentimos sem nos questionar de onde vêm esses sentimentos. A Lifeshop é como esses ambientes, onde nos
+                sentimos confortáveis e talvez não saibamos o porquê. Mas fique tranquilo, nós te contamos!</p>
+
+            <h2 class="font1 font-weight-bold font-green my-3 mt-5">Como Lifehsop carrega as imagens que você visualiza?
+            </h2>
+            <p class="text-justify font-fam font-gray mb-5" style="font-size: 18px">Todas as imagens da Lifeshop são
+                carregadas através de Skeleton, mas o que seria isso e qual a necessidade disso? O Skeleton proporciona
+                melhor experiência ao usuário, que ao ver uma página onde nada parece estar acontecendo, pode acabar
+                até,
+                desistindo de permanecer na página até que ela carregue. Pensando nisso, a Lifeshop decidiu implementar
+                o
+                skeleton, um efeito de carregamento que transmite a impressão de que algo está ocorrendo até que as
+                imagens
+                da página sejam efetivamente carregadas e possam ser visualizadas. Dessa forma, garantindo melhor
+                experiência ao usuário. Nas imagens abaixo, podemos ver o que é o Skeleton e qual é sua funcionalidade:
+            </p>
+            <div class="row align-items-center">
+                <div class="col-md-9">
+                    <app-img [class]="'card-img-top'" [src]="'https://i.imgur.com/Echur9Q.png'"></app-img>
+                </div>
+                <div class="col-md-3">
+                    <app-img [class]="'card-img-top'" [src]="'https://i.imgur.com/7UcIgbj.png'"></app-img>
+                </div>
+            </div>
+            <h2 class="font1 font-weight-bold font-green my-3 mt-5">Como os seus produtos são adicionados no seu
+                carrinho?
+                <img src="https://i.imgur.com/ljP6UYk.gif" style="width: 50px; height: 50px;">
+            </h2>
+            <p class="text-justify font-fam font-gray mb-5" style="font-size: 18px">Como todo ecommerce, a Lifeshop não
+                poderia ser diferente ao representar seu carrinho de compras. Muito embora pareça muito simples
+                adicionar um
+                produto e ver ele no carrinho, o que acontece por trás disso envolve um trabalho bem mais complexo,
+                desde
+                pensar nas informações que serão guardadas no banco de dados até o visual desse componente. O carrinho
+                Lifeshop adiciona, através de lógicas implementadas tanto no Back End quanto no Front End, os produtos
+                que o
+                usuário desejar adicionar clicando em um botão de comprar presente nas visualizações dos produtos. Ao
+                clicar, o produto é adicionado no carrinho e essa informação é passada de tal forma, que fique realmente
+                armazenada. Assim, tudo que o cliente adicionar, se manterá intacto até que se tome e decisão de comprar
+                ou
+                retirar aquele item do carrinho! Dessa forma, aumentamos a autonomia do usuário e, também, a eficiência
+                do
+                ecommerce com dados persistentes em vez de temporários.</p>
+            <div class="row align-items-center">
+                <div class="col-md-9">
+                    <h2 class="font1 font-weight-bold font-green my-3">Curiosidades de UX</h2>
+                    <p class="text-justify font-fam font-gray mb-3" style="font-size: 18px">Lifeshop preza muito pela
+                        experiência
+                        que o usuário terá, desde funcionalidades notáveis até as mais minuciosas. Se ainda não reparou,
+                        tire um
+                        momento para analisar com calma cada pequeno detalhe da Lifeshop. Uma dica: tente adicionar um
+                        produto
+                        ao
+                        seu carrinho e veja o que acontece!</p>
+                    <p class="text-justify font-fam font-gray mb-3" style="font-size: 18px">Percebeu? Ao adicionar algo
+                        ao
+                        carrinho,
+                        ao finalizar uma compra, ao se cadastrar, ao excluir algo do carrinho e entre outras ações, um
+                        alerta é
+                        enviado na sua tela! Mas, não qualquer alerta! Prezando pelo visual e a experiência que isso
+                        poderia
+                        trazer
+                        ao cliente, a Lifeshop resolveu implementar o Toast! Um alerta estilizado, rápido e eficaz,
+                        trazendo
+                        pequenas mensagens em pequenas caixas, facilitando a leitura, informando o usuário e o mais
+                        interessante:
+                        sem causar aborrecimentos, pois ele se retira sozinho da tela em poucos segundos!</p>
+                </div>
+                <div class="col-md-3">
+                    <app-img [class]="'card-img-top'" [src]="'https://i.imgur.com/2kaHIJt.png'"
+                        style="width: 280px; height: 280px;"></app-img>
+                </div>
+            </div>
+            <p class="text-justify font-fam font-gray mb-5" style="font-size: 18px">Além do Skeleton, que também
+                proporciona
+                uma experiência agradável ao usuário e o Toast, a Lifeshop em si, como um todo, fornece grande atenção e
+                cuidado aos detalhes de cada mínima implementação, sabemos da importância de cada uma no nosso conjunto
+                e
+                esperamos que você tnha tido uma ótima experiência utilizando nosso ecommerce!</p>
+            <a (click)='topo()' style="cursor: pointer; text-decoration: none;" class="font1 font-green justify-content-end d-flex">Voltar ao topo</a>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

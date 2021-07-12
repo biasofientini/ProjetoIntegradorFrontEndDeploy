@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../model/User';
 import { UserService } from '../service/user.service';
 
@@ -12,6 +13,7 @@ export class AccountComponent implements OnInit {
   user: User = new User()
 
   constructor(
+    private router: Router,
     private authUserService: UserService
   ) { }
 
@@ -21,7 +23,6 @@ export class AccountComponent implements OnInit {
 
   getUserProfile() {
     this.authUserService.getById(Number(localStorage.getItem("idUser") || "")).subscribe((resp: User) => {
-      console.log(resp)
       this.user.email = resp.email
       this.user.name = resp.name
       this.user.points = resp.points
@@ -30,5 +31,4 @@ export class AccountComponent implements OnInit {
       this.user.address = resp.address
     })
   }
-
 }
