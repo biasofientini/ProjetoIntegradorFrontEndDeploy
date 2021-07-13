@@ -60,3 +60,7 @@
 .button:hover {
     color: #fff;
 }
+
+a:hover {
+    cursor: pointer;
+}

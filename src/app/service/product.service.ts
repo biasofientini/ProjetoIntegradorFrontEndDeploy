@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from '../model/Product';
@@ -23,5 +23,14 @@ export class ProductService {
 
   putProduct(product: Product): Observable<Product> {
     return this.http.put<Product>(`${URL}/product/${product.id}`, product, this.token)
+  }
+
+  getProductsByCatogories(category: string): Observable<Product[]>{
+    return this.http.get<Product[]>(`${URL}/product/category/${category}`)
+  }
+
+  getProductsByDescription(description: string):Observable<Product[]>{
+    let  descriptionP = new HttpParams().set('description', description)
+    return this.http.get<Product[]>(`${URL}/product?${descriptionP}`)
   }
 }
