@@ -52,8 +52,9 @@ export class ProductsCategoryComponent implements OnInit {
       this.categoryName = 'bem-estar'
     }
     this.productService.getProductsByCatogories(this.categoryEnum).subscribe((resp: Product[]) =>{
-    this.listProducts = resp
-    this.numberOfPages = Math.ceil(resp.length/this.maxItemsPage)
+      resp = resp.filter((p: Product) => p.stock > 0)
+      this.listProducts = resp
+      this.numberOfPages = Math.ceil(resp.length/this.maxItemsPage)
     }, 
     () => this.alert.setAlert(`Erro!`, ` Erro ao buscar por ${this.categoryName}, não há produtos cadastrados nessa categoria.`, 'agora')
     )
