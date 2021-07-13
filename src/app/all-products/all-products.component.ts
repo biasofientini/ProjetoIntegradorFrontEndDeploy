@@ -24,6 +24,7 @@ export class AllProductsComponent implements OnInit {
 
   findAllProducts() {
     this.allProductsService.getAllProducts().subscribe((resp: Product[]) => {
+      resp = resp.filter((p: Product) => p.stock > 0)
       this.listProducts = resp
       this.numberOfPages = Math.ceil(resp.length/this.maxItemsPage)
     })

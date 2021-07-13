@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
+import { Observable, Subject } from 'rxjs';
+import { of } from 'rxjs';
 import { User } from '../model/User';
 import { AuthService } from '../service/auth.service';
 
@@ -9,18 +11,18 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
   @ViewChild('searchComponent') searchComponent: ElementRef
 
   user: User = new User
   autenticado = false
-  search: string
+  static searchObs = new Subject<string>()
+  static search: string = ''
   admin: boolean = false
-
 
   constructor(
     private authService: AuthService,
     private router: Router
-
   ) { }
 
   ngOnInit() {
@@ -45,23 +47,13 @@ export class NavbarComponent implements OnInit {
     localStorage.clear()
     window.location.reload()
   }
-  //lógica para fazer o search
+  
   f(x?: any) {
-    console.log(x)
     if (x.key == 'Enter') {
-      this.search = this.searchComponent.nativeElement.value
-      let navigationExtras: NavigationExtras = { state: { example: this.search } };
+      NavbarComponent.search = this.searchComponent.nativeElement.value
+      let navigationExtras: NavigationExtras = { state: { example: NavbarComponent.search} };
+      NavbarComponent.searchObs.next(this.searchComponent.nativeElement.value)
       this.router.navigate(['/search'], navigationExtras);
-      console.log(this.search)
-      if (this.router.url == '/search') {
-        console.log('chegou aqui')
-        console.log(this.search)
-        this.router.navigate(['/search'], navigationExtras);
-        this.f(this.search) //recursão
-        
-      }
-      //this.router.navigate(['/search'])
-      //console.log('enter')*/
     }
   }
 }
