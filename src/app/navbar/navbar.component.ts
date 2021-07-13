@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { User } from '../model/User';
 import { AuthService } from '../service/auth.service';
 
@@ -46,9 +46,18 @@ export class NavbarComponent implements OnInit {
     console.log(x)
     if (x.key == 'Enter') {
       this.search = this.searchComponent.nativeElement.value
-      alert(this.search)
-      this.router.navigate(['/search'])
-      //console.log('enter')
+      let navigationExtras: NavigationExtras = { state: { example: this.search } };
+      this.router.navigate(['/search'], navigationExtras);
+      console.log(this.search)
+      if (this.router.url == '/search') {
+        console.log('chegou aqui')
+        console.log(this.search)
+        this.router.navigate(['/search'], navigationExtras);
+        this.f(this.search) //recursão
+        
+      }
+      //this.router.navigate(['/search'])
+      //console.log('enter')*/
     }
   }
 }
