@@ -12,4 +12,8 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  topo(){
+    window.scroll(0,0)
+  }
+
 }

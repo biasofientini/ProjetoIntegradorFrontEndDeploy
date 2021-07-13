@@ -56,17 +56,6 @@ export class NewUserComponent implements OnInit {
     modal.show()
   }
 
-  /*updateUser(){
-    if (this.user.password != this.confirmeSenha) {
-      alert('As senhas digitadas não correspondem.')
-    } else {
-      this.userService.putUser(this.user).subscribe((resp: User) =>{
-        this.user = resp
-        alert('Alterações realizadas com sucesso!')
-      })
-    }
-  }*/
-
   deleteUser() {
     this.userService.deleteUser(this.user.id!).subscribe(() => {
       this.alert.setAlert('Remoção', `${this.user.name} removido com sucesso`, 'agora')
