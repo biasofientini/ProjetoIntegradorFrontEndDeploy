@@ -7,114 +7,61 @@
             <source src="../../assets/img/video2.mp4" type="video/mp4">
         </video>
         <h1 class="centered font1">Lifeshop</h1>
-        <!-- <h2 class="centered font1"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt. </h2> -->
     </div>
 </div>
 <!-- /VÍDEO -->
 
-
 <!-- DESTAQUES DA SEMANA -->
-<div class="container-fluid my-4">
+<div class="container-fluid my-4 align-items-center">
     <h3 class="font-green pt-3 bold font1 ml-3">Destaques</h3>
-    <div class="row">
+    <div class="row justify-content-center">
         <div *ngFor="let p of listProducts.slice(0, 4)">
             <app-product [p]="p"></app-product>
         </div>
     </div>
 </div>
-<!--
-<div class="container font-fam">
-    <div class="row">
-        <h3 class="font-green mt-3 font-weight-bold">Destaques da Semana</h3>
-        <div class="card mx-4 my-4 align-items-center card-pref week-config" style="width: 18rem;">
-            <img src="https://images.unsplash.com/photo-1540914124281-342587941389?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80"
-                class="card-img-top card-pref" alt="...">
-            <div class="card-body card-pref">
-                <h5 class="card-title font font-weight-bold">Vegan food</h5>
-                <p class="card-text">A delicious pack of vegan food</p>
-                <p class="card-text price">R$ 00,00</p>
-                <p>
-                    <span class="badge badge-pill badge-secondary font">Food</span>
-                </p>
-                <a href="#" class="btn btn-card">ADD TO CART</a>
-            </div>
-        </div>
-        <div class="card mx-4 my-4 align-items-center card-pref week-config" style="width: 18rem;">
-            <img src="https://images.unsplash.com/photo-1540914124281-342587941389?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80"
-                class="card-img-top card-pref" alt="...">
-            <div class="card-body card-pref">
-                <h5 class="card-title font-weight-bold">Vegan food</h5>
-                <p class="card-text font">A delicious pack of vegan food</p>
-                <p class="card-text price">R$ 00,00</p>
-                <p>
-                    <span class="badge badge-pill badge-secondary font">Food</span>
-                </p>
-                <a href="#" class="btn btn-card">ADD TO CART</a>
-            </div>
-        </div>
-        <div class="card mx-4 my-4 align-items-center card-pref week-config" style="width: 18rem;">
-            <img src="https://images.unsplash.com/photo-1540914124281-342587941389?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80"
-                class="card-img-top card-pref" alt="...">
-            <div class="card-body card-pref align-items-center">
-                <h5 class="card-title font font-weight-bold">Vegan food</h5>
-                <p class="card-text">A delicious pack of vegan food</p>
-                <p class="card-text price">R$ 00,00</p>
-                <p>
-                <p>
-                
-                    <span class="badge badge-pill badge-secondary font">Food</span>
-                </p>
-                <a href="#" class="btn btn-card">ADD TO CART</a>
-            </div>
-        </div>
-    </div>
-
-</div> -->
 <!-- / DESTAQUES DA SEMANA -->
 
 <!--CATEGORIAS  -->
-
 <div class="container-fluid">
     <h3 class="font-green pt-3 bold font1 ml-3">Categorias</h3>
     <div class="row">
         <div class="col-md-4">
             <div class="categoriaAnimacao">
-                <a routerLink='/produtos/alimentos'> <app-img [class]="'card-img-top'" [src]="'https://i.imgur.com/PzJDG1d.png'"></app-img> 
-                    <!--<h4 class="cat-texto font1">ALIMENTOS</h4>-->
+                <a routerLink='/produtos/alimentos'>
+                    <app-img [class]="'card-img-top'" [src]="'https://i.imgur.com/PzJDG1d.png'"></app-img>
                 </a>
-
             </div>
         </div>
         <div class="col-md-4 ">
             <div class="categoriaAnimacao">
-                <a routerLink="/produtos/vestuario"><app-img [class]="'card-img-top'" [src]="'https://i.imgur.com/IpQV4pn.png'"></app-img>
+                <a routerLink="/produtos/vestuario">
+                    <app-img [class]="'card-img-top'" [src]="'https://i.imgur.com/IpQV4pn.png'"></app-img>
                 </a>
 
             </div>
         </div>
         <div class="col-md-4">
             <div class="categoriaAnimacao">
-                <a routerLink='/produtos/bemestar'> <app-img [class]="'card-img-top'" [src]="'https://i.imgur.com/r2UsMis.png'"></app-img>
-                    <!--<h4 class="cat-texto font1">BEM ESTAR</h4>-->
+                <a routerLink='/produtos/bemestar'>
+                    <app-img [class]="'card-img-top'" [src]="'https://i.imgur.com/r2UsMis.png'"></app-img>
                 </a>
-
             </div>
         </div>
     </div>
-    <!-- <div class="row ml-1 mr-1 mt-3 pb-5"> -->
     <div class="row mt-3 pb-5">
         <div class="col-md-6 ">
             <div class="categoriaAnimacao">
-                <a routerLink='/produtos/acessorios'><app-img [class]="'card-img-top'" [src]="'https://i.imgur.com/p2XqwX2.png'"></app-img>
+                <a routerLink='/produtos/acessorios'>
+                    <app-img [class]="'card-img-top'" [src]="'https://i.imgur.com/p2XqwX2.png'"></app-img>
                 </a>
 
             </div>
         </div>
         <div class="col-md-6 ">
             <div class="categoriaAnimacao">
-                <a routerLink='/produtos/utensilios'> <app-img [class]="'card-img-top'" [src]="'https://i.imgur.com/sM0FR1r.png'"></app-img>
-                    <!--<h4 class="cat-texto font1">UTENSÍLIOS</h4>-->
+                <a routerLink='/produtos/utensilios'>
+                    <app-img [class]="'card-img-top'" [src]="'https://i.imgur.com/sM0FR1r.png'"></app-img>
                 </a>
             </div>
         </div>

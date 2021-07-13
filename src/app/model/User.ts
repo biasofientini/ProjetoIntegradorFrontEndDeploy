@@ -3,6 +3,7 @@ import { Role } from "./Role"
 
 export class User{
     public id: number
+    public idRole: number
     public name: string
     public email: string
     public password: string
