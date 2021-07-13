@@ -1,4 +1,3 @@
-import { Component, OnInit } from '@angular/core';
 import { ElementRef } from '@angular/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AlertComponent } from '../alert/alert.component';
@@ -59,18 +58,6 @@ export class NewUserFormComponent implements OnInit {
   admin(event: any) {
     this.roleId = Number(event.target.value)
   }
-  
-  newUser(){
-    this.serviceUser.postUser(this.user, this.roleId).subscribe((resp: User) =>{
-    this.user = resp
-    this.user = new User()
-    if(this.roleId==1){
-      this.alert.setAlert('😁 Sucesso!', `O administrador ${this.user.name} foi cadastrado na Lifeshop!`, 'agora', 3000)
-    }
-    if(this.roleId ==2){
-      this.alert.setAlert('😁 Sucesso!', `O usuário ${this.user.name} foi cadastrado na Lifeshop!`, 'agora', 3000)
-    }
-  }
                                                                 
   confirmarSenha(event: any) {
     this.confirmeSenha = event.target.value
@@ -95,10 +82,10 @@ export class NewUserFormComponent implements OnInit {
       this.serviceUser.postUser(this.user, this.roleId).subscribe((resp: User) => {
         this.user = resp
         if (this.checkboxAdmin.nativeElement.checked == true) {
-          alert('Novo administrador cadastrado no sistema!')
+          this.alert.setAlert('😁 Sucesso!', `O administrador ${this.user.name} foi cadastrado na Lifeshop!`, 'agora', 3000)
           window.location.reload()
         } else if (this.checkboxAdmin.nativeElement.checked == false) {
-          alert('Novo usuário cadastrado!')
+          this.alert.setAlert('😁 Sucesso!', `O usuário ${this.user.name} foi cadastrado na Lifeshop!`, 'agora', 3000)
           window.location.reload()
         }
       }, () => this.alert.setAlert(`Erro ao cadastrar`, `O email ${this.user.email}, já está cadastrado em nosso sistema.`, 'agora')
