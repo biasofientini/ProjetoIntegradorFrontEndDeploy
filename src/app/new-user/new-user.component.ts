@@ -56,7 +56,7 @@ export class NewUserComponent implements OnInit {
     modal.show()
   }
 
-  updateUser(){
+  /*updateUser(){
     if (this.user.password != this.confirmeSenha) {
       alert('As senhas digitadas não correspondem.')
     } else {
@@ -65,7 +65,7 @@ export class NewUserComponent implements OnInit {
         alert('Alterações realizadas com sucesso!')
       })
     }
-  }
+  }*/
 
   deleteUser() {
     this.userService.deleteUser(this.user.id!).subscribe(() => {
