@@ -26,6 +26,25 @@ export class NewUserFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  confirmarSenha(event: any) {
+    this.confirmeSenha = event.target.value
+  }
+
+  adminCheckbox(event: any) {
+    if (this.checkboxAdmin.nativeElement.checked == true) {
+      this.adminCheck = true
+      this.roleId = 1
+    }
+    if (this.checkboxAdmin.nativeElement.checked == false) {
+      this.adminCheck = false
+      this.roleId = 2
+    }
+  }
+
+  cancel() {
+    window.location.reload()
+  }
+
   validateInput() {
     if (this.user.name === undefined || this.user.name === '') {
       this.alert.setAlert('Dados inválidos', 'Insira um nome válido', 'agora')
@@ -58,22 +77,7 @@ export class NewUserFormComponent implements OnInit {
   admin(event: any) {
     this.roleId = Number(event.target.value)
   }
-                                                                
-  confirmarSenha(event: any) {
-    this.confirmeSenha = event.target.value
-  }
-
-  adminCheckbox(event: any) {
-    if (this.checkboxAdmin.nativeElement.checked == true) {
-      this.adminCheck = true
-      this.roleId = 1
-    }
-    if (this.checkboxAdmin.nativeElement.checked == false) {
-      this.adminCheck = false
-      this.roleId = 2
-    }
-  }
-
+  
   newUser() {
     if(!this.validateInput()) return
     if (this.user.password != this.confirmeSenha) {
@@ -91,8 +95,5 @@ export class NewUserFormComponent implements OnInit {
       }, () => this.alert.setAlert(`❌ Erro!`, `O email ${this.user.email}, já está cadastrado em nosso sistema.`, 'agora')
       )
     }
-  }
-  cancel() {
-    window.location.reload()
   }
 }
