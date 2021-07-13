@@ -55,7 +55,8 @@ export class NewUserComponent implements OnInit {
     const modal = new bootstrap.Modal(this.modalComponentUser.nativeElement)
     modal.show()
   }
-
+  
+/*
   updateUser(){
     if (this.user.password != this.confirmeSenha) {
       alert('As senhas digitadas não correspondem.')
@@ -66,6 +67,7 @@ export class NewUserComponent implements OnInit {
       })
     }
   }
+  */
 
   deleteUser() {
     this.userService.deleteUser(this.user.id!).subscribe(() => {
