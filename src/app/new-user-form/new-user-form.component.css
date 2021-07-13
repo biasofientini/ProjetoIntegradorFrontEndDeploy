@@ -5,8 +5,8 @@
     margin-left: 5px;
 }
 
-  .fs-14 {
-    font-size: 14pt;
+  .fs-13 {
+    font-size: 13pt;
   }
 
   .animado:hover {
@@ -31,4 +31,32 @@
   .iconeAnimacao:not(:hover) {
     transition: 0.25s;
     color: #000000;
+  }
+
+  .buttonsend {
+    top: 695px;
+    left: 861px;
+    width: 120px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #364A15;
+    color: #ffffff;
+  }
+  .buttonsend:hover {
+    color: #ffffff;
+    background-color: #A4B501;
+  }
+
+  .buttoncancel {
+    top: 695px;
+    left: 861px;
+    width: 120px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #707070;
+    color: #ffffff;
+  }
+  .buttoncancel:hover {
+    color: #ffffff;
+    background-color: #98A2AB;
   }

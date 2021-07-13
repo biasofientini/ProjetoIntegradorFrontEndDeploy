@@ -2,20 +2,23 @@
 <app-alert></app-alert>
 
 <div class="container-fluid">
-    <div class="row"> <!-- testar o css selector -->
+    <div class="row">
+        <!-- testar o css selector -->
 
 
         <div class="container px-4 mt-5 mb-5">
-            <h1 class="text-center font1 font-green font-weight-bold">Bem vindo aos sistema da Lifeshop</h1>
+            <h1 class="text-center font1 font-green font-weight-bold">Bem vindo ao sistema da Lifeshop</h1>
             <p class="text-center font-fam font-gray my-4 fs-18">Aqui você pode alterar dados de um produto ou usuário,
                 bem
                 como cadastrar novo ou excluí-los. Gerencie também os pedidos em aberto.</p>
             <div class="row">
                 <div class="col-3">
                     <ul class="list-group font-fam">
-                        <li class="list-group-item active li-color"><p class="justify-content-center"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket3-fill mr-1" viewBox="0 0 16 16">
-                            <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.468 15.426.943 9h14.114l-1.525 6.426a.75.75 0 0 1-.729.574H3.197a.75.75 0 0 1-.73-.574z"/>
-                          </svg> Produtos</p> </li>
+                        <li class="list-group-item active li-color d-flex justify-content-start"> <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                height="16" fill="currentColor" class="bi bi-basket3-fill mr-2" viewBox="0 0 16 16">
+                                <path
+                                    d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.468 15.426.943 9h14.114l-1.525 6.426a.75.75 0 0 1-.729.574H3.197a.75.75 0 0 1-.73-.574z" />
+                            </svg>Produtos</li>
                         <button class="list-group-item text-left font-weight-bold" routerLink="produto/cadastrar"
                             routerLinkActive="bg-linkAtivo" [routerLinkActiveOptions]="{exact:true}">
                             Cadastrar
