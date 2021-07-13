@@ -20,6 +20,7 @@ export class NewUserFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   confirmarSenha(event: any) {
 
   }
