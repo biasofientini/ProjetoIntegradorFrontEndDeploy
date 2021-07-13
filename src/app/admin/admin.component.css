@@ -1,0 +1,40 @@
+.active{
+    background-color: #364A15;
+    border: none;
+    text-align: center;
+}
+.router-active{
+    text-align: left;
+}
+.fs-18{
+    font-size: 20px;
+}
+.bg-linkAtivo{
+    background-color: #f5f5f5;
+}
+
+/* Opinião do grupo do selector */
+.css-selector {
+    background: linear-gradient(215deg, #ebebea, #ebebea, #f5f5f5, #ebebea, #f5f5f5);
+    background-size: 1000% 1000%;
+
+    -webkit-animation: AnimationName 22s ease infinite;
+    -moz-animation: AnimationName 22s ease infinite;
+    animation: AnimationName 22s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:93% 0%}
+    50%{background-position:0% 100%}
+    100%{background-position:93% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:93% 0%}
+    50%{background-position:0% 100%}
+    100%{background-position:93% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:93% 0%}
+    50%{background-position:0% 100%}
+    100%{background-position:93% 0%}
+}
