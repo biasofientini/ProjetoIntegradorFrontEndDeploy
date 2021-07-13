@@ -1,3 +1,4 @@
+import { ElementRef } from '@angular/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ElementRef } from '@angular/core';
 import { AlertComponent } from '../alert/alert.component';
@@ -92,3 +93,4 @@ export class NewUserFormComponent implements OnInit {
   }
 
 }
+
