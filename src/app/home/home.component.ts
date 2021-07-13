@@ -10,7 +10,7 @@ import { AllProductsService } from '../service/all-products.service';
 })
 export class HomeComponent implements OnInit {
 
-  listProducts: Product[]
+  listProducts: Product[] = []
 
   constructor(
     private router: Router,

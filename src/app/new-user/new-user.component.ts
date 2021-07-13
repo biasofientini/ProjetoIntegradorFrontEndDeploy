@@ -61,7 +61,7 @@ export class NewUserComponent implements OnInit {
     if (this.user.password != this.confirmeSenha) {
       alert('As senhas digitadas não correspondem.')
     } else {
-      this.userService.putUser(this.user).subscribe((resp: User) =>{
+      this.userService.putUser(this.user, this.user.id).subscribe((resp: User) =>{
         this.user = resp
         alert('Alterações realizadas com sucesso!')
       })

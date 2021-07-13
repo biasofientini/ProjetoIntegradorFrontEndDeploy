@@ -1,5 +1,6 @@
 import { ElementRef } from '@angular/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ElementRef } from '@angular/core';
 import { AlertComponent } from '../alert/alert.component';
 import { User } from '../model/User';
 import { UserService } from '../service/user.service';
@@ -24,6 +25,25 @@ export class NewUserFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+  }
+
+  confirmarSenha(event: any) {
+    this.confirmeSenha = event.target.value
+  }
+
+  adminCheckbox(event: any) {
+    if (this.checkboxAdmin.nativeElement.checked == true) {
+      this.adminCheck = true
+      this.roleId = 1
+    }
+    if (this.checkboxAdmin.nativeElement.checked == false) {
+      this.adminCheck = false
+      this.roleId = 2
+    }
+  }
+
+  cancel() {
+    window.location.reload()
   }
 
   validateInput() {
@@ -58,41 +78,19 @@ export class NewUserFormComponent implements OnInit {
   admin(event: any) {
     this.roleId = Number(event.target.value)
   }
-                                                                
-  confirmarSenha(event: any) {
-    this.confirmeSenha = event.target.value
+  
+  newUser(){
+    this.serviceUser.postUser(this.user, this.roleId).subscribe((resp: User) =>{
+    this.user = resp
+    this.user = new User()
+    if(this.roleId==1){
+      this.alert.setAlert('😁 Sucesso!', `O administrador ${this.user.name} foi cadastrado na Lifeshop!`, 'agora', 3000)
+    }
+    if(this.roleId ==2){
+      this.alert.setAlert('😁 Sucesso!', `O usuário ${this.user.name} foi cadastrado na Lifeshop!`, 'agora', 3000)
+      }
+    })
   }
 
-  adminCheckbox(event: any) {
-    if (this.checkboxAdmin.nativeElement.checked == true) {
-      this.adminCheck = true
-      this.roleId = 1
-    }
-    if (this.checkboxAdmin.nativeElement.checked == false) {
-      this.adminCheck = false
-      this.roleId = 2
-    }
-  }
-
-  newUser() {
-    if(!this.validateInput()) return
-    if (this.user.password != this.confirmeSenha) {
-      alert('As senhas digitadas não correspondem.')
-    } else {
-      this.serviceUser.postUser(this.user, this.roleId).subscribe((resp: User) => {
-        this.user = resp
-        if (this.checkboxAdmin.nativeElement.checked == true) {
-          this.alert.setAlert('😁 Sucesso!', `O administrador ${this.user.name} foi cadastrado na Lifeshop!`, 'agora', 3000)
-          window.location.reload()
-        } else if (this.checkboxAdmin.nativeElement.checked == false) {
-          this.alert.setAlert('😁 Sucesso!', `O usuário ${this.user.name} foi cadastrado na Lifeshop!`, 'agora', 3000)
-          window.location.reload()
-        }
-      }, () => this.alert.setAlert(`Erro ao cadastrar`, `O email ${this.user.email}, já está cadastrado em nosso sistema.`, 'agora')
-      )
-    }
-  }
-  cancel() {
-    window.location.reload()
-  }
 }
+
