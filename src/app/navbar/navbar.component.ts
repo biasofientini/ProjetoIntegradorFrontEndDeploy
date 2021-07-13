@@ -14,6 +14,7 @@ export class NavbarComponent implements OnInit {
   user: User = new User
   autenticado = false
   search: string
+  admin: boolean = false
 
 
   constructor(
@@ -26,6 +27,9 @@ export class NavbarComponent implements OnInit {
     window.scroll(0, 0)
     if ((localStorage.getItem('token') || "") != '') {
       this.autenticado = true
+    }
+    if ((localStorage.getItem("idRole") || "") == "1") {
+      this.admin = true
     }
   }
 

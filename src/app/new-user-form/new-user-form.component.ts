@@ -1,6 +1,5 @@
 import { ElementRef } from '@angular/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ElementRef } from '@angular/core';
 import { AlertComponent } from '../alert/alert.component';
 import { User } from '../model/User';
 import { UserService } from '../service/user.service';
@@ -93,4 +92,3 @@ export class NewUserFormComponent implements OnInit {
   }
 
 }
-
