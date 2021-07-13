@@ -88,7 +88,7 @@ export class NewUserFormComponent implements OnInit {
           this.alert.setAlert('😁 Sucesso!', `O usuário ${this.user.name} foi cadastrado na Lifeshop!`, 'agora', 3000)
           window.location.reload()
         }
-      }, () => this.alert.setAlert(`Erro ao cadastrar`, `O email ${this.user.email}, já está cadastrado em nosso sistema.`, 'agora')
+      }, () => this.alert.setAlert(`❌ Erro!`, `O email ${this.user.email}, já está cadastrado em nosso sistema.`, 'agora')
       )
     }
   }
