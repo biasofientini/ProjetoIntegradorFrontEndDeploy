@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertComponent } from '../alert/alert.component';
 import { User } from '../model/User';
 import { AuthService } from '../service/auth.service';
 
@@ -11,6 +12,7 @@ import { AuthService } from '../service/auth.service';
 export class LoginComponent implements OnInit {
 
   user: User = new User
+  alert = AlertComponent
 
   constructor(
     private authService: AuthService,
@@ -26,6 +28,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("token", resp.token)
       localStorage.setItem("idUser", resp.id.toString())
       localStorage.setItem("idRole", resp.idRole.toString())
+      this.router.navigate(['/home'])
       window.location.reload()
     })
   }
