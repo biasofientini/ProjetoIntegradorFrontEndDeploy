@@ -38,8 +38,8 @@ export class SignupComponent implements OnInit {
       this.authService.cadastrar(this.user).subscribe((resp: User) => {
         this.user = resp
         this.alert.setAlert('😁 Sucesso!', `O usuário ${this.user.name} foi incluído no sistema!`, 'agora', 3000)
-        this.router.navigate(['/home'])
       })
+      this.router.navigate(['/home'])
     }
   }
   voltar() {
