@@ -4,6 +4,8 @@ import { AlertComponent } from '../alert/alert.component';
 import { User } from '../model/User';
 import { UserService } from '../service/user.service';
 
+
+
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
@@ -31,12 +33,22 @@ export class AccountComponent implements OnInit {
       this.user.phone = resp.phone
       this.user.zipCode = resp.zipCode
       this.user.address = resp.address
+
       
     })
   }
   updateUser() {
     this.authUserService.putUser(this.user, +(localStorage.getItem("idUser") || "")).subscribe((resp: User) => {
-      this.alert.setAlert('🎉 Tudo certo', `Informações atualizadas com sucesso! ${this.user.name}`, 'agora', 3000)
+      if(this.user.password != resp.password){
+        this.alert.setAlert('🎉 Tudo certo', `Informações atualizadas com sucesso! ${this.user.name}`, 'agora', 3000)
+        localStorage.setItem("token", resp.token)
+        localStorage.setItem("idUser", resp.id.toString())
+        localStorage.setItem("idRole", resp.idRole.toString())
+        window.location.reload()
+      } else{
+        this.alert.setAlert('🎉 Tudo certo', `Informações atualizadas com sucesso! ${this.user.name}`, 'agora', 3000)
+      }
+
     })
   }
 }
