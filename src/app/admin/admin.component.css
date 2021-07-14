@@ -38,3 +38,11 @@
     50%{background-position:0% 100%}
     100%{background-position:93% 0%}
 }
+
+/*Logo de fundo*/
+.fundo{
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-image:url(https://i.imgur.com/tZcIO2b.png);
+    background-size: 60%;
+}
