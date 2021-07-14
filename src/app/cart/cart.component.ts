@@ -60,7 +60,7 @@ export class CartComponent implements OnInit {
   checkout() {
     this.processingOrder = true
     this.authOrder.post(this.c.id).subscribe((order: Order) => {
-      this.alert.setAlert('😍 Tudo certo', `Compra realizada com sucesso! Total gasto: R$ ${order.finalPrice}`, 'agora', 3000)
+      this.alert.setAlert('😍 Tudo certo', `Compra realizada com sucesso! Total gasto: R$ ${order.finalPrice.toFixed(2)}`, 'agora', 3000)
       this.processingOrder = false
       this.authCart.post().subscribe(() => {
         this.cartEvent.emit()
