@@ -19,7 +19,9 @@
                         <span class="sr-only">Anterior</span>
                     </a>
                 </li>
-                <li *ngFor="let _ of [].constructor(numberOfPages); index as i" (click)='changePage(i)' class="{{'page-item'+' '+(i==currentPage?'active':'')}}"><a class="page-link" style="color: black;">{{i+1}}</a></li>
+                <li *ngFor="let _ of [].constructor(numberOfPages); index as i" (click)='changePage(i)'
+                    class="{{'page-item'+' '+(i==currentPage?'active':'')}}"><a class="page-link"
+                        style="color: black;">{{i+1}}</a></li>
                 <li class="page-item">
                     <a class="page-link" (click)='increasePage()' aria-label="Próximo" style="color: black;">
                         <span aria-hidden="true">&raquo;</span>
