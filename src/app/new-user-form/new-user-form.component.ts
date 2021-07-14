@@ -77,8 +77,6 @@ export class NewUserFormComponent implements OnInit {
   admin(event: any) {
     this.roleId = Number(event.target.value)
   }
-  
-                                                                
 
   newUser() {
     if(!this.validateInput()) return
