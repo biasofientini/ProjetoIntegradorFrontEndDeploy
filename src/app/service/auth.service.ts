@@ -14,7 +14,7 @@ export class AuthService {
     private http: HttpClient
   ) { }
 
-  cadastrar(user: User, id: number = 2): Observable<User>{
+  postUser(user: User, id: number = 2): Observable<User>{
     return this.http.post<User>(`${URL}/user/role/${id}`, user)
   }
   logar(user: User): Observable<any>{

@@ -55,8 +55,8 @@ export class NewUserFormComponent implements OnInit {
       this.alert.setAlert('Dados inválidos', 'Insira um email válido', 'agora')
       return false
     }
-    if (this.user.zipCode === undefined || this.user.zipCode === '' || this.user.zipCode.length !== 8) {
-      this.alert.setAlert('Cpf inválido', 'Insira somente números', 'agora')
+    if (this.user.zipCode === undefined || this.user.zipCode === '' || this.user.zipCode.length !== 9) {
+      this.alert.setAlert('Cep inválido', 'Insira um cep válido', 'agora')
       return false
     }
     if (this.user.phone === undefined || this.user.phone === '' || this.user.phone.length < 10 || this.user.phone.length > 11) {
