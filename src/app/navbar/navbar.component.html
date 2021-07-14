@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-lg navOpt">
+  <a class="navbar-brand" href="index.html"> <img width="130" src="https://i.imgur.com/qjfgrRu.png" alt=""></a>
+  <button class="navbar-toggler font navbar-light" type="button" data-toggle="collapse"
+    data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link transit-size font1" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle font1 transit-size" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Categorias
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item font-fam" routerLink='/produtos/acessorios'>Acessórios</a>
+          <a class="dropdown-item font-fam" routerLink='/produtos/alimentos'>Alimentos</a>
+          <a class="dropdown-item font-fam" routerLink='/produtos/bemestar'>Bem-Estar</a>
+          <a class="dropdown-item font-fam" routerLink='/produtos/utensilios'>Utensílios</a>
+          <a class="dropdown-item font-fam" routerLink="/produtos/vestuario">Vestuário</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active transit-size font1" href="#" routerLink="/produtos">Shop</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active transit-size font1" href="#" routerLink="/sobre">Sobre</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input (keyup)='f($event)' class="form-control mr-sm-2 me-2 radius mc-font font-fam" id="search" type="search" href=""
+        placeholder="O que você procura?" #searchComponent>
+    </form>
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0 font container-logo">
+
+      <li *ngIf="!autenticado" class="nav-item">
+        <a class="nav-link active mc-font transit-size font1" aria-current="page" href="#" data-toggle="modal"
+          data-target="#login"><img src="assets/img/login.png" width="25" height="25" alt=""> Login</a>
+      </li>
+
+      <li *ngIf="autenticado && admin" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle font1 transit-size" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Minha conta
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item font-fam" routerLink="/pedido">Meus pedidos</a>
+          <a class="dropdown-item font-fam" routerLink="/conta">Meu perfil</a>
+          <a class="dropdown-item font-fam" routerLink="/admin">Administrador</a>
+          <a class="dropdown-item font-fam" (click)='signout()'>Sair</a>
+        </div>
+      </li>
+
+      <li *ngIf="autenticado && !admin" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle font1 transit-size" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Minha conta
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item font-fam" routerLink="/pedido">Meus pedidos</a>
+          <a class="dropdown-item font-fam" routerLink="/conta">Meu perfil</a>
+          <a class="dropdown-item font-fam" (click)='signout()'>Sair</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <img class="transit-size" src="assets/img/carrinho.png" width="25" height="25" alt="" routerLink='/carrinho'>
+      </li>
+    </ul>
+  </div>
+</nav>
+<app-login></app-login>

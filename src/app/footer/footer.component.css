@@ -1,0 +1,93 @@
+
+.footer-bg{
+    background: #cfcfcc;
+}
+.fs-12{
+    font-size: 12pt;
+    color:#707070;
+}
+.fs-14{
+    color:#364A15;
+    font-size: 14pt;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container-alinhamento { /*tudo dentro dessa classe esta alinhado na vertical*/
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3%;
+
+}
+
+/* ESTILIZAÇÃO DO FOOTER */
+ul.social-network{
+    list-style: none;
+    padding: 0;
+}
+
+/* acessando a tag <li> dentro da tag <ul> para alinhar os ícones da lista*/
+ul.social-network li{
+    display: inline;
+    margin: 0;
+   /* padding: 5px;*/
+}
+
+/* acessando a classe fa dentro da tag dos icones <i> para alterar tamanho, cor e padding de todos */
+.fa{
+    color:#707070;
+    padding-right: 10px;
+   
+}
+
+/* alterando a cor dos icones das redes sociais ao passar o mouse (hover) */
+.social-network :hover{
+    color: white;
+}
+ul.method-payment{
+    list-style: none;
+    padding: 0;
+
+}
+
+/* acessando a tag <li> dentro da tag <ul> para alinhar os ícones da lista*/
+ul.method-payment li{
+    display: inline;
+    margin: 1.2px;
+
+}
+
+ul.icons-empresa{
+    list-style: none;
+    padding: 0;
+    margin-top: 100px;
+
+}
+
+/* acessando a tag <li> dentro da tag <ul> para alinhar os ícones da lista*/
+ul.icons-empresa li{
+    display: inline;
+    padding: 5px;
+}
+
+#mt-5{
+    margin-top: 6px;
+}
+.footer-copyright{
+    background-color: #1E1E1E;
+}
+.fb-copyright{
+    color:#A4B501;
+}
+a.fb-copyright{
+    text-decoration:none;
+}
+
+a{
+    text-decoration: none;
+}
+
+

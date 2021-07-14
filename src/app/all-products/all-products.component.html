@@ -1,0 +1,69 @@
+<app-navbar></app-navbar>
+<app-alert></app-alert>
+
+<div class="container-fluid">
+    <div class="row d-flex align-items-center">
+        <div class="col-md-12">
+
+            <div class="row d-flex justify-content-between">
+
+                <div class="my-4 d-flex" style="width: 18%;">
+                    <app-img class="cardstyle" routerLink='/produtos/acessorios' [class]="'card-img-top'" [src]="'https://i.imgur.com/W9wOfPo.png'"></app-img>
+                </div>
+
+                <div class="my-4 d-flex" style="width: 18%;">
+                    <app-img class="cardstyle" routerLink='/produtos/alimentos' [class]="'card-img-top'" [src]="'https://i.imgur.com/nBrtzdg.png'"></app-img>
+                </div>
+
+                <div class="my-4 d-flex" style="width: 18%;">
+                    <app-img class="cardstyle" routerLink='/produtos/bemestar' [class]="'card-img-top'" [src]="'https://i.imgur.com/cwuET5L.png'"></app-img>
+                </div>
+
+                <div class="my-4 d-flex" style="width: 18%;">
+                    <app-img class="cardstyle" routerLink='/produtos/utensilios' [class]="'card-img-top'" [src]="'https://i.imgur.com/cW9cMJP.png'"></app-img>
+                </div>
+
+                <div class="my-4 d-flex" style="width: 18%;">
+                    <app-img class="cardstyle" routerLink='/produtos/vestuario' [class]="'card-img-top'" [src]="'https://i.imgur.com/I07mV4e.png'"></app-img>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container align-items-center">
+    <h1 class="text-center font1 font-green">Shop</h1>
+    <h4 class="text-center font-fam font-gray">Aqui você encontra todos os produtos da Lifeshop, independente de sua categoria! Caso deseje uma categoria especifíca, por favor, escolha acima uma das imagens! E, caso deseje uma pesquisa personalizada, utilize nossa barra de pesquisa!</h4>
+</div>
+
+<div class="container mr-0">
+    <div class="row">
+        <div *ngFor="let p of listProducts.slice(maxItemsPage*currentPage, (currentPage+1)*maxItemsPage)">
+            <app-product [p]="p"></app-product>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row d-flex justify-content-center align-items-center">
+        <nav aria-label="Navegação de página exemplo">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" (click)='decreasePage()' aria-label="Anterior" style="color: black;">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                </li>
+                <li *ngFor="let _ of [].constructor(numberOfPages); index as i" (click)='changePage(i)' class="{{'page-item'+' '+(i==currentPage?'active':'')}}"><a class="page-link" style="color: black;">{{i+1}}</a></li>
+                <li class="page-item">
+                    <a class="page-link" (click)='increasePage()' aria-label="Próximo" style="color: black;">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Próximo</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<app-footer></app-footer>

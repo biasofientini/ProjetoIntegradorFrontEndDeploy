@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+<div class="container mt-5 pb-5">
+    <h1>Pedidos</h1>
+
+    <div class="accordion" id="accordionExample2">
+        <div class="card" *ngFor="let o of listOrders; index as i;">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                        [attr.data-target]="'#collapse2'+i" aria-expanded="true">
+                        {{o.id}}
+                    </button>
+                </h2>
+            </div>
+    
+            <div [attr.id]="'collapse2'+i" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample2">
+               <app-order [o]="o"></app-order> 
+            </div>
+        </div>
+    </div>
+</div>

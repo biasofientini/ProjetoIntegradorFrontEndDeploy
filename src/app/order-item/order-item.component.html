@@ -1,0 +1,7 @@
+<td>
+    <app-img [style]="'height: 64px;width: 64px;object-fit: cover;'" [class]="'rounded'"
+        [src]="item.urlImage"></app-img>
+</td>
+<td>{{item.name}}</td>
+<td><span class="badge badge-pill badge-secondary">Qtd {{item.productQty}}</span></td>
+<td>{{item.price | currency:'BRL'}}</td>

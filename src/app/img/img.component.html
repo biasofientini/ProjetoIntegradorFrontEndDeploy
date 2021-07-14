@@ -1,0 +1,4 @@
+<div class="wrapper" [style]="style">
+    <div [style]="style" *ngIf="skeleton" class="{{'skeleton' + ' ' + class }}"></div>
+    <img [style]="style" src="{{src}}" class="{{ skeleton ? ('img' + ' ' + class): ('img-loaded' + ' ' + class) }}" (load)="handleLoad()" />
+</div>

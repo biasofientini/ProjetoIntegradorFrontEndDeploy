@@ -1,0 +1,74 @@
+.borderimg{
+    /* border-radius: 50%;
+    background: #e0e0e0;
+    box-shadow:  17px 17px 32px #c1c1c1, -17px -17px 32px #ffffff; */
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 200px;
+    border: 5px solid rgba( 255, 255, 255, 0.18 );
+}
+.fs-22{
+    font-size: 18px;
+    color: #A4B501;
+}
+.fs-20{
+    font-size: 16px;
+    color: #707070;
+}
+.borderl{
+    border-left: 2px solid;
+    color: #A4B501;
+    height: 400px;
+}
+.x:hover{
+    color: #A4B501;
+    font-size: 18px;
+}
+
+.x:hover{
+    color: #A4B501;
+    font-size: 18px;
+}
+
+.css-selector {
+    background: linear-gradient(217deg, #a4b501, #364a15);
+    background-size: 400% 400%;
+    height: 210px;
+
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:58% 0%}
+    50%{background-position:43% 100%}
+    100%{background-position:58% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:58% 0%}
+    50%{background-position:43% 100%}
+    100%{background-position:58% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:58% 0%}
+    50%{background-position:43% 100%}
+    100%{background-position:58% 0%}
+}
+
+.buttonpadrao {
+    top: 695px;
+    left: 861px;
+    width: 160px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #364A15;
+    color: #ffffff;
+    border-radius: 10px;
+}
+.buttonpadrao:hover {
+    color: #ffffff;
+    background-color: #A4B501;
+}
