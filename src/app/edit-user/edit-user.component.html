@@ -12,7 +12,7 @@
                 <div class="form-group">
                     <label for="nome">Nome</label>
                     <input [(ngModel)]='user.name' type="text" class="form-control" id="nome"
-                        placeholder="Nome usuário">
+                        placeholder="seu nome">
                 </div>
 
                 <div class="form-group">
@@ -46,8 +46,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="senha">Senha</label>
-                            <input type="password" class="form-control" id="senha"
-                                placeholder="Digite senha usuário">
+                            <input type="password" class="form-control" id="senha" placeholder="Digite senha usuário">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -57,10 +56,12 @@
                                 placeholder="Confirme senha">
                         </div>
                     </div>
-                    <div class="d-flex justify-content-center font-fam ml-5 mr-0">
-                        <button class="btn buttonpadrao" type="submit" data-dismiss="modal" aria-label="Close" (click)='updateUser()'>Atualizar</button>
-                    </div>
+
                 </div>
+            </div>
+            <div class="d-flex justify-content-center font-fam mb-4">
+                <button class="btn buttonpadrao" type="submit" data-dismiss="modal" aria-label="Close"
+                    (click)='updateUser()'>Atualizar</button>
             </div>
         </div>
     </div>

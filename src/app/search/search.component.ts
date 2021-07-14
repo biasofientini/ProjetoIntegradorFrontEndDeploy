@@ -11,10 +11,13 @@ import { ProductService } from '../service/product.service';
 })
 export class SearchComponent implements OnInit {
 
-  p: Product = new Product()
+ 
   example: string
   description: string
   listProducts: Product[] = []
+  maxItemsPage: number = 12
+  currentPage: number = 0
+  numberOfPages: number
 
   constructor(
     private router: Router,
@@ -33,13 +36,31 @@ export class SearchComponent implements OnInit {
       this.description = this.example
       this.findProductsByDescription()
     })
+    this.findProductsByDescription()
   }
 
   findProductsByDescription(){
     this.productService.getProductsByDescription(this.description).subscribe((resp: Product[]) => {
+      resp = resp.filter((p: Product) => p.stock > 0)
       this.listProducts = resp
-      
+      this.numberOfPages = Math.ceil(resp.length/this.maxItemsPage)
     })
+  }
+
+  changePage(index: number) {
+    this.currentPage = index
+  }
+
+  decreasePage() {
+    if(this.currentPage - 1 >= 0){
+      this.currentPage--
+    }
+  }
+
+  increasePage() {
+    if(this.currentPage + 1 < this.numberOfPages){
+      this.currentPage++
+    }
   }
 
 }

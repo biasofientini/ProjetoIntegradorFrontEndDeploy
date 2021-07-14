@@ -57,3 +57,18 @@
     50%{background-position:43% 100%}
     100%{background-position:58% 0%}
 }
+
+.buttonpadrao {
+    top: 695px;
+    left: 861px;
+    width: 160px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #364A15;
+    color: #ffffff;
+    border-radius: 10px;
+}
+.buttonpadrao:hover {
+    color: #ffffff;
+    background-color: #A4B501;
+}
