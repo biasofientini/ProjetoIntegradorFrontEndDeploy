@@ -1,0 +1,8 @@
+.hide {
+    display: none;
+  }
+      
+  .fodase:hover + .hide {
+    display: block;
+    color: red;
+  }
