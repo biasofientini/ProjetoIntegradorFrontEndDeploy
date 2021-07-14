@@ -1,9 +1,10 @@
 <div class="container">
+    <h5 class="text-center mb-4 font-fam font-gray font-weight-bold">LISTAR PRODUTOS</h5>
     <div class="row mb-3">
         <div class="col-md-6  d-flex justify-content-start">
             <div class="form-group col-md-8 ml-0 p-0">
-                <label for="categorias">Pesquisar por categoria:</label>
-                <select id="categorias" class="form-control" (change)='findProductsByCategory($event)'>
+                <label for="categorias" class="font-fam">Pesquisar por categoria:</label>
+                <select id="categorias" class="form-control font-fam" (change)='findProductsByCategory($event)'>
                     <option value='0'>Todos os produtos</option>
                     <option value='1'>Alimentos</option>
                     <option value='2'>Vestuário</option>
@@ -15,10 +16,11 @@
         </div>
 
         <div class="col-md-6">
-            <p class="mb-2 d-flex justify-content-start" >Pesquisar por descrição:</p>
+            <p class="mb-2 d-flex justify-content-start font-fam">Pesquisar por descrição:</p>
             <form class="form-inline d-flex justify-content-start">
                 <div class="form-group">
-                    <input [(ngModel)]="p.description" type="text" class="form-control" style="width: 260px;"  id="nome" placeholder="Digite descrição produto" name="nome">
+                    <input [(ngModel)]="p.description" type="text" class="form-control font-fam" style="width: 260px;" id="nome"
+                        placeholder="Digite descrição produto" name="nome">
                 </div>
                 <button (click)="findProductsByDescription()" type="button" class="btn btn-outline-secondary ml-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

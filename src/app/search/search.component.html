@@ -1,6 +1,10 @@
 <app-navbar></app-navbar>
 <div class="container">
-    <h1>{{example}}</h1>
+  <div class="row">
+    <div *ngFor="let p of listProducts">
+      <app-product [p]="p"></app-product>
+      </div>
+    </div>
 </div>
 <app-footer></app-footer>
 
