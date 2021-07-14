@@ -22,6 +22,10 @@
     color: #A4B501;
     height: 400px;
 }
+.x:hover{
+    color: #A4B501;
+    font-size: 18px;
+}
 
 
 .css-selector {

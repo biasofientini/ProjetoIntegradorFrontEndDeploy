@@ -77,22 +77,6 @@ export class NewUserFormComponent implements OnInit {
   admin(event: any) {
     this.roleId = Number(event.target.value)
   }
-  
-                                                                
-  confirmarSenha(event: any) {
-    this.confirmeSenha = event.target.value
-  }
-
-  adminCheckbox(event: any) {
-    if (this.checkboxAdmin.nativeElement.checked == true) {
-      this.adminCheck = true
-      this.roleId = 1
-    }
-    if (this.checkboxAdmin.nativeElement.checked == false) {
-      this.adminCheck = false
-      this.roleId = 2
-    }
-  }
 
   newUser() {
     if(!this.validateInput()) return
