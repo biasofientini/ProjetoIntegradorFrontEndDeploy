@@ -72,12 +72,13 @@ export class SignupComponent implements OnInit {
     } else {
       this.authService.postUser(this.user).subscribe((resp: User) => {
         this.user = resp
+        this.router.navigate(['/home'])
         this.alert.setAlert('😁 Sucesso!', `O usuário ${this.user.name} foi incluído no sistema!`, 'agora', 3000)
       }, () => this.alert.setAlert(`❌ Erro!`, `O email ${this.user.email}, já está cadastrado em nosso sistema.`, 'agora')
+      
       )
-      const modal = new bootstrap.Modal(document.querySelector('#login'))
-      this.router.navigate(['/home'])
-      modal.show()
+      //const modal = new bootstrap.Modal(document.querySelector('#login'))
+      //modal.show()
     }
   }
   voltar() {
