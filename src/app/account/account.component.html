@@ -1,9 +1,11 @@
+<app-alert></app-alert>
 <div class="container-fluid">
     <div class="row css-selector">
         <div class="col-12">
             <div class="row d-flex justify-content-between pt-3">
                 <h1 class="font1 ml-3 text-light">Olá, {{user.name}}</h1>
-                <a routerLink='/home' class="font1 text-light justify-content-end m-3" style="text-decoration: none;">Voltar</a>
+                <a routerLink='/home' class="font1 text-light justify-content-end m-3"
+                    style="text-decoration: none;">Voltar</a>
             </div>
             <div class="row justify-content-center d-flex pt-5">
                 <svg style="border: 5px solid #364A15;" xmlns="http://www.w3.org/2000/svg" width="11rem"
@@ -52,12 +54,84 @@
                     <h2 class="font-fam fs-20 ml-3 x" style="cursor: pointer;" routerLink='/carrinho'>Meu carrinho</h2>
                     <h2 class="font-fam fs-20 ml-3 x" style="cursor: pointer;" routerLink='/pedido'>Meus pedidos</h2>
                     <h2 class="font-fam fs-20 ml-3 x" style="cursor: pointer;" routerLink='/produtos'>Comprar</h2>
-                    <h2 class="font-fam fs-20 ml-3 x" style="cursor: pointer;" routerLink='/home'>Página inicial Lifeshop
+                    <h2 class="font-fam fs-20 ml-3 x" style="cursor: pointer;" routerLink='/home'>Página inicial
+                        Lifeshop
                     </h2>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<app-edit-user></app-edit-user>
+
+<!--<app-edit-user></app-edit-user>-->
+<!-- Modal Update User -->
+
+<div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+            </div>
+            <div class="modal-body justify-content-center font-fam">
+                <div class="form-group">
+                    <label for="nome" class="font-green">Nome</label>
+                    <input [(ngModel)]='user.name' type="text" class="form-control font-gray" id="nome" placeholder="seu nome">
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="font-green">Email</label>
+                    <input [(ngModel)]='user.email' type="email" class="form-control font-gray" id="email" placeholder="usuario@exemplo.com">
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cep" class="font-green">CEP</label>
+                            <input [(ngModel)]='user.zipCode' type="text" class="form-control font-gray" id="cep"
+                                placeholder="xxxxx-xxx">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="telefone" class="font-green">Telefone</label>
+                            <input [(ngModel)]='user.phone' type="text" class="form-control font-gray" id="telefone"
+                                placeholder="(xx)xxxxx-xxxx">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="endereco" class="font-green">Endereço</label>
+                    <input [(ngModel)]='user.address' type="text" class="form-control font-gray" id="endereco"
+                        placeholder="Rua, nº, bairro">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="senha" class="font-green">Senha</label>
+                            <input type="password" class="form-control font-gray" id="senha" placeholder="Digite senha usuário">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="confirmeSenha" class="font-green">Confirmar Senha</label>
+                            <input [(ngModel)]='user.password' type="password" class="form-control font-gray" id="confirmeSenha"
+                                placeholder="Confirme senha">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="d-flex justify-content-center font-fam mb-4">
+                <button class="btn buttonpadrao" type="submit" data-dismiss="modal" (click)='updateUser()'
+                    aria-label="Close">Atualizar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <app-footer></app-footer>

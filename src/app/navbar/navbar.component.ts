@@ -45,7 +45,9 @@ export class NavbarComponent implements OnInit {
 
   signout() {
     localStorage.clear()
-    window.location.reload()
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigate(['/home']);
   }
   
   f(x?: any) {

@@ -1,0 +1,7 @@
+.animacao:hover {
+    color: green;
+}
+
+.animacao:not(hover){
+    text-decoration: unset;
+}

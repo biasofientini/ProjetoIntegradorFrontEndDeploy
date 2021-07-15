@@ -67,13 +67,16 @@ export class NewProductFormComponent implements OnInit {
     this.productService.postProduct(this.product).subscribe((resp: Product) => {
       this.product = resp
       this.alert.setAlert('Produto cadastrado', `${this.product.name} cadastrado com sucesso`, 'agora', 2000)
-      window.location.reload()//dar reload na página
-
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+      this.router.onSameUrlNavigation = 'reload';
+      this.router.navigate(['/admin/produto/cadastrar']);
     })
    }
   }
 
   cancel() {
-    window.location.reload()
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigate(['/admin/produto/cadastrar']);
   }
 }

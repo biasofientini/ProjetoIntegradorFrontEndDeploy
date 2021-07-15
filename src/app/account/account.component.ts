@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertComponent } from '../alert/alert.component';
 import { User } from '../model/User';
 import { UserService } from '../service/user.service';
 
@@ -11,6 +12,7 @@ import { UserService } from '../service/user.service';
 export class AccountComponent implements OnInit {
 
   user: User = new User()
+  alert = AlertComponent
 
   constructor(
     private router: Router,
@@ -29,6 +31,16 @@ export class AccountComponent implements OnInit {
       this.user.phone = resp.phone
       this.user.zipCode = resp.zipCode
       this.user.address = resp.address
+      this.user.password = resp.password
+    })
+  }
+
+  updateUser() {
+    this.authUserService.putUser(this.user, +(localStorage.getItem("idUser") || "")).subscribe((resp: User) => {
+      this.alert.setAlert('🎉 Tudo certo', `Informações atualizadas com sucesso! ${this.user.name}`, 'agora', 3000)
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+      this.router.onSameUrlNavigation = 'reload';
+      this.router.navigate(['/conta']);
     })
   }
 }
