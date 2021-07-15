@@ -11,17 +11,15 @@ declare var bootstrap: any
   styleUrls: ['./new-user.component.css']
 })
 export class NewUserComponent implements OnInit {
-  @ViewChild('component') component: ElementRef
+  @ViewChild('componentUser') componentUser: ElementRef
   @ViewChild('passwordInput') passwordInput: ElementRef
   @ViewChild('confirmPasswordInput') confirmPasswordInput: ElementRef
-  @ViewChild('checkboxAdmin') checkboxAdmin: ElementRef
   @ViewChild('modalComponentUser') modalComponentUser: ElementRef
-  @ViewChild('modalComponentUpdateUser') modalComponentUpdateUser: ElementRef
 
   @Input() user: User
   roleId: number = 2 //default
   confirmeSenha: string
-  adminCheck: boolean = false
+
   alert = AlertComponent
 
   constructor(
@@ -35,21 +33,7 @@ export class NewUserComponent implements OnInit {
     this.confirmeSenha = event.target.value
   }
 
-  adminCheckbox(event: any) {
-    if (this.checkboxAdmin.nativeElement.checked == true) {
-      this.adminCheck = true
-      this.roleId = 1
-    }
-    if (this.checkboxAdmin.nativeElement.checked == false) {
-      this.adminCheck = false
-      this.roleId = 2
-    }
-  }
-  showUpdateUser() {
-    this.confirmPasswordInput.nativeElement.value = ''
-    const modal = new bootstrap.Modal(this.modalComponentUpdateUser.nativeElement)
-    modal.show()
-  }
+
 
   showPreviewUser() {
     const modal = new bootstrap.Modal(this.modalComponentUser.nativeElement)
@@ -60,13 +44,12 @@ export class NewUserComponent implements OnInit {
     this.userService.deleteUser(this.user.id!).subscribe(() => {
       this.alert.setAlert('Remoção', `${this.user.name} removido com sucesso`, 'agora')
       const collapse = new bootstrap.Collapse(
-        this.component.nativeElement,
+        this.componentUser.nativeElement,
         { toggle: false }
       )
       collapse.hide()
     },
       () => this.alert.setAlert(`Erro`, `Erro ao excluir ${this.user.name}`, 'agora')
     )
-
   }
 }
