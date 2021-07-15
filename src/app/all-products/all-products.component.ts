@@ -9,7 +9,7 @@ import { AllProductsService } from '../service/all-products.service';
 })
 export class AllProductsComponent implements OnInit {
 
-  listProducts: Product[]
+  listProducts: Product[] = []
   maxItemsPage: number = 12
   currentPage: number = 0
   numberOfPages: number

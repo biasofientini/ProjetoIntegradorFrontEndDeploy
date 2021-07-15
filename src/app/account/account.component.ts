@@ -4,6 +4,8 @@ import { AlertComponent } from '../alert/alert.component';
 import { User } from '../model/User';
 import { UserService } from '../service/user.service';
 
+
+
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
@@ -37,10 +39,17 @@ export class AccountComponent implements OnInit {
 
   updateUser() {
     this.authUserService.putUser(this.user, +(localStorage.getItem("idUser") || "")).subscribe((resp: User) => {
-      this.alert.setAlert('🎉 Tudo certo', `Informações atualizadas com sucesso! ${this.user.name}`, 'agora', 3000)
-      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-      this.router.onSameUrlNavigation = 'reload';
-      this.router.navigate(['/conta']);
+      if(this.user.password != resp.password){
+        this.alert.setAlert('🎉 Tudo certo', `Informações atualizadas com sucesso! ${this.user.name}`, 'agora', 3000)
+        localStorage.setItem("token", resp.token)
+        localStorage.setItem("idUser", resp.id.toString())
+        localStorage.setItem("idRole", resp.idRole.toString())
+        this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+        this.router.onSameUrlNavigation = 'reload';
+        this.router.navigate(['/conta']);
+      } else{
+        this.alert.setAlert('🎉 Tudo certo', `Informações atualizadas com sucesso! ${this.user.name}`, 'agora', 3000)
+      }
     })
   }
 }
