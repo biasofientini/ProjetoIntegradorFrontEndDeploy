@@ -1,5 +1,6 @@
 import { ElementRef } from '@angular/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlertComponent } from '../alert/alert.component';
 import { User } from '../model/User';
 import { UserService } from '../service/user.service';
@@ -20,7 +21,8 @@ export class NewUserFormComponent implements OnInit {
   alert = AlertComponent
 
   constructor(
-    private serviceUser: UserService
+    private serviceUser: UserService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -42,7 +44,9 @@ export class NewUserFormComponent implements OnInit {
   }
 
   cancel() {
-    window.location.reload()
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigate(['/admin/usuario/cadastrar']);
   }
 
   validateInput() {
@@ -87,10 +91,14 @@ export class NewUserFormComponent implements OnInit {
         this.user = resp
         if (this.checkboxAdmin.nativeElement.checked == true) {
           this.alert.setAlert('😁 Sucesso!', `O administrador ${this.user.name} foi cadastrado na Lifeshop!`, 'agora', 3000)
-          window.location.reload()
+          this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+          this.router.onSameUrlNavigation = 'reload';
+          this.router.navigate(['/admin/usuario/cadastrar']);
         } else if (this.checkboxAdmin.nativeElement.checked == false) {
           this.alert.setAlert('😁 Sucesso!', `O usuário ${this.user.name} foi cadastrado na Lifeshop!`, 'agora', 3000)
-          window.location.reload()
+          this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+          this.router.onSameUrlNavigation = 'reload';
+          this.router.navigate(['/admin/usuario/cadastrar']);
         }
       }, () => this.alert.setAlert(`❌ Erro!`, `O email ${this.user.email}, já está cadastrado em nosso sistema.`, 'agora')
       )

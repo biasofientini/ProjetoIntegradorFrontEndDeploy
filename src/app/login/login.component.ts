@@ -28,8 +28,9 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("token", resp.token)
       localStorage.setItem("idUser", resp.id.toString())
       localStorage.setItem("idRole", resp.idRole.toString())
-      this.router.navigate(['/home'])
-      window.location.reload()
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+      this.router.onSameUrlNavigation = 'reload';
+      this.router.navigate(['/home']);
     })
   }
 

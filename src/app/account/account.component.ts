@@ -33,10 +33,10 @@ export class AccountComponent implements OnInit {
       this.user.phone = resp.phone
       this.user.zipCode = resp.zipCode
       this.user.address = resp.address
-
-      
+      this.user.password = resp.password
     })
   }
+
   updateUser() {
     this.authUserService.putUser(this.user, +(localStorage.getItem("idUser") || "")).subscribe((resp: User) => {
       if(this.user.password != resp.password){
@@ -44,11 +44,12 @@ export class AccountComponent implements OnInit {
         localStorage.setItem("token", resp.token)
         localStorage.setItem("idUser", resp.id.toString())
         localStorage.setItem("idRole", resp.idRole.toString())
-        window.location.reload()
+        this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+        this.router.onSameUrlNavigation = 'reload';
+        this.router.navigate(['/conta']);
       } else{
         this.alert.setAlert('🎉 Tudo certo', `Informações atualizadas com sucesso! ${this.user.name}`, 'agora', 3000)
       }
-
     })
   }
 }
