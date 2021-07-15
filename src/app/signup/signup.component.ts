@@ -77,10 +77,9 @@ export class SignupComponent implements OnInit {
       }, () => this.alert.setAlert(`❌ Erro!`, `O email ${this.user.email}, já está cadastrado em nosso sistema.`, 'agora')
       
       )
-      //const modal = new bootstrap.Modal(document.querySelector('#login'))
-      //modal.show()
     }
   }
+  
   voltar() {
     this.router.navigate(['/home'])
   }
