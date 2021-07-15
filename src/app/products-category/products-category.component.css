@@ -2,3 +2,6 @@
     background-color: #e9ecef;
     border: none;
 }
+a:hover {
+    cursor: pointer;
+}

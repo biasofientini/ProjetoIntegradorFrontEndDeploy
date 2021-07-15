@@ -37,8 +37,8 @@
     <h4 class="text-center font-fam font-gray">Aqui você encontra todos os produtos da Lifeshop, independente de sua categoria! Caso deseje uma categoria especifíca, por favor, escolha acima uma das imagens! E, caso deseje uma pesquisa personalizada, utilize nossa barra de pesquisa!</h4>
 </div>
 
-<div class="container mr-0">
-    <div class="row">
+<div class="container">
+    <div class="row d-flex justify-content-center">
         <div *ngFor="let p of listProducts.slice(maxItemsPage*currentPage, (currentPage+1)*maxItemsPage)">
             <app-product [p]="p"></app-product>
         </div>

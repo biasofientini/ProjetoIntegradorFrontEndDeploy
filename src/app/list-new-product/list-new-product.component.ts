@@ -1,5 +1,5 @@
 import { Product } from '../model/Product';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { AllProductsService } from '../service/all-products.service';
 import { ProductService } from '../service/product.service';
 import { AlertComponent } from '../alert/alert.component';
