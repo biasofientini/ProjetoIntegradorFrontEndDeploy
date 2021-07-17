@@ -2,3 +2,16 @@
     background-color: #e9ecef;
     border: none;
 }
+.cardstyle{
+    transition:0.3s;
+}
+
+.cardstyle:hover{
+    transition:0.3s;
+    transform: scale(0.98);
+    opacity: 0.5; 
+    cursor: pointer;
+}
+a:hover {
+    cursor: pointer;
+}

@@ -1,7 +1,40 @@
 <app-navbar></app-navbar>
 <app-alert></app-alert>
+
+<div class="container-fluid">
+    <div class="row d-flex align-items-center">
+        <div class="col-md-12">
+
+            <div class="row d-flex justify-content-between">
+
+                <div class="my-4 d-flex" style="width: 18%;">
+                    <app-img class="cardstyle" routerLink='/produtos/acessorios' [class]="'card-img-top'" [src]="'https://i.imgur.com/W9wOfPo.png'"></app-img>
+                </div>
+
+                <div class="my-4 d-flex" style="width: 18%;">
+                    <app-img class="cardstyle" routerLink='/produtos/alimentos' [class]="'card-img-top'" [src]="'https://i.imgur.com/nBrtzdg.png'"></app-img>
+                </div>
+
+                <div class="my-4 d-flex" style="width: 18%;">
+                    <app-img class="cardstyle" routerLink='/produtos/bemestar' [class]="'card-img-top'" [src]="'https://i.imgur.com/cwuET5L.png'"></app-img>
+                </div>
+
+                <div class="my-4 d-flex" style="width: 18%;">
+                    <app-img class="cardstyle" routerLink='/produtos/utensilios' [class]="'card-img-top'" [src]="'https://i.imgur.com/cW9cMJP.png'"></app-img>
+                </div>
+
+                <div class="my-4 d-flex" style="width: 18%;">
+                    <app-img class="cardstyle" routerLink='/produtos/vestuario' [class]="'card-img-top'" [src]="'https://i.imgur.com/I07mV4e.png'"></app-img>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="container">
     <h1 class="text-center font1 font-green">Resultados da busca por {{description}}</h1>
+    <h4 class="text-center font-fam font-gray">Não é o que você está procurando?!? Não se preocupe, você pode fazer uma nova busca, procurar por produtos de uma categoria específica ou acessar nossa loja com todos nossos produtos!</h4>
     <div class="row justify-content-center">
         <div *ngFor="let p of listProducts.slice(maxItemsPage*currentPage, (currentPage+1)*maxItemsPage)">
             <app-product [p]="p"></app-product>
