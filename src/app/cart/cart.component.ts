@@ -68,6 +68,8 @@ export class CartComponent implements OnInit {
     },
     () => {
       this.processingOrder = false
+      this.finalPriceWithoutDiscount = 0
+      this.totalItems = 0
       this.findAllCartItems()
       this.alert.setAlert('Erro ao efetuar compra', 'Por favor, selecione uma válida para cada item', 'agora')
     })
@@ -102,9 +104,9 @@ export class CartComponent implements OnInit {
       const first = cartItems[0]
       for(let i=1; i < cartItems.length; i++){
         first.productQty += cartItems[i].productQty
-        this.authCartItem.delete(cartItems[i].id).subscribe()
+        //this.authCartItem.delete(cartItems[i].id).subscribe()
       }
-      this.authCartItem.update(first).subscribe()
+      //this.authCartItem.update(first).subscribe()
       arrayProducts.push(first)
     })
     return arrayProducts
