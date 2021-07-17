@@ -13,16 +13,16 @@ export class ProductService {
     private http: HttpClient
   ) { }
 
-  token = {
-    headers: new HttpHeaders().set('Authorization', localStorage.getItem("token") || "")
+  token() {
+    return {headers: new HttpHeaders().set('Authorization', localStorage.getItem("token") || "")}
   }
 
   postProduct(product: Product): Observable<Product> {
-    return this.http.post<Product>(`${URL}/product`, product, this.token)
+    return this.http.post<Product>(`${URL}/product`, product, this.token())
   }
 
   putProduct(product: Product): Observable<Product> {
-    return this.http.put<Product>(`${URL}/product/${product.id}`, product, this.token)
+    return this.http.put<Product>(`${URL}/product/${product.id}`, product, this.token())
   }
 
   getProductsByCatogories(category: string): Observable<Product[]>{

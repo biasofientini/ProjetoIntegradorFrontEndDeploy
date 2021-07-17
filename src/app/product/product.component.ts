@@ -19,8 +19,8 @@ export class ProductComponent implements OnInit {
   alert = AlertComponent
 
   constructor(
-    private authCartItem: CartItemService,
-    private authCart: CartService
+    public authCartItem: CartItemService,
+    public authCart: CartService
   ) {}
 
 
