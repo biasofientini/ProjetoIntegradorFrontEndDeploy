@@ -13,8 +13,8 @@ export class AllProductsService {
     private http: HttpClient
   ) { }
 
-  token = {
-    headers: new HttpHeaders().set('Authorization', localStorage.getItem("token") || "")
+  token() {
+    return {headers: new HttpHeaders().set('Authorization', localStorage.getItem("token") || "")}
   }
 
   getAllProducts(): Observable<Product[]>{
@@ -27,6 +27,6 @@ export class AllProductsService {
 
   deleteById(idProduct: number): Observable<any>{
     console.log(idProduct)
-    return this.http.delete(`${URL}/product/${idProduct}`, this.token)
+    return this.http.delete(`${URL}/product/${idProduct}`, this.token())
   }
 }
