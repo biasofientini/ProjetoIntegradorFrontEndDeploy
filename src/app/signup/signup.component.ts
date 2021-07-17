@@ -68,13 +68,13 @@ export class SignupComponent implements OnInit {
   
     if(!this.validateInput()) return
     if (this.user.password != this.confirmeSenha) {
-      this.alert.setAlert('⚠️ Atenção!', 'As senhas não correspodem.', 'agora', 3000)
+      this.alert.setAlert('⚠️ Atenção!', 'As senhas não correspodem.', 'agora', 5000)
     } else {
       this.authService.postUser(this.user).subscribe((resp: User) => {
         this.user = resp
         this.router.navigate(['/home'])
-        this.alert.setAlert('😁 Sucesso!', `O usuário ${this.user.name} foi incluído no sistema!`, 'agora', 3000)
-      }, () => this.alert.setAlert(`❌ Erro!`, `O email ${this.user.email}, já está cadastrado em nosso sistema.`, 'agora')
+        this.alert.setAlert('😁 Sucesso!', `O usuário ${this.user.name} foi incluído no sistema!`, 'agora', 5000)
+      }, () => this.alert.setAlert(`❌ Erro!`, `O email ${this.user.email}, já está cadastrado em nosso sistema.`, 'agora', 5000)
       
       )
     }
