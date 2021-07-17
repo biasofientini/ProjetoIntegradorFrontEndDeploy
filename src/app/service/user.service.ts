@@ -13,26 +13,25 @@ export class UserService {
     private http: HttpClient
   ) { }
 
-  token = {
-    headers: new HttpHeaders().set('Authorization', localStorage.getItem("token") || "")
+  token() {
+    return {headers: new HttpHeaders().set('Authorization', localStorage.getItem("token") || "")}
   }
 
- 
   getById(id: number): Observable<User> {
-    return this.http.get<User>(`${URL}/user/u/${id}`, this.token)
+    return this.http.get<User>(`${URL}/user/u/${id}`, this.token())
   }
 
   adminGetById(id: number): Observable<User>{
-    return this.http.get<User>(`${URL}/user/${id}`, this.token)
+    return this.http.get<User>(`${URL}/user/${id}`, this.token())
   }
 
   getAllUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${URL}/user`, this.token)
+    return this.http.get<User[]>(`${URL}/user`, this.token())
   }
 
   getUsersByName(name: string):Observable<User[]>{
     let  nameUser = new HttpParams().set('name', name)
-    return this.http.get<User[]>(`${URL}/user?${nameUser}`, this.token)
+    return this.http.get<User[]>(`${URL}/user?${nameUser}`, this.token())
   }
 
   postUser(user: User, id: number): Observable<User> {
@@ -40,11 +39,11 @@ export class UserService {
   }
 
   putUser(user: User, id: number){
-    return this.http.put<User>(`${URL}/user/${id}`, user, this.token)
+    return this.http.put<User>(`${URL}/user/${id}`, user, this.token())
   }
 
   deleteUser(id: number) :Observable<any>{
     console.log(id)
-    return this.http.delete<User>(`${URL}/user/${id}`, this.token)
+    return this.http.delete<User>(`${URL}/user/${id}`, this.token())
   }
 }

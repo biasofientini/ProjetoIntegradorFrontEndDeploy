@@ -15,19 +15,19 @@ export class CartService {
     private http: HttpClient
   ) { }
 
-  token = {
-    headers: new HttpHeaders().set('Authorization', localStorage.getItem("token") || "")
+  token() {
+    return {headers: new HttpHeaders().set('Authorization', localStorage.getItem("token") || "")}
   }
 
   getAllCart() {
-    return this.http.get<Cart[]>(`${URL}/cart`, this.token)
+    return this.http.get<Cart[]>(`${URL}/cart`, this.token())
   }
 
   post() {
-    return this.http.post<Cart>(`${URL}/cart`, {} ,this.token)
+    return this.http.post<Cart>(`${URL}/cart`, {} ,this.token())
   }
 
   delete(idCart: number) {
-    return this.http.delete(`${URL}/cart/${idCart}` ,this.token)
+    return this.http.delete(`${URL}/cart/${idCart}` ,this.token())
   }
 }
