@@ -35,7 +35,7 @@ export class AccountComponent implements OnInit {
       this.user.phone = resp.phone
       this.user.zipCode = resp.zipCode
       this.user.address = resp.address
-      this.user.password = resp.password
+      this.user.password = ''
     })
   }
 
