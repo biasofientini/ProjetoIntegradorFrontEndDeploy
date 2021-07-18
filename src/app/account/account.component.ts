@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertComponent } from '../alert/alert.component';
 import { User } from '../model/User';
+import { AuthService } from '../service/auth.service';
 import { UserService } from '../service/user.service';
 
 
@@ -18,7 +19,8 @@ export class AccountComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private authUserService: UserService
+    private authUserService: UserService,
+    private authService: AuthService,
   ) { }
 
   ngOnInit() {
@@ -39,17 +41,14 @@ export class AccountComponent implements OnInit {
 
   updateUser() {
     this.authUserService.putUser(this.user, +(localStorage.getItem("idUser") || "")).subscribe((resp: User) => {
-      if(this.user.password != resp.password){
-        this.alert.setAlert('🎉 Tudo certo', `Informações atualizadas com sucesso! ${this.user.name}`, 'agora', 3000)
+      this.alert.setAlert('🎉 Tudo certo', `Informações atualizadas com sucesso! ${this.user.name}`, 'agora', 3000)
+      this.authService.logar(this.user).subscribe((resp: User) => {
         localStorage.setItem("token", resp.token)
         localStorage.setItem("idUser", resp.id.toString())
         localStorage.setItem("idRole", resp.idRole.toString())
-        this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-        this.router.onSameUrlNavigation = 'reload';
-        this.router.navigate(['/conta']);
-      } else{
-        this.alert.setAlert('🎉 Tudo certo', `Informações atualizadas com sucesso! ${this.user.name}`, 'agora', 3000)
-      }
+        this.getUserProfile()
+      })
     })
   }
+
 }
