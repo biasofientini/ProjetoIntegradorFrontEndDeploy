@@ -13,15 +13,15 @@ export class OrderItemService {
     private http: HttpClient
   ) { }
 
-  token = {
-    headers: new HttpHeaders().set('Authorization', localStorage.getItem("token") || "")
+  token() {
+    return {headers: new HttpHeaders().set('Authorization', localStorage.getItem("token") || "")}
   }
 
   getAllByOrderId(idOrder: number): Observable<OrderItem[]>{
-     return this.http.get<OrderItem[]> (`${URL}/orderitem/u?idOrder=${idOrder}`, this.token)
+     return this.http.get<OrderItem[]> (`${URL}/orderitem/u?idOrder=${idOrder}`, this.token())
   }
 
   adminGetAllByOrderId(idOrder: number): Observable<OrderItem[]>{
-    return this.http.get<OrderItem[]> (`${URL}/orderitem/a?idOrder=${idOrder}`, this.token)
+    return this.http.get<OrderItem[]> (`${URL}/orderitem/a?idOrder=${idOrder}`, this.token())
  }
 }

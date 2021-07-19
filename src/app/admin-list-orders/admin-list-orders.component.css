@@ -1,7 +1,9 @@
 .animacao:hover {
-    color: green;
+    color: #A4B501;
 }
 
 .animacao:not(hover){
     text-decoration: unset;
+    color: #364A15;
+    font-weight: bold;
 }

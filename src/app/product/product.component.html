@@ -3,12 +3,12 @@
     <app-img [class]="'card-img-top'" [style]="'height: 10rem; width: 18rem;'" [src]="p.urlImage"></app-img>
     <div class="card-body d-flex align-items-end font-fam">
         <div class="text-center" style="width: 16rem;">
-            <h5 class="card-title">{{p.name.substring(0, 20)}}</h5>
-            <p class="card-text">{{p.description.substring(0, 25) + "..."}}</p>
+            <h5 class="card-title">{{p.name}}</h5>
+            <p class="card-text">{{p.description.substring(0, 25 || "") + "..."}}</p>
             <p>
                 <span class="badge badge-pill badge-secondary">{{ getCategoryName(p.category) }}</span>
             </p>
-            <p class="card-text">{{p.price | currency:'BRL'}}</p>
+            <p class="card-text brown-color">{{p.price | currency:'BRL'}}</p>
             <button *ngIf="qty == 0" (click)="increaseQty()" type="button" class="btn btn-block btn-success">Comprar</button>
             <div *ngIf="qty > 0" class="d-block">
                 <div class="input-group border">

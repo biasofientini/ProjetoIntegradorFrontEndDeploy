@@ -42,14 +42,14 @@ export class NewUserComponent implements OnInit {
 
   deleteUser() {
     this.userService.deleteUser(this.user.id!).subscribe(() => {
-      this.alert.setAlert('Remoção', `${this.user.name} removido com sucesso`, 'agora')
+      this.alert.setAlert('✔️ Remoção', `${this.user.name} removido com sucesso`, 'agora', 3000)
       const collapse = new bootstrap.Collapse(
         this.componentUser.nativeElement,
         { toggle: false }
       )
       collapse.hide()
     },
-      () => this.alert.setAlert(`Erro`, `Erro ao excluir ${this.user.name}`, 'agora')
+      () => this.alert.setAlert(`❌ Erro ao excluir`, `Erro ao tentar excluir ${this.user.name}, provavelmente o usuário tem pedidos pendentes.`, 'agora', 3000)
     )
   }
 }

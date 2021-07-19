@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from '../model/Order';
+import { User } from '../model/User';
 import { OrderService } from '../service/order.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class AdminListOrdersComponent implements OnInit {
     private authOrder: OrderService
   ) { }
 
-  pedingOrders: Order[] = [] 
+  pedingOrders: Order[] = []
+  user: User = new User()
 
   ngOnInit(): void {
     this.findAllOrders()
@@ -21,7 +23,7 @@ export class AdminListOrdersComponent implements OnInit {
 
   findAllOrders(){
     this.authOrder.adminGetAll().subscribe((orders: Order[]) => {
-      this.pedingOrders = orders.filter((order: Order) => order.status == "Em separação")
+      this.pedingOrders = orders.filter((order: Order) => order.status == "Em separação")  
     })
   }
 }
