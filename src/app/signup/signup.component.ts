@@ -31,7 +31,7 @@ export class SignupComponent implements OnInit {
 
 
   validateInput() {
-    if (this.user.name === undefined || this.user.name === '') {
+    if (this.user.name === undefined || this.user.name === '' || this.user.name.length < 3) {
       this.alert.setAlert('Dados inválidos', 'Insira um nome válido', 'agora')
       return false
     }

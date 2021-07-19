@@ -78,32 +78,32 @@
             </div>
             <div class="modal-body justify-content-center font-fam">
                 <div class="form-group">
-                    <label for="nome" class="font-green">Nome</label>
+                    <label for="nome" class="font-green font-weight-bold">Nome</label>
                     <input [(ngModel)]='user.name' type="text" class="form-control font-gray" id="nome" placeholder="seu nome">
                 </div>
 
                 <div class="form-group">
-                    <label for="email" class="font-green">Email</label>
-                    <input [(ngModel)]='user.email' type="email" class="form-control font-gray" id="email" placeholder="usuario@exemplo.com">
+                    <label for="email" class="font-green font-weight-bold">Email </label>
+                    <input [(ngModel)]='user.email' type="email" class="form-control font-gray" id="email" placeholder="usuario@exemplo.com" readonly>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="cep" class="font-green">CEP</label>
+                            <label for="cep" class="font-green font-weight-bold">CEP</label>
                             <input [(ngModel)]='user.zipCode' type="text" class="form-control font-gray" id="cep"
                                 placeholder="xxxxx-xxx">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="telefone" class="font-green">Telefone</label>
+                            <label for="telefone" class="font-green font-weight-bold">Telefone</label>
                             <input [(ngModel)]='user.phone' type="text" class="form-control font-gray" id="telefone"
                                 placeholder="(xx)xxxxx-xxxx">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="endereco" class="font-green">Endereço</label>
+                    <label for="endereco" class="font-green font-weight-bold">Endereço</label>
                     <input [(ngModel)]='user.address' type="text" class="form-control font-gray" id="endereco"
                         placeholder="Rua, nº, bairro">
                 </div>
@@ -111,13 +111,13 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="senha" class="font-green">Senha</label>
-                            <input type="password" class="form-control font-gray" id="senha" placeholder="Digite senha usuário">
+                            <label for="senha" class="font-green font-weight-bold">Senha</label>
+                            <input type="password" class="form-control font-gray" id="senha" placeholder="Digite senha usuário" #passwordInput>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="confirmeSenha" class="font-green">Confirmar Senha</label>
+                            <label for="confirmeSenha" class="font-green font-weight-bold">Confirmar Senha</label>
                             <input [(ngModel)]='user.password' type="password" class="form-control font-gray" id="confirmeSenha"
                                 placeholder="Confirme senha">
                         </div>

@@ -1,3 +1,4 @@
+<app-alert></app-alert>
 <div class="container" style="background-color: white;">
     <h5 class="text-center mb-3 font-fam font-gray font-weight-bold">CADASTRAR NOVO USUÁRIO </h5>
     <div class="row">
@@ -75,6 +76,8 @@
                     </svg>
                 </div>
                 <div class="card-body font-fam">
+                    <h6 class="card-title fs-14 font-weight-bolder">{{user.name}}</h6>
+                    <!-- RETIREI O CADEADO DO LADO DO NOME DO ADMIN, ESTAVA ME IRRITANDO
                     <ng-template [ngIf]="adminCheck==true">
                         <h6 class="card-title fs-14 font-weight-bolder">{{user.name}} <i class="fa fa-unlock-alt"
                                 aria-hidden="true"></i> </h6>
@@ -82,6 +85,7 @@
                     <ng-template [ngIf]="adminCheck==false">
                         <h6 class="card-title fs-14 font-weight-bolder">{{user.name}}</h6>
                     </ng-template>
+                -->
                     <p class="card-text d-inline">{{user.email}}</p>
                     <br>
                     <p class="card-text d-inline">Tel. {{user.phone}}</p>
