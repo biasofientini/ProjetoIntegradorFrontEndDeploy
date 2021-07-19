@@ -72,3 +72,6 @@
     color: #ffffff;
     background-color: #A4B501;
 }
+input{
+    border-radius: 15px;
+}
