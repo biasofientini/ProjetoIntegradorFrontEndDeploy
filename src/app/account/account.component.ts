@@ -22,7 +22,7 @@ export class AccountComponent implements OnInit {
   constructor(
     private router: Router,
     private authUserService: UserService,
-    private authService: AuthService,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
