@@ -8,23 +8,28 @@
             <div class="row d-flex justify-content-between">
 
                 <div class="my-4 d-flex" style="width: 18%;">
-                    <app-img class="cardstyle" routerLink='/produtos/acessorios' [class]="'card-img-top'" [src]="'https://i.imgur.com/W9wOfPo.png'"></app-img>
+                    <app-img class="cardstyle" routerLink='/produtos/acessorios' [class]="'card-img-top'"
+                        [src]="'https://i.imgur.com/W9wOfPo.png'"></app-img>
                 </div>
 
                 <div class="my-4 d-flex" style="width: 18%;">
-                    <app-img class="cardstyle" routerLink='/produtos/alimentos' [class]="'card-img-top'" [src]="'https://i.imgur.com/nBrtzdg.png'"></app-img>
+                    <app-img class="cardstyle" routerLink='/produtos/alimentos' [class]="'card-img-top'"
+                        [src]="'https://i.imgur.com/nBrtzdg.png'"></app-img>
                 </div>
 
                 <div class="my-4 d-flex" style="width: 18%;">
-                    <app-img class="cardstyle" routerLink='/produtos/bemestar' [class]="'card-img-top'" [src]="'https://i.imgur.com/cwuET5L.png'"></app-img>
+                    <app-img class="cardstyle" routerLink='/produtos/bemestar' [class]="'card-img-top'"
+                        [src]="'https://i.imgur.com/cwuET5L.png'"></app-img>
                 </div>
 
                 <div class="my-4 d-flex" style="width: 18%;">
-                    <app-img class="cardstyle" routerLink='/produtos/utensilios' [class]="'card-img-top'" [src]="'https://i.imgur.com/cW9cMJP.png'"></app-img>
+                    <app-img class="cardstyle" routerLink='/produtos/utensilios' [class]="'card-img-top'"
+                        [src]="'https://i.imgur.com/cW9cMJP.png'"></app-img>
                 </div>
 
                 <div class="my-4 d-flex" style="width: 18%;">
-                    <app-img class="cardstyle" routerLink='/produtos/vestuario' [class]="'card-img-top'" [src]="'https://i.imgur.com/I07mV4e.png'"></app-img>
+                    <app-img class="cardstyle" routerLink='/produtos/vestuario' [class]="'card-img-top'"
+                        [src]="'https://i.imgur.com/I07mV4e.png'"></app-img>
                 </div>
 
             </div>
@@ -32,37 +37,59 @@
     </div>
 </div>
 
-<div class="container">
-    <h1 class="text-center font1 font-green">Resultados da busca por {{description}}</h1>
-    <h4 class="text-center font-fam font-gray">Não é o que você está procurando?!? Não se preocupe, você pode fazer uma nova busca, procurar por produtos de uma categoria específica ou acessar nossa loja com todos nossos produtos!</h4>
-    <div class="row justify-content-center">
-        <div *ngFor="let p of listProducts.slice(maxItemsPage*currentPage, (currentPage+1)*maxItemsPage)">
-            <app-product [p]="p"></app-product>
+<ng-template [ngIf]="listProducts.length != 0">
+    <div class="container">
+        <h1 class="text-center font1 font-green">Resultados da busca por {{description}}</h1>
+        <h4 class="text-center font-fam font-gray">Não é o que você está procurando?!? Não se preocupe, você pode fazer
+            uma nova busca, procurar por produtos de uma categoria específica ou acessar nossa loja com todos nossos
+            produtos!</h4>
+        <div class="row justify-content-center">
+            <div *ngFor="let p of listProducts.slice(maxItemsPage*currentPage, (currentPage+1)*maxItemsPage)">
+                <app-product [p]="p"></app-product>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row d-flex justify-content-center align-items-center">
+            <nav aria-label="Navegação de página exemplo">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" (click)='decreasePage()' aria-label="Anterior" style="color: black;">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Anterior</span>
+                        </a>
+                    </li>
+                    <li *ngFor="let _ of [].constructor(numberOfPages); index as i" (click)='changePage(i)'
+                        class="{{'page-item'+' '+(i==currentPage?'active':'')}}"><a class="page-link"
+                            style="color: black;">{{i+1}}</a></li>
+                    <li class="page-item">
+                        <a class="page-link" (click)='increasePage()' aria-label="Próximo" style="color: black;">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Próximo</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</ng-template>
+
+<div *ngIf="listProducts.length==0" class="container d-flex justify-content-center">
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center">
+            <h1 class="font1 font-green">Ops... Parece que não tem nada aqui.</h1>
+        </div>
+        <div class="col-md-12 d-flex justify-content-center">
+            <h4 class="text-center font-fam font-gray mb-0">Não se preocupe, você pode fazer
+                uma nova busca, procurar por produtos de uma categoria específica ou acessar nossa loja com todos nossos produtos! </h4>
+        </div>
+        <div class="col-md-12 d-flex justify-content-center">
+            <app-img [class]="'card-img-top'" [style]="'height: 40rem; width: 40rem;'"
+            [src]="'https://i.imgur.com/hzFy4kS.png'"></app-img>
+
         </div>
     </div>
 </div>
 
-<div class="container">
-    <div class="row d-flex justify-content-center align-items-center">
-        <nav aria-label="Navegação de página exemplo">
-            <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" (click)='decreasePage()' aria-label="Anterior" style="color: black;">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only">Anterior</span>
-                    </a>
-                </li>
-                <li *ngFor="let _ of [].constructor(numberOfPages); index as i" (click)='changePage(i)'
-                    class="{{'page-item'+' '+(i==currentPage?'active':'')}}"><a class="page-link"
-                        style="color: black;">{{i+1}}</a></li>
-                <li class="page-item">
-                    <a class="page-link" (click)='increasePage()' aria-label="Próximo" style="color: black;">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">Próximo</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</div>
 <app-footer></app-footer>

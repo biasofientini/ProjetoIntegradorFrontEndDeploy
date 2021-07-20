@@ -15,7 +15,7 @@
                     <p class="text-center mt-2">
                         <span class="badge badge-pill badge-secondary">{{ getCategoryName(p.category) }}</span>
                     </p>
-                    <p class="card-text text-center brown-color">{{p.price | currency:'BRL'}}</p>
+                    <p class="card-text text-center">{{p.price | currency:'BRL'}}</p>
                     <button *ngIf="qty == 0" (click)="increaseQty()" type="button"
                         class="btn btn-block btn-success">Comprar</button>
                     <div *ngIf="qty > 0" class="d-block">

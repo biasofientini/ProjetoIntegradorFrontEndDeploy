@@ -4,7 +4,7 @@
             <button *ngIf="o.status == 'Em separação'" (click)="markAsSent()" class="btn buttonsend">
                 Marcar como enviado
             </button>
-            <button *ngIf="o.status == 'Enviado'" (click)="markAsSent()" class="btn" style="background-color: #364A15;" disabled>
+            <button *ngIf="o.status == 'Enviado'" (click)="markAsSent()" class="btn" style="background-color: #A4B501;" disabled>
                 Enviado
             </button>
         </div>
@@ -26,8 +26,8 @@
             <h5 class="font-fam">Endereço: {{ customer.address }}</h5>
             <h5 class="font-fam">CEP: {{ customer.zipCode }}</h5>
         </div>
-        <h4 class="font-fam">Preço pago: <span class="badge badge-pill badge-light" style="color: #943200; font-weight: lighter;">{{ finalPrice | currency:'BRL' }}</span></h4>
-        <h4 class="font-fam">Total de itens <span class="badge badge-pill badge-light" style="font-weight: lighter;">{{ totalItems }}</span></h4>
+        <h4 class="font-fam">Valor recebido: <span class="badge badge-pill badge-light" style=" font-weight: bold;">{{ finalPrice | currency:'BRL' }}</span></h4>
+        <h4 class="font-fam">Total de itens <span class="badge badge-pill badge-light" style="font-weight: bold;">{{ totalItems }}</span></h4>
     </div>
     <div>
         <table class="table table-hover">

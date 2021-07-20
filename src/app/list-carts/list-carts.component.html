@@ -3,12 +3,13 @@
 <app-alert></app-alert>
 
 <div class="container mt-5">
-    <h1>Carrinhos</h1>
+    <h1 class="text-center font1 font-weight-bold font-green my-4">Meus Carrinhos</h1>
+    <p class="text-center font-fam font-gray my-4" style="font-size: 18px">Bem vindo a sessão com seus carrinhos de compras! Aqui você pode editar a quantidade dos itens de um carrinho, excluir algum item ou excluir o próprio carrinho. Além disso, em cada carrinho você pode acompanhar o desconto correspondente aos seus pontos acumulados.</p>
     <div class="accordion" id="accordionExample">
         <div class="card" *ngFor="let c of listCarts; index as i;">
             <div class="card-header" id="headingOne">
-                <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                <h2 class="mb-0 font-fam">
+                    <button class="btn btn-link btn-block text-left animacao" type="button" data-toggle="collapse"
                         [attr.data-target]="'#collapse'+i" aria-expanded="true">
                         Carrinho {{ listCarts.length-i }}
                     </button>
