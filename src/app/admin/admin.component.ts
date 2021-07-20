@@ -11,11 +11,14 @@ import { UserService } from '../service/user.service';
 export class AdminComponent implements OnInit {
 
   tipoTemplate: number
+  admin: boolean = false
   
   constructor() { }
 
   ngOnInit(): void {
-    
+    if ((localStorage.getItem("idRole") || "") == "1") {
+      this.admin = true
+    }
   }
 
 }
