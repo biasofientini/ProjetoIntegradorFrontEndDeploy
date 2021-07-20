@@ -43,6 +43,7 @@ import { VestuarioComponent } from './category/vestuario/vestuario.component';
 import { UtensiliosComponent } from './category/utensilios/utensilios.component';
 import { AcessoriosComponent } from './category/acessorios/acessorios.component';
 import { SearchComponent } from './search/search.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { SearchComponent } from './search/search.component';
     VestuarioComponent,
     UtensiliosComponent,
     AcessoriosComponent,
-    SearchComponent
+    SearchComponent,
+    ForbiddenComponent
   ],
   imports: [
     BrowserModule,

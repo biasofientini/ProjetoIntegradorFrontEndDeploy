@@ -24,6 +24,7 @@ import { VestuarioComponent } from './category/vestuario/vestuario.component';
 import { AcessoriosComponent } from './category/acessorios/acessorios.component';
 import { UtensiliosComponent } from './category/utensilios/utensilios.component';
 import { SearchComponent } from './search/search.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
 
 
 const routes: Routes = [
@@ -41,6 +42,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'produtos', component: AllProductsComponent},
   { path: 'search', component: SearchComponent},
+  { path: 'proibido', component: ForbiddenComponent },
   { path: 'admin', component: AdminComponent, children: [
     { path: 'produto', component: ListNewProductComponent},
     { path: 'produto/cadastrar', component: NewProductFormComponent},
