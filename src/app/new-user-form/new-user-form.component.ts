@@ -85,7 +85,7 @@ export class NewUserFormComponent implements OnInit {
   newUser() {
     if (!this.validateInput()) return
     if (this.user.password != this.confirmeSenha) {
-      this.alert.setAlert('⚠️ Atenção!', 'As senhas não correspodem.', 'agora', 3000)
+      this.alert.setAlert('⚠️ Atenção', 'As senhas não correspodem.', 'agora', 3000)
     } else {
       this.serviceUser.postUser(this.user, this.roleId).subscribe((resp: User) => {
         this.user = resp

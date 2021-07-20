@@ -15,15 +15,24 @@ export class AdminListOrdersComponent implements OnInit {
   ) { }
 
   pedingOrders: Order[] = []
+  order: Order = new Order()
   user: User = new User()
 
   ngOnInit(): void {
     this.findAllOrders()
+
   }
+
+  /**
+   * for(let i=1; i < cartItems.length; i++){
+        first.productQty += cartItems[i].productQty
+        //this.authCartItem.delete(cartItems[i].id).subscribe()
+      }
+   */
 
   findAllOrders(){
     this.authOrder.adminGetAll().subscribe((orders: Order[]) => {
-      this.pedingOrders = orders.filter((order: Order) => order.status == "Em separação")  
+      this.pedingOrders = orders.filter((order: Order) => order.status == "Em separação")
     })
   }
 }

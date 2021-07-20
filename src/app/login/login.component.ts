@@ -10,7 +10,10 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+
   @ViewChild('passwordInput') passwordInput: ElementRef
+  
 
   user: User = new User
   alert = AlertComponent
@@ -23,6 +26,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(){
     window.scroll(0,0)
   }
+
 
   validateInput() {
     if (this.user.email === undefined || this.user.email === '') {

@@ -1,0 +1,9 @@
+.animacao:hover {
+    color: #A4B501;
+}
+
+.animacao{
+    text-decoration: unset;
+    color: #364A15;
+    font-weight: bold;
+}
