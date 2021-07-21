@@ -17,6 +17,7 @@ export class ProductComponent implements OnInit {
   cartItem: CartItem | null = null
   qty: number = 0
   alert = AlertComponent
+  autenticado = false
 
   constructor(
     public authCartItem: CartItemService,
@@ -46,6 +47,9 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit() {
+    if ((localStorage.getItem('token') || "") != '') {
+      this.autenticado = true
+    }
   }
 
   increaseQty(){
@@ -58,7 +62,7 @@ export class ProductComponent implements OnInit {
       this.qty--
       this.authCartItem.delete(this.cartItem!.id).subscribe(() => {
         this.alert.setAlert(
-          'Remoção', 
+          '✔️ Remoção', 
           `${this.p.name} removido do carrinho com sucesso`,
           'agora'
         )
@@ -78,20 +82,25 @@ export class ProductComponent implements OnInit {
     else{
       this.cartItem.productQty = this.qty
       this.authCartItem.update(this.cartItem).subscribe((cartItem: CartItem) => {
-        this.alert.setAlert('Atualização', `${this.p.name} foi atualizado para ${cartItem.productQty} itens`, 'agora')
+        this.alert.setAlert('🔥 Atualização', `${this.p.name} foi atualizado para ${cartItem.productQty} itens`, 'agora')
       })
     }
   }
 
   async addToCart() {
-    const carts = await this.authCart.getAllCart().toPromise()
-    if(carts.length == 0){
-      carts.push(await this.authCart.post().toPromise())
+    if(this.autenticado){
+      const carts = await this.authCart.getAllCart().toPromise()
+      if(carts.length == 0){
+        carts.push(await this.authCart.post().toPromise())
+      }
+      carts.sort((c1: Cart, c2: Cart) => c1.id-c2.id).reverse()
+      this.authCartItem.post(carts[0].id, this.p.id!).subscribe((cartItem: CartItem) => {
+        this.alert.setAlert('😄 produto adicionado', `${this.p.name} adiconado ao carrinho`, 'agora', 1500)
+        this.cartItem = cartItem
+      })
+    } else {
+      this.alert.setAlert('😪 Ops...', `Para fazer uma compra você precisa fazer login com sua conta na Lifeshop`, 'agora', 1500)
     }
-    carts.sort((c1: Cart, c2: Cart) => c1.id-c2.id).reverse()
-    this.authCartItem.post(carts[0].id, this.p.id!).subscribe((cartItem: CartItem) => {
-      this.alert.setAlert('😄 produto adicionado', `${this.p.name} adiconado ao carrinho`, 'agora', 1500)
-      this.cartItem = cartItem
-    })
+
   }
 }

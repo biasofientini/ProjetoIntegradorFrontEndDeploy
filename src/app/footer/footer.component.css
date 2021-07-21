@@ -62,20 +62,14 @@ ul.method-payment li{
 
 ul.icons-empresa{
     list-style: none;
-    padding: 0;
-    margin-top: 100px;
-
 }
 
 /* acessando a tag <li> dentro da tag <ul> para alinhar os ícones da lista*/
 ul.icons-empresa li{
     display: inline;
-    padding: 5px;
 }
 
-#mt-5{
-    margin-top: 6px;
-}
+
 .footer-copyright{
     background-color: #1E1E1E;
 }
