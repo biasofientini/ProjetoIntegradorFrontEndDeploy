@@ -1,6 +1,6 @@
 <app-alert></app-alert>
 <div class="container">
-    <div class="row"> 
+    <div class="row d-flex justify-content-center"> 
         <div *ngFor="let p of listProducts.slice(maxItemsPage*currentPage, (currentPage+1)*maxItemsPage)">
             <app-product-horizontal [p]="p"></app-product-horizontal>
         </div>
