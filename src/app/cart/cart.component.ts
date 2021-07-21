@@ -71,13 +71,13 @@ export class CartComponent implements OnInit {
       this.finalPriceWithoutDiscount = 0
       this.totalItems = 0
       this.findAllCartItems()
-      this.alert.setAlert('Erro ao efetuar compra', 'Por favor, selecione uma válida para cada item', 'agora')
+      this.alert.setAlert('❌ Erro ao efetuar compra', 'Por favor, selecione uma quantidade válida para cada item', 'agora', 5000)
     })
   }
 
   deleteCart(){
     this.authCart.delete(this.c.id).subscribe(() => {
-      this.alert.setAlert('Carrinho removido', 'Carrinho removido com sucesso', 'agora')
+      this.alert.setAlert('✔️ Carrinho removido', 'Carrinho removido com sucesso', 'agora', 3000)
       this.cartEvent.emit()
     })
   }

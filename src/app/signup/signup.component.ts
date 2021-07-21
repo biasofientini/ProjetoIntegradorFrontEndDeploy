@@ -76,7 +76,14 @@ export class SignupComponent implements OnInit {
         this.user = new User()
         this.passwordInput.nativeElement.value = ''
 
-      },  () => this.alert.setAlert(`❌ Erro!`, `O email ${this.user.email}, já está cadastrado em nosso sistema.`, 'agora')
+      }, erro => {
+        if(erro.status==400){
+          this.alert.setAlert(`❌ Erro!`, `O email ${this.user.email}, já está cadastrado em nosso sistema.`, 'agora',3000)
+        }
+        if (erro.status==500){
+          this.alert.setAlert('⚠️ Email inválido', 'Insira um email válido', 'agora',3000)
+        }
+      }
       )
     }
   }
