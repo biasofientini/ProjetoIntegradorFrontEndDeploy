@@ -68,10 +68,27 @@ export class SignupComponent implements OnInit {
 
     if (!this.validateInput()) return
     if (this.user.password != this.confirmeSenha) {
+<<<<<<< HEAD
+<<<<<<< HEAD
+      this.alert.setAlert('⚠️ Atenção!', 'As senhas não correspodem.', 'agora', 5000)
+    } else {
+      this.authService.postUser(this.user).subscribe((resp: User) => {
+        this.user = resp
+        this.router.navigate(['/home'])
+        this.alert.setAlert('😁 Sucesso!', `O usuário ${this.user.name} foi incluído no sistema!`, 'agora', 5000)
+      }, () => this.alert.setAlert(`❌ Erro!`, `O email ${this.user.email}, já está cadastrado em nosso sistema.`, 'agora', 5000)
+      
+=======
       this.alert.setAlert('⚠️ Atenção', 'As senhas não correspodem.', 'agora', 3000)
     } else {
       this.authService.postUser(this.user).subscribe((resp: User) => {
         this.user = resp
+=======
+      this.alert.setAlert('⚠️ Atenção', 'As senhas não correspodem.', 'agora', 3000)
+    } else {
+      this.authService.postUser(this.user).subscribe((resp: User) => {
+        this.user = resp
+>>>>>>> 9c683f80a4bd27617cb6ed38478e3159cc0ca1ca
         this.alert.setAlert('🎉 Bem vindo', `Sucesso ao cadastrar ${this.user.name} na Lifeshop!`, 'agora', 3000)
         this.user = new User()
         this.passwordInput.nativeElement.value = ''
@@ -84,6 +101,10 @@ export class SignupComponent implements OnInit {
           this.alert.setAlert('⚠️ Email inválido', 'Insira um email válido', 'agora',3000)
         }
       }
+<<<<<<< HEAD
+>>>>>>> 6c6cc3632c382633d19d8a69c453b5902670759c
+=======
+>>>>>>> 9c683f80a4bd27617cb6ed38478e3159cc0ca1ca
       )
     }
   }
