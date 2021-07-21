@@ -56,23 +56,23 @@ export class NewProductComponent implements OnInit {
   }
   validateInput() {
 
-    if (this.p.name === undefined || this.p.name === '') {
+    if (this.p.name === undefined || this.p.name === '' || this.p.name === null) {
       this.alert.setAlert('⚠️ Nome inváldio', 'Insira um nome para o produto válido .', 'agora')
       return false
     }
-    if (this.p.description === undefined || this.p.description.length < 25 || this.p.description.length > 250){
+    if (this.p.description === undefined || this.p.description.length < 6 || this.p.description.length > 250){
       this.alert.setAlert('⚠️ Descrição inválida', 'Insira uma descrição válida.', 'agora')
       return false
     }
-    if (this.p.urlImage === undefined || this.p.urlImage === '') {
+    if (this.p.urlImage === undefined || this.p.urlImage === '' || this.p.urlImage === null) {
       this.alert.setAlert('⚠️ Url inválida', 'Insira uma url válida.', 'agora')
       return false
     }
-    if (this.p.stock === undefined || this.p.stock < 0) {
+    if (this.p.stock === undefined || this.p.stock <= 0 || this.p.stock === null) {
       this.alert.setAlert('⚠️ Estoque inválido', 'Insira um estoque válido.', 'agora')
       return false
     }
-    if (this.p.price === undefined || this.p.price < 0) {
+    if (this.p.price === undefined || this.p.price <= 0 || this.p.price === null) {
       this.alert.setAlert('⚠️ Preço inválido', 'Insira um preço válido.', 'agora')
       return false
     }
