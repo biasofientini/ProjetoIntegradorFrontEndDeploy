@@ -22,7 +22,7 @@ export class AccountComponent implements OnInit {
   constructor(
     private router: Router,
     private authUserService: UserService,
-    private authService: AuthService
+    private authService: AuthService,
   ) { }
 
   ngOnInit() {
@@ -74,6 +74,7 @@ export class AccountComponent implements OnInit {
 
   updateUser() {
 <<<<<<< HEAD
+<<<<<<< HEAD
     this.authUserService.putUser(this.user, +(localStorage.getItem("idUser") || "")).subscribe((resp: User) => {
       this.alert.setAlert('🎉 Tudo certo', `Informações atualizadas com sucesso! ${this.user.name}`, 'agora', 3000)
       this.authService.logar(this.user).subscribe((resp: User) => {
@@ -101,5 +102,23 @@ export class AccountComponent implements OnInit {
       })
     }
 >>>>>>> 6c6cc3632c382633d19d8a69c453b5902670759c
+=======
+    if(!this.validateInput()) return
+    if (this.user.password !=  this.passwordInput.nativeElement.value){
+      this.alert.setAlert('⚠️ Atenção!', 'As senhas não correspodem.', 'agora', 3000)
+      this.getUserProfile()
+      this.passwordInput.nativeElement.value = ''
+    } else{
+      this.authUserService.putUser(this.user, +(localStorage.getItem("idUser") || "")).subscribe((resp: User) => {
+        this.alert.setAlert('🎉 Tudo certo', `Informações atualizadas com sucesso! ${this.user.name}`, 'agora', 3000)
+        this.authService.logar(this.user).subscribe((resp: User) => {
+          localStorage.setItem("token", resp.token)
+          localStorage.setItem("idUser", resp.id.toString())
+          localStorage.setItem("idRole", resp.idRole.toString())
+          this.getUserProfile()
+        })
+      })
+    }
+>>>>>>> 9c683f80a4bd27617cb6ed38478e3159cc0ca1ca
   }
 }
