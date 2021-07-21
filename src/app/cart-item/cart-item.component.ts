@@ -66,7 +66,7 @@ export class CartItemComponent implements OnInit {
     this.cartItem.productQty = this.item.productQty
 
     this.authCartItemService.update(this.cartItem).subscribe((cartItem: CartItem) => {
-      this.alert.setAlert('Atualização', `${this.item.name} foi atualizado para ${cartItem.productQty} itens`, 'agora')
+      this.alert.setAlert('🔥 Atualização', `${this.item.name} foi atualizado para ${cartItem.productQty} itens`, 'agora')
     })
   }
 
@@ -77,7 +77,7 @@ export class CartItemComponent implements OnInit {
         qty: -this.item.productQty
       })
       this.alert.setAlert(
-        'Remoção', 
+        '✔️ Remoção', 
         `${this.item.name} removido com sucesso`,
         'agora'
       )

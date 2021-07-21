@@ -15,6 +15,7 @@ export class OrderComponent implements OnInit {
   finalPrice: number = 0
   totalItems: number = 0
   date: string
+  id: number
 
   listOrderItems: OrderItem[] = []
 
@@ -30,6 +31,7 @@ export class OrderComponent implements OnInit {
   ngOnInit(): void {
     this.findAllOrderItems()
     this.date = this.o.date
+    this.id = this.o.id
   }
 
   findAllOrderItems() {

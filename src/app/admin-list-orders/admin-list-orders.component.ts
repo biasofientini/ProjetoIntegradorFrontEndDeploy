@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from '../model/Order';
+import { User } from '../model/User';
 import { OrderService } from '../service/order.service';
 
 @Component({
@@ -13,11 +14,21 @@ export class AdminListOrdersComponent implements OnInit {
     private authOrder: OrderService
   ) { }
 
-  pedingOrders: Order[] = [] 
+  pedingOrders: Order[] = []
+  order: Order = new Order()
+  user: User = new User()
 
   ngOnInit(): void {
     this.findAllOrders()
+
   }
+
+  /**
+   * for(let i=1; i < cartItems.length; i++){
+        first.productQty += cartItems[i].productQty
+        //this.authCartItem.delete(cartItems[i].id).subscribe()
+      }
+   */
 
   findAllOrders(){
     this.authOrder.adminGetAll().subscribe((orders: Order[]) => {

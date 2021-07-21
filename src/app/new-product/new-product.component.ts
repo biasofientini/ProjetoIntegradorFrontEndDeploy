@@ -55,31 +55,35 @@ export class NewProductComponent implements OnInit {
     }
   }
   validateInput() {
-    if (this.p.description === undefined || this.p.description === '') {
-      this.alert.setAlert('Dados inválidos', 'Insira uma descrição válida', 'agora')
-      return false
-    }
+
     if (this.p.name === undefined || this.p.name === '') {
-      this.alert.setAlert('Dados inválidos', 'Insira um nome válido', 'agora')
+      this.alert.setAlert('⚠️ Nome inváldio', 'Insira um nome para o produto válido .', 'agora')
       return false
     }
-    if (this.p.price === undefined || this.p.price < 0) {
-      this.alert.setAlert('Dados inválidos', 'Insira um preço válido', 'agora')
-      return false
-    }
-    if (this.p.stock === undefined || this.p.stock < 0) {
-      this.alert.setAlert('Dados inválidos', 'Insira um estoque válido', 'agora')
+    if (this.p.description === undefined || this.p.description.length < 25 || this.p.description.length > 250){
+      this.alert.setAlert('⚠️ Descrição inválida', 'Insira uma descrição válida.', 'agora')
       return false
     }
     if (this.p.urlImage === undefined || this.p.urlImage === '') {
-      this.alert.setAlert('Url inválida', 'Insira uma url válida', 'agora')
+      this.alert.setAlert('⚠️ Url inválida', 'Insira uma url válida.', 'agora')
       return false
     }
+    if (this.p.stock === undefined || this.p.stock < 0) {
+      this.alert.setAlert('⚠️ Estoque inválido', 'Insira um estoque válido.', 'agora')
+      return false
+    }
+    if (this.p.price === undefined || this.p.price < 0) {
+      this.alert.setAlert('⚠️ Preço inválido', 'Insira um preço válido.', 'agora')
+      return false
+    }
+
+
     return true
   }
   showUpdateProduct(){
     const modal = new bootstrap.Modal(this.modalComponentUpdateP.nativeElement)
     modal.show()
+    
   }
 
   updateProduct(){
@@ -97,14 +101,14 @@ export class NewProductComponent implements OnInit {
 
   deleteProduct() {
     this.allProductsService.deleteById(this.p.id!).subscribe(() => {
-      this.alert.setAlert('Remoção', `${this.p.name} removido com sucesso`, 'agora')
+      this.alert.setAlert('✔️ Remoção', `${this.p.name} removido com sucesso.`, 'agora', 3000)
       const collapse = new bootstrap.Collapse(
         this.component.nativeElement, 
         {toggle: false}
       )
       collapse.hide()
     },
-    () => this.alert.setAlert(`Erro ao apagar produto`, ` Erro ao apagar ${this.p.name}, possivelmente o produto está associado a alguma ordem de algum cliente`, 'agora')
+    () => this.alert.setAlert(`❌ Erro ao excluir`, ` Erro ao tentar excluir ${this.p.name}, possivelmente o produto está associado a um pedido de um cliente.`, 'agora', 3000)
     )
   }
 }

@@ -21,7 +21,7 @@ export class ListOrdersComponent implements OnInit {
 
   findAllOrders(){
     this.authOrder.getAll().subscribe((orders: Order[]) => {
-      orders.sort((a: Order, b: Order) => a.id-b.id)
+      orders.sort((a: Order, b: Order) => a.id-b.id) //que isso???
       this.listOrders = orders.reverse()
     })
   }

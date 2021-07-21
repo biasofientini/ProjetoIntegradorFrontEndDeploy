@@ -1,17 +1,17 @@
 <div class="card p-4">
     <div class="card-body">
-        <div class="text-right mb-4">
-            <button *ngIf="o.status == 'Em separação'" (click)="markAsSent()" class="btn btn-outline-success">
+        <div class="text-right mb-4 font-fam">
+            <button *ngIf="o.status == 'Em separação'" (click)="markAsSent()" class="btn buttonsend">
                 Marcar como enviado
             </button>
-            <button *ngIf="o.status == 'Enviado'" (click)="markAsSent()" class="btn btn-success" disabled>
+            <button *ngIf="o.status == 'Enviado'" (click)="markAsSent()" class="btn" style="background-color: #A4B501;" disabled>
                 Enviado
             </button>
         </div>
-        <h2>Data da compra {{ date }} </h2>
+        <h2 class="font-fam font-weight-bold font-green">Data da compra {{ date | date : 'dd/MM/yyyy HH:mm' }} </h2>
         <hr>
         <div class="my-3">
-            <h2>
+            <h2 class="font-fam font-green2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1.8rem" height="1.8rem" fill="currentColor" class="bi bi-house"
                     viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -21,17 +21,17 @@
                 </svg>
                 Dados de Entrega
             </h2>
-            <h5>Cliente: {{ customer.name }}</h5>
-            <h5>Telefone: {{ customer.phone }}</h5>
-            <h5>Endereço: {{ customer.address }}</h5>
-            <h5>CEP: {{ customer.zipCode }}</h5>
+            <h5 class="font-fam">Cliente: {{ customer.name }}</h5>
+            <h5 class="font-fam">Telefone: {{ customer.phone }}</h5>
+            <h5 class="font-fam">Endereço: {{ customer.address }}</h5>
+            <h5 class="font-fam">CEP: {{ customer.zipCode }}</h5>
         </div>
-        <h4>Preço pago: <span class="badge badge-pill badge-light">{{ finalPrice | currency:'BRL' }}</span></h4>
-        <h4>Total de itens <span class="badge badge-pill badge-light">{{ totalItems }}</span></h4>
+        <h4 class="font-fam">Valor recebido: <span class="badge badge-pill badge-light" style=" font-weight: bold;">{{ finalPrice | currency:'BRL' }}</span></h4>
+        <h4 class="font-fam">Total de itens <span class="badge badge-pill badge-light" style="font-weight: bold;">{{ totalItems }}</span></h4>
     </div>
     <div>
         <table class="table table-hover">
-            <thead>
+            <thead class="font-fam">
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Produto</th>
@@ -39,7 +39,7 @@
                     <th scope="col">Preço</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="font-fam">
                 <tr app-admin-order-item (newProductEvent)="computeOrder($event)"
                     *ngFor="let orderItem of listOrderItems;" [orderItem]="orderItem"></tr>
             </tbody>
