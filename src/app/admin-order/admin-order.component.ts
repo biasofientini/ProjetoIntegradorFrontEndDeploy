@@ -49,7 +49,7 @@ export class AdminOrderComponent implements OnInit {
   markAsSent(){
     this.o.status = "Enviado"
     this.authOrder.update(this.o).subscribe((order: Order) => {
-      this.alert.setAlert('Sucesso', `Pedido ${this.o.id} marcado como enviado`, 'agora')
+      this.alert.setAlert('🎉 Sucesso', `Pedido ${this.o.id} marcado como enviado`, 'agora',3000)
     })
   }
 
